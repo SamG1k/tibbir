@@ -181,6 +181,37 @@ a{color:inherit}
 .dir tr.grp td{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1a1a14;background:rgba(26,26,20,.06);padding:8px 10px;border-bottom:1px solid #1a1a14;white-space:normal;width:auto}
 .dir tr.grp:hover td{background:rgba(26,26,20,.06)}
 
+/* START HERE */
+.article p b{color:#1a1a14}
+.cmp{width:100%;border-collapse:collapse;border:3px solid #1a1a14}
+.cmp th,.cmp td{padding:12px 14px;text-align:left;vertical-align:top;font-size:14px;line-height:1.45;border-bottom:1px solid rgba(26,26,20,.2)}
+.cmp thead th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:3px solid #1a1a14;background:#e7e3d8}
+.cmp thead th.hl{background:#1a7a2e;color:#f2efe6}
+.cmp tbody th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#666;font-weight:600;width:22%}
+.cmp td:last-child{font-weight:600;background:rgba(26,122,46,.07)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
+.cmp-note{font-size:13px;color:#555;line-height:1.6;margin-top:12px;max-width:820px}
+.loop{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;border:3px solid #1a1a14}
+.lp{padding:16px 16px 18px}
+.lp span{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#1a7a2e}
+.lp b{display:block;font-size:20px;letter-spacing:-.5px;margin:4px 0 4px}
+.lp p{font-size:13px;color:#555;line-height:1.45}
+.lp-a{display:flex;align-items:center;font-size:22px;padding:0 4px;color:#1a7a2e;font-weight:700}
+.lp-back{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 28px;padding:12px 16px;border-top:2px dashed #1a1a14;background:#1a1a14;color:#f2efe6;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+.lp-back span:first-child{color:#3fa055;font-weight:600}
+.lp-back b{color:#f2efe6}
+.ladder{list-style:none;border-top:2px solid #1a1a14}
+.ladder li{display:grid;grid-template-columns:44px 180px 1fr;gap:18px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(26,26,20,.2)}
+.ladder .lv{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:#1a7a2e}
+.ladder .lb{height:14px;border:2px solid #1a1a14;position:relative}
+.ladder .lb i{position:absolute;left:0;top:0;bottom:0;background:#1a7a2e}
+.ladder .ln b{font-size:17px;letter-spacing:-.3px}
+.ladder .ln p{font-size:14px;color:#444;line-height:1.45;margin-top:2px}
+.faq div{display:grid;grid-template-columns:1fr 2fr;gap:24px;padding:18px 0;border-top:1px solid rgba(26,26,20,.2)}
+.faq div:last-child{border-bottom:1px solid rgba(26,26,20,.2)}
+.faq dt{font-size:19px;font-weight:700;letter-spacing:-.4px;line-height:1.25}
+.faq dd{font-size:15px;line-height:1.65;color:#2b2b24}
+
 /* CASES */
 .case{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:30px 0;border-top:1px solid rgba(26,26,20,.2)}
 .case:last-child{border-bottom:1px solid rgba(26,26,20,.2)}
@@ -242,6 +273,14 @@ a{color:inherit}
   .tl-tabs button{padding:8px 12px}
   .key .k-note{margin-left:0;width:100%}
   .sub{flex-wrap:wrap}
+  .cmp{display:block;overflow-x:auto}
+  .cmp th,.cmp td{padding:10px 8px;font-size:12.5px;min-width:96px}
+  .loop{grid-template-columns:1fr}
+  .lp-a{justify-content:center;padding:0;transform:rotate(90deg);height:22px}
+  .ladder li{grid-template-columns:34px 1fr;gap:6px 12px}
+  .ladder .lb{grid-column:2}
+  .ladder .ln{grid-column:2}
+  .faq div{grid-template-columns:1fr;gap:8px}
   .sub em{margin-left:0;width:100%}
   .dir tr.grp{padding:0;border:none}
   .dir tr.grp td{display:block;padding:8px 10px}
@@ -259,6 +298,7 @@ a{color:inherit}
 <div class="nav">
   <div class="logo"><span>AGENTIC ECONOMY</span></div>
   <div class="links">
+    <a href="#start">Start here</a>
     <a href="#agents">Agents</a>
     <a href="#stack">Infrastructure</a>
     <a href="#work">Work</a>
@@ -284,7 +324,7 @@ a{color:inherit}
     <h1>AI agents are getting to <em>work</em>.</h1>
     <div class="standfirst">
       <p>Between 2024 and 2026, AI agents went from demos to doing real jobs — writing code, answering customers, using computers, trading and paying for things on their own. This guide covers what they are, what they run on, where they work, how the money moves, and what could go wrong.</p>
-      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §9<br>~20 min read</div>
+      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §9<br>~25 min read</div>
     </div>
   </header>
 
@@ -305,11 +345,78 @@ a{color:inherit}
   </div>
   <div class="key"><b>Status key</b><span><span class="tag tag-live">Live</span> available now</span><span><span class="tag tag-preview">Preview</span> beta or early access</span><span><span class="tag tag-announced">Announced</span> not yet available</span><span><span class="tag tag-forecast">Forecast</span> analyst projection</span><span class="k-note">As reported at the time</span></div>
 
+  <!-- §0 START HERE -->
+  <section class="part" id="start">
+    <div class="sh"><span class="sn">§0</span><h2>Start here</h2><span class="aside">The basics, in plain English</span></div>
+
+    <div class="sub"><span>0.1</span><h3>What is the agentic economy?</h3></div>
+    <div class="article">
+      <p class="lead">Today, people do the searching, comparing, booking and paying. In an agentic economy, AI agents do more of that work. Microsoft researchers describe it as an economy “where assistant and service agents interact programmatically” to get transactions done.<a class="fn" href="#src-48">[48]</a></p>
+      <p>An <b>assistant agent</b> works for you: it carries your preferences to businesses. A <b>service agent</b> works for a business, dealing with customers and other companies.<a class="fn" href="#src-48">[48]</a> The agentic economy is what happens when those agents start finding each other, negotiating and paying.</p>
+      <div class="pull"><q>Our current trajectory points toward the accidental emergence of a vast, and likely permeable, sandbox economy.</q><cite>Google DeepMind researchers — Virtual Agent Economies, Sep 2025<a class="fn" href="#src-50">[50]</a></cite></div>
+      <p>That warning is about agents trading with each other in markets that leak into the human economy. The researchers’ point: the question is no longer whether this economy appears, but how it’s designed.<a class="fn" href="#src-50">[50]</a></p>
+      <p>Microsoft’s researchers expect it to change how things are sold. When agents handle payments, the hassle of tiny payments disappears — favouring pay-per-use over subscriptions — and competition shifts from grabbing human attention to matching agents with the best services.<a class="fn" href="#src-48">[48]</a></p>
+    </div>
+
+    <div class="sub"><span>0.2</span><h3>Chatbot, workflow or agent?</h3></div>
+    <table class="cmp">
+      <thead><tr><th></th><th>Chatbot</th><th>Workflow</th><th class="hl">Agent</th></tr></thead>
+      <tbody>
+        <tr><th>Who decides the steps?</th><td>You, one prompt at a time</td><td>The developer, in advance</td><td>The AI itself, as it goes</td></tr>
+        <tr><th>Uses tools?</th><td>No</td><td>Yes, on a fixed path</td><td>Yes, and picks which ones</td></tr>
+        <tr><th>Plans ahead?</th><td>No</td><td>The plan is the code</td><td>Breaks the goal into subtasks and revises</td></tr>
+        <tr><th>Remembers?</th><td>No</td><td>—</td><td>Stores past interactions and learns from them</td></tr>
+        <tr><th>Best for</th><td>Short, simple requests</td><td>Well-defined, predictable tasks</td><td>Open-ended problems with unpredictable steps</td></tr>
+      </tbody>
+    </table>
+    <p class="cmp-note">Anthropic: workflows are systems where AI and tools follow “predefined code paths”; agents “dynamically direct their own processes and tool usage”.<a class="fn" href="#src-51">[51]</a> IBM: plain chatbots are those “without available tools, memory or reasoning”.<a class="fn" href="#src-49">[49]</a></p>
+
+    <div class="sub"><span>0.3</span><h3>How an agent works</h3><em>The loop</em></div>
+    <div class="loop">
+      <div class="lp"><span>01</span><b>Goal</b><p>A person gives it a task.</p></div>
+      <div class="lp-a">→</div>
+      <div class="lp"><span>02</span><b>Plan</b><p>It breaks the task into steps.</p></div>
+      <div class="lp-a">→</div>
+      <div class="lp"><span>03</span><b>Act</b><p>It uses a tool — search, code, a browser, a payment.</p></div>
+      <div class="lp-a">→</div>
+      <div class="lp"><span>04</span><b>Check</b><p>It looks at the result to see if it’s working.</p></div>
+      <div class="lp-back"><span>↺ Repeat until done</span><span><b>Pause</b> for a human at checkpoints or when stuck</span><span><b>Stop</b> when finished or at a set limit</span></div>
+    </div>
+    <p class="cmp-note">In Anthropic’s words, agents are “typically just LLMs using tools based on environmental feedback in a loop.”<a class="fn" href="#src-51">[51]</a> IBM breaks them into planning, reasoning, tools and memory.<a class="fn" href="#src-49">[49]</a></p>
+
+    <div class="sub"><span>0.4</span><h3>How much does it do on its own?</h3><em>Five levels of autonomy</em></div>
+    <ol class="ladder">
+      <li><div class="lv">L1</div><div class="lb"><i style="width:20%"></i></div><div class="ln"><b>Operator</b><p>You lead. The agent helps only when called or with suggestions you approve.</p></div></li>
+      <li><div class="lv">L2</div><div class="lb"><i style="width:40%"></i></div><div class="ln"><b>Collaborator</b><p>You and the agent plan and do the work together, often in parallel.</p></div></li>
+      <li><div class="lv">L3</div><div class="lb"><i style="width:60%"></i></div><div class="ln"><b>Consultant</b><p>The agent takes the lead; you give feedback and direction.</p></div></li>
+      <li><div class="lv">L4</div><div class="lb"><i style="width:80%"></i></div><div class="ln"><b>Approver</b><p>The agent works on its own and checks in only for blockers or big decisions.</p></div></li>
+      <li><div class="lv">L5</div><div class="lb"><i style="width:100%"></i></div><div class="ln"><b>Observer</b><p>The agent runs fully on its own. You watch the logs and keep an off-switch.</p></div></li>
+    </ol>
+    <p class="cmp-note">Levels by Feng, McDonald and Zhang, defined by the role the person plays. A very capable agent can still be built to sit at a low level.<a class="fn" href="#src-52">[52]</a></p>
+
+    <div class="sub"><span>0.5</span><h3>Why now — and why agents need their own money</h3></div>
+    <div class="article">
+      <p><b>They got capable.</b> The length of tasks agents can finish has doubled roughly every seven months,<a class="fn" href="#src-45">[45]</a> and since late 2024 they can operate a computer like a person.<a class="fn" href="#src-36">[36]</a></p>
+      <p><b>They got common plugs.</b> MCP lets any agent use any tool — 10,000+ public servers by December 2025 — and A2A lets agents work with each other.<a class="fn" href="#src-44">[44]</a><a class="fn" href="#src-6">[6]</a></p>
+      <p><b>They got payment rails.</b> x402, Google’s AP2 and the card networks’ agent programs all launched in 2025.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-11">[11]</a><a class="fn" href="#src-7">[7]</a></p>
+      <p><b>Why their own money?</b> “An AI agent isn’t a legal person,” so it can’t hold a bank account in its own name, and its authority changes every time it gets new instructions or a new budget.<a class="fn" href="#src-53">[53]</a> Agents also need systems that don’t make them get around CAPTCHAs, two-factor prompts and approvals built for humans.<a class="fn" href="#src-24">[24]</a> Hence wallets, stablecoins and payment tokens scoped to one job.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-13">[13]</a></p>
+    </div>
+
+    <div class="sub"><span>0.6</span><h3>Common questions</h3></div>
+    <dl class="faq">
+      <div><dt>Is this just crypto?</dt><dd>No. Crypto is one payment rail — x402 and Tempo settle in stablecoins.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-20">[20]</a> But Visa, Mastercard, Stripe, PayPal and ChatGPT’s checkout run agent payments over ordinary cards and accounts.<a class="fn" href="#src-7">[7]</a><a class="fn" href="#src-13">[13]</a><a class="fn" href="#src-30">[30]</a></dd></div>
+      <div><dt>Will agents take jobs?</dt><dd>Some work, already. Klarna says its assistant does the work of 700 support agents.<a class="fn" href="#src-35">[35]</a> Gartner expects 15% of day-to-day work decisions to be made by agents by 2028.<a class="fn" href="#src-43">[43]</a> Google DeepMind researchers list job substitution and polarisation among the main risks.<a class="fn" href="#src-50">[50]</a></dd></div>
+      <div><dt>Is it safe to let an agent spend my money?</dt><dd>There are guardrails — spending limits, approval for each purchase, payment tokens locked to one shop and one amount.<a class="fn" href="#src-17">[17]</a><a class="fn" href="#src-13">[13]</a> But on Robinhood the risk of an agent’s trades sits with you,<a class="fn" href="#src-19">[19]</a> and prompt injection has no complete fix.<a class="fn" href="#src-46">[46]</a></dd></div>
+      <div><dt>Who’s in charge — me or the agent?</dt><dd>It depends how the agent is built. Researchers argue autonomy is “a deliberate design decision made by agent developers”, not just a matter of how capable the AI is.<a class="fn" href="#src-52">[52]</a> Most products today keep a person in the loop: Operator pauses before actions with outside effects, and GitHub’s agent hands back a pull request to review.<a class="fn" href="#src-37">[37]</a><a class="fn" href="#src-38">[38]</a></dd></div>
+      <div><dt>Will it be open, or owned by a few giants?</dt><dd>Undecided. Microsoft researchers describe two futures: “agentic walled gardens” run by dominant platforms, or an open “web of agents” where agents can freely connect and transact. They argue for the open one.<a class="fn" href="#src-48">[48]</a></dd></div>
+    </dl>
+  </section>
+
   <!-- §1 THE AGENTS -->
   <section class="part" id="agents">
-    <div class="sh"><span class="sn">§1</span><h2>The agents</h2><span class="aside">What they are and what they can do</span></div>
+    <div class="sh"><span class="sn">§1</span><h2>The agents</h2><span class="aside">What they can do</span></div>
     <div class="article">
-      <p class="lead">An AI agent is software that doesn’t just answer — it acts on someone’s behalf: it plans steps, uses tools and gets things done. In 2024 that went from demo to product. Cognition pitched Devin as an AI software engineer that could plan and carry out complex coding tasks.<a class="fn" href="#src-34">[34]</a> Anthropic let Claude use a computer the way people do — looking at the screen, moving a cursor, clicking and typing — while admitting the ability was “imperfect”.<a class="fn" href="#src-36">[36]</a></p>
+      <p class="lead">In 2024, agents went from demo to product. Cognition pitched Devin as an AI software engineer that could plan and carry out complex coding tasks.<a class="fn" href="#src-34">[34]</a> Anthropic let Claude use a computer the way people do — looking at the screen, moving a cursor, clicking and typing — while admitting the ability was “imperfect”.<a class="fn" href="#src-36">[36]</a></p>
       <p>OpenAI’s Operator could book a restaurant table or fill a grocery order in a browser, but scored 38.1% on a benchmark of computer tasks where humans score 72.4%.<a class="fn" href="#src-37">[37]</a> The gap is closing fast: METR found the length of tasks agents can complete has doubled roughly every seven months for six years.<a class="fn" href="#src-45">[45]</a></p>
       <div class="pull"><q>The next generation of agents won’t just advise — they’ll act.</q><cite>Erik Reppel &amp; Josh Nickerson, Coinbase — Cointelegraph, Feb 2026</cite></div>
       <p>Not everything sold as an agent is one. Gartner estimates only about 130 of the thousands of “agentic AI” vendors are the real thing, and expects over 40% of agentic AI projects to be cancelled by the end of 2027 — over cost, unclear value and weak risk controls.<a class="fn" href="#src-43">[43]</a></p>
@@ -520,7 +627,7 @@ a{color:inherit}
 
   <!-- §8 GLOSSARY -->
   <section class="part" id="glossary">
-    <div class="sh"><span class="sn">§8</span><h2>Glossary</h2><span class="aside">24 terms</span></div>
+    <div class="sh"><span class="sn">§8</span><h2>Glossary</h2><span class="aside">30 terms</span></div>
     <dl class="gloss">
       <div><dt>MCP<span>Protocol</span></dt><dd>Model Context Protocol. Anthropic’s standard for giving AI agents tools and context.<a class="fn" href="#src-5">[5]</a></dd></div>
       <div><dt>A2A<span>Protocol</span></dt><dd>Agent2Agent. Google’s protocol for agents to discover each other and delegate tasks.<a class="fn" href="#src-6">[6]</a></dd></div>
@@ -546,12 +653,18 @@ a{color:inherit}
       <div><dt>Prompt injection<span>Security</span></dt><dd>Hiding instructions in content an agent reads, to make it do something its user didn’t ask for.<a class="fn" href="#src-46">[46]</a></dd></div>
       <div><dt>Excessive agency<span>Security</span></dt><dd>An agent holding more tools or permissions than its job needs — OWASP’s #3 AI risk in 2026.<a class="fn" href="#src-46">[46]</a></dd></div>
       <div><dt>Coding agent<span>Agents</span></dt><dd>An agent that takes a software task and returns finished code for review, like GitHub’s Copilot agent.<a class="fn" href="#src-38">[38]</a></dd></div>
+      <div><dt>Assistant agent<span>Agents</span></dt><dd>An agent that works for a consumer, carrying their preferences to businesses.<a class="fn" href="#src-48">[48]</a></dd></div>
+      <div><dt>Service agent<span>Agents</span></dt><dd>An agent that works for a business, dealing with customers and other businesses.<a class="fn" href="#src-48">[48]</a></dd></div>
+      <div><dt>Workflow<span>Agents</span></dt><dd>AI and tools following steps a developer wrote in advance — predictable, but not adaptive.<a class="fn" href="#src-51">[51]</a></dd></div>
+      <div><dt>Autonomy level<span>Agents</span></dt><dd>How much an agent does without its user — from Operator (you lead) to Observer (you just watch).<a class="fn" href="#src-52">[52]</a></dd></div>
+      <div><dt>Sandbox economy<span>Economics</span></dt><dd>Google DeepMind’s term for digital markets where AI agents transact with each other.<a class="fn" href="#src-50">[50]</a></dd></div>
+      <div><dt>KYA<span>Trust</span></dt><dd>Know Your Agent. Checks on who runs an agent, who it acts for and what it’s allowed to do.<a class="fn" href="#src-53">[53]</a></dd></div>
     </dl>
   </section>
 
   <!-- §9 SOURCES -->
   <section class="part" id="sources">
-    <div class="sh"><span class="sn">§9</span><h2>Sources</h2><span class="aside">47 sources · read directly</span></div>
+    <div class="sh"><span class="sn">§9</span><h2>Sources</h2><span class="aside">53 sources · read directly</span></div>
     <ol class="sources">
       <li id="src-1">Marc Andreessen Sends $50K in Bitcoin to an AI Bot on Twitter — Decrypt, Jul 10, 2024. <a href="https://decrypt.co/?p=239340" target="_blank" rel="noopener">link</a></li>
       <li id="src-2">Coinbase sees first crypto transaction between AI agents — Cointelegraph, Aug 31, 2024. <a href="https://cointelegraph.com/news/coinbase-artificial-intelligence-ai-crypto-transactions-wallet-brian-armstrong" target="_blank" rel="noopener">link</a></li>
@@ -600,6 +713,12 @@ a{color:inherit}
       <li id="src-45">Measuring AI Ability to Complete Long Tasks — METR, Mar 19, 2025. <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" target="_blank" rel="noopener">link</a></li>
       <li id="src-46">Prompt Injection tops 2026 OWASP GenAI / LLM Top Ten vulnerabilities — SD Times, Aug 4, 2026. <a href="https://sdtimes.com/security/prompt-injection-tops-2026-owasp-genai-llm-top-ten-vulnerabilities/" target="_blank" rel="noopener">link</a></li>
       <li id="src-47">Stripe closes $1.1 billion Bridge deal, prepares for aggressive stablecoin push — CNBC via NBC New York, Feb 4, 2025. <a href="https://www.nbcnewyork.com/news/business/money-report/stripe-closes-1-1-billion-bridge-deal-prepares-for-aggressive-stablecoin-push/6135508/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-48">The Agentic Economy — Microsoft Research (Rothschild et al.), arXiv, May 29, 2025. <a href="https://arxiv.org/abs/2505.15799" target="_blank" rel="noopener">link</a></li>
+      <li id="src-49">What are AI agents? — IBM Think, accessed Oct 2026. <a href="https://www.ibm.com/think/topics/ai-agents" target="_blank" rel="noopener">link</a></li>
+      <li id="src-50">Virtual Agent Economies — Google DeepMind (Tomašev et al.), arXiv, Sep 12, 2025. <a href="https://arxiv.org/abs/2509.10147" target="_blank" rel="noopener">link</a></li>
+      <li id="src-51">Building effective agents — Anthropic, Dec 19, 2024. <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">link</a></li>
+      <li id="src-52">Levels of Autonomy for AI Agents — Knight First Amendment Institute (Feng, McDonald, Zhang), Jul 28, 2025. <a href="https://knightcolumbia.org/content/levels-of-autonomy-for-ai-agents-1" target="_blank" rel="noopener">link</a></li>
+      <li id="src-53">What is Know Your Agent (KYA)? — Elliptic, accessed Oct 2026. <a href="https://www.elliptic.co/blockchain-basics/what-is-know-your-agent-kya/" target="_blank" rel="noopener">link</a></li>
     </ol>
   </section>
 
