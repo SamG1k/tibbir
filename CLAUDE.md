@@ -86,11 +86,14 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - Figures row with footnote markers
 - §1 Overview — two-column article, drop cap, pull quote
 - §2 The stack — isometric SVG slab diagram (5 layers) with labels; hover links slab ↔ label
-- §3 How we got here — full-width black band, vertical timeline
-- §4 Who's building it — directory table
-- §5 Glossary — book-style definition list
-- §6 Sources — numbered list; footnotes `[n]` link here
-- Companion note linking to TIBBIR
+- §3 How an agent pays — x402 sequence diagram (agent ↔ server, 4 steps)
+- §4 Agents at work — case studies (Robinhood, Coinbase for Agents, ChatGPT checkout, Tempo/MPP, Virtuals), spec-sheet layout
+- §5 How we got here — full-width black band, vertical timeline (32 events)
+- §6 Who's building it — directory table
+- §7 Open questions — numbered list of unsolved problems
+- §8 Glossary — book-style definition list
+- §9 Sources — numbered list; footnotes `[n]` link here
+- (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
 **Status:** layout done with placeholder text. Next step: fill content from Sam's links below. Every fact gets a footnote + source entry. Read each page directly (WebFetch); if a page can't be read, say so — don't fill from memory or search snippets. Show Sam a rundown before putting content on the page.
