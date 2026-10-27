@@ -14,13 +14,13 @@
 
 - Repo: `SamG1k/tibbir`. GitHub → Vercel. Anything pushed to `main` goes live automatically.
 - Never push straight to `main` for site changes. Push to a test branch, Sam checks the Vercel preview, then merge to `main` only when Sam says so.
-- Vercel preview: Vercel dashboard → tibbir project → Deployments → newest deployment for the branch → Visit (add `/agentic.html` for the agentic page).
+- Vercel preview: Vercel dashboard → tibbir project → Deployments → newest deployment for the branch → Visit (agentic page is `/`, TIBBIR is `/tibbir`).
 - Commit with author name `SamG1k`.
 
 ## Files
 
-- `index.html` — the live TIBBIR site (single file, base64 images embedded).
-- `agentic.html` — new Agentic Economy page (in progress, see below). Lives on branch `agentic-page` until approved.
+- On branch `agentic-page` the pages are swapped: `index.html` = Agentic Economy homepage, `tibbir.html` = TIBBIR (served at `/tibbir` via `vercel.json` `cleanUrls`). The flip button top-right links to `/tibbir`. On `main` (until merged) `index.html` is still TIBBIR.
+- TIBBIR page — single file, base64 images embedded.
 - `CLAUDE.md` — this file. Excluded from deploys via `.vercelignore`.
 
 ## TIBBIR — project brief
@@ -33,7 +33,7 @@ Contract address (bottom of page, `user-select: all`): `0xA4A2E2ca3fBfE21aed8347
 
 ### Source of truth
 
-`index.html` is the live site. Before any task, read a stripped copy so you know the current content — it changes between tasks. If this file and the HTML disagree on content, trust the HTML. Don't read it raw (base64 images):
+The TIBBIR page (`tibbir.html` on `agentic-page`, `index.html` on `main`) is the source of truth. Before any task, read a stripped copy so you know the current content — it changes between tasks. If this file and the HTML disagree on content, trust the HTML. Don't read it raw (base64 images):
 
 ```bash
 sed -E 's/data:image\/[a-zA-Z+]+;base64,[A-Za-z0-9+\/=]+/data:image;base64,STRIPPED/g' index.html > /tmp/tibbir-lite.html
@@ -77,9 +77,9 @@ Always edit the real `index.html`, never the lite copy.
 - Card image crops: pixel-analysis edge detection; physical card edge ~22px beyond printed frame lines. Michael Rihani final crop: front `(144, 58, 733, 958)`, back `(796, 58, 1374, 959)`.
 - Frame recolouring: thin-run method — dark pixel runs ≤6px wide within edge bands — recoloured to match each rebel's logo colour.
 
-## Agentic Economy page (`agentic.html`)
+## Agentic Economy page (`index.html` on `agentic-page`)
 
-A general page on the agentic economy, same colours/fonts as TIBBIR but its own look. Top bar: "AGENTIC ECONOMY" left, section links, green ЯIBBIT→TIBBIR flip button on the right linking to `/`.
+A general page on the agentic economy, same colours/fonts as TIBBIR but its own look. Top bar: "AGENTIC ECONOMY" left, section links, green ЯIBBIT→TIBBIR flip button on the right linking to `/tibbir`.
 
 Design went through several rounds; Sam's goal is **authentic, not AI-themed**. Current direction = editorial "field guide" / research report:
 - Masthead (Vol. 01 · A field guide · Updated…), big headline, standfirst, "Compiled by SamG1k" byline
