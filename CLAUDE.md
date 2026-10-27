@@ -87,11 +87,12 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §1 Overview — two-column article, drop cap, pull quote
 - §2 The stack — isometric SVG slab diagram (5 layers) with labels; hover links slab ↔ label
 - §3 How an agent pays — x402 sequence diagram (agent ↔ server, 4 steps)
-- §4 How we got here — full-width black band, vertical timeline
-- §5 Who's building it — directory table
-- §6 Open questions — numbered list of unsolved problems
-- §7 Glossary — book-style definition list
-- §8 Sources — numbered list; footnotes `[n]` link here
+- §4 Agents at work — case studies (Robinhood, Coinbase for Agents, ChatGPT checkout, Tempo/MPP, Virtuals), spec-sheet layout
+- §5 How we got here — full-width black band, vertical timeline (32 events)
+- §6 Who's building it — directory table
+- §7 Open questions — numbered list of unsolved problems
+- §8 Glossary — book-style definition list
+- §9 Sources — numbered list; footnotes `[n]` link here
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
