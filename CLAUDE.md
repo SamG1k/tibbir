@@ -90,7 +90,7 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §4 Who's building it — directory table
 - §5 Glossary — book-style definition list
 - §6 Sources — numbered list; footnotes `[n]` link here
-- Companion note linking to TIBBIR
+- (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
 **Status:** layout done with placeholder text. Next step: fill content from Sam's links below. Every fact gets a footnote + source entry. Read each page directly (WebFetch); if a page can't be read, say so — don't fill from memory or search snippets. Show Sam a rundown before putting content on the page.
