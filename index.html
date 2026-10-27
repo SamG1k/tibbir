@@ -120,7 +120,36 @@ a{color:inherit}
 .sources li::before{content:'[' counter(src) ']';position:absolute;left:0;color:#1a7a2e;font-weight:600}
 .sources li a{color:#1a7a2e}
 
-/* COMPANION NOTE */
+
+/* PAYMENT FLOW */
+.seq{border:3px solid #1a1a14}
+.seq-head{display:grid;grid-template-columns:120px 1fr 120px;border-bottom:3px solid #1a1a14;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:3px}
+.seq-head span{padding:12px 16px}
+.seq-head span:last-child{text-align:right;background:#1a1a14;color:#f2efe6}
+.seq-head span:first-child{background:#1a7a2e;color:#f2efe6}
+.seq-row{display:grid;grid-template-columns:120px 1fr 120px;align-items:center;border-bottom:1px solid rgba(26,26,20,.2)}
+.seq-row:last-child{border-bottom:none}
+.seq-row .n{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:600;color:#1a7a2e;padding:18px 16px}
+.seq-row .msg{padding:18px 0}
+.seq-row .msg b{display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.5px;margin-bottom:8px}
+.seq-row .ln{position:relative;height:2px;background:#1a1a14}
+.seq-row .ln::after{content:'';position:absolute;top:-5px;right:-1px;border:6px solid transparent;border-left:9px solid #1a1a14;border-right:none}
+.seq-row.back .ln::after{right:auto;left:-1px;border-left:none;border-right:9px solid #1a1a14}
+.seq-row.back .msg b{text-align:right}
+.seq-row .msg p{font-size:13px;color:#555;line-height:1.5;margin-top:8px}
+.seq-row.back .msg p{text-align:right}
+.seq-note{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:24px}
+.seq-note p{font-size:15px;line-height:1.65;color:#2b2b24}
+
+/* OPEN QUESTIONS */
+.qs{counter-reset:q;list-style:none}
+.qs li{counter-increment:q;display:grid;grid-template-columns:72px 1fr 2fr;gap:24px;padding:22px 0;border-top:1px solid rgba(26,26,20,.2)}
+.qs li:last-child{border-bottom:1px solid rgba(26,26,20,.2)}
+.qs li::before{content:counter(q,decimal-leading-zero);font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:600;color:#1a7a2e;line-height:1}
+.qs h3{font-size:21px;font-weight:700;letter-spacing:-.5px;line-height:1.2}
+.qs p{font-size:15px;line-height:1.65;color:#2b2b24}
+.figs .fig:nth-child(4n+1){padding-left:0;border-left:none}
+.figs .fig:nth-child(-n+4){border-bottom:1px solid #1a1a14}
 
 .footer{margin-top:48px;padding:16px 28px;display:flex;justify-content:space-between;border-top:1px solid #1a1a14;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#888;letter-spacing:1px}
 
@@ -135,7 +164,11 @@ a{color:inherit}
   .figs{grid-template-columns:1fr 1fr}
   .fig,.fig + .fig{padding:18px 12px 16px 0;border-left:none}
   .fig:nth-child(even){padding-left:14px;border-left:1px solid #1a1a14}
-  .fig:nth-child(-n+2){border-bottom:1px solid #1a1a14}
+  .fig:nth-child(-n+6){border-bottom:1px solid #1a1a14}
+  .seq-head,.seq-row{grid-template-columns:44px 1fr 44px}
+  .seq-head span{padding:10px 6px;font-size:9px;letter-spacing:1px}
+  .seq-row .n{font-size:18px;padding:14px 6px}
+  .seq-note,.qs li{grid-template-columns:1fr;gap:10px}
   .part{padding-top:48px}
   .sh{flex-wrap:wrap;gap:4px 12px}
   .sh .aside{margin-left:0;width:100%}
@@ -164,8 +197,10 @@ a{color:inherit}
   <div class="links">
     <a href="#overview">Overview</a>
     <a href="#stack">Stack</a>
+    <a href="#payments">Payments</a>
     <a href="#timeline">Timeline</a>
     <a href="#players">Players</a>
+    <a href="#questions">Questions</a>
     <a href="#glossary">Glossary</a>
     <a href="#sources">Sources</a>
   </div>
@@ -184,7 +219,7 @@ a{color:inherit}
     <h1>AI agents are getting <em>wallets</em>.</h1>
     <div class="standfirst">
       <p>Between 2024 and 2026, AI agents went from posting on X to holding money, paying each other and checking out on their own. Coinbase, Stripe, Google, Visa and Mastercard built the rails. This is how it happened.</p>
-      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §6<br>~6 min read</div>
+      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §8<br>~9 min read</div>
     </div>
   </header>
 
@@ -194,6 +229,10 @@ a{color:inherit}
     <div class="fig"><div class="v">50M<a class="fn" href="#src-15">[15]</a></div><div class="l">x402 transactions by Feb 2026</div></div>
     <div class="fig"><div class="v">60+<a class="fn" href="#src-11">[11]</a></div><div class="l">Launch partners for Google’s AP2</div></div>
     <div class="fig"><div class="v">$1.1B<a class="fn" href="#src-4">[4]</a></div><div class="l">Stripe’s price for Bridge</div></div>
+    <div class="fig"><div class="v">700M<a class="fn" href="#src-13">[13]</a></div><div class="l">ChatGPT weekly users at Instant Checkout launch</div></div>
+    <div class="fig"><div class="v">75M+<a class="fn" href="#src-9">[9]</a></div><div class="l">Accounts on Privy when Stripe bought it</div></div>
+    <div class="fig"><div class="v">8<a class="fn" href="#src-10">[10]</a></div><div class="l">ERC-8004 implementations in its first 24 hours</div></div>
+    <div class="fig"><div class="v">$1T+<a class="fn" href="#src-9">[9]</a></div><div class="l">Payments Stripe processed in 2024</div></div>
   </div>
 
   <!-- §1 OVERVIEW -->
@@ -254,12 +293,28 @@ a{color:inherit}
     </div>
   </section>
 
+  <!-- §3 HOW AN AGENT PAYS -->
+  <section class="part" id="payments">
+    <div class="sh"><span class="sn">§3</span><h2>How an agent pays</h2><span class="aside">x402, step by step</span></div>
+    <div class="seq">
+      <div class="seq-head"><span>AGENT</span><span></span><span>SERVER</span></div>
+      <div class="seq-row"><span class="n">01</span><div class="msg"><b>Request</b><div class="ln"></div><p>The agent asks for something — an API, a dataset, a page.</p></div><span></span></div>
+      <div class="seq-row back"><span class="n">02</span><div class="msg"><b>402 Payment Required</b><div class="ln"></div><p>Instead of the content, the server replies with payment instructions.</p></div><span></span></div>
+      <div class="seq-row"><span class="n">03</span><div class="msg"><b>Payment authorization</b><div class="ln"></div><p>The agent pays — in stablecoins, settled near-instantly.</p></div><span></span></div>
+      <div class="seq-row back"><span class="n">04</span><div class="msg"><b>Access + confirmation</b><div class="ln"></div><p>Once the payment is verified, the agent gets what it asked for.<a class="fn" href="#src-12">[12]</a></p></div><span></span></div>
+    </div>
+    <div class="seq-note">
+      <p>That’s the whole loop. No account, no subscription, no API key. x402 reuses HTTP’s “402 Payment Required” code — long unused — so payment becomes part of an ordinary web request.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-12">[12]</a></p>
+      <p>The examples given at the x402 Foundation launch: an AI assistant buying from several merchants at once, agents paying per browser session, trading bots buying real-time data through micropayments.<a class="fn" href="#src-12">[12]</a> By February 2026 x402 had reportedly processed 50 million transactions.<a class="fn" href="#src-15">[15]</a></p>
+    </div>
+  </section>
+
 </div>
 
-<!-- §3 TIMELINE (dark band) -->
+<!-- §4 TIMELINE (dark band) -->
 <section class="band" id="timeline">
   <div class="wrap">
-    <div class="sh"><span class="sn">§3</span><h2>How we got here</h2><span class="aside">Jul 2024 — Jun 2026</span></div>
+    <div class="sh"><span class="sn">§4</span><h2>How we got here</h2><span class="aside">Jul 2024 — Jun 2026</span></div>
     <div class="vtl">
       <div class="tl-item"><div class="d">Jul 10, 2024</div><div class="t">A bot gets a grant</div><p>Marc Andreessen sends $50K in Bitcoin to Truth Terminal, an AI agent on X, framed as a grant.<a class="fn" href="#src-1">[1]</a></p></div>
       <div class="tl-item"><div class="d">Aug 2024</div><div class="t">Agents get spending money</div><p>Skyfire launches a payment platform that lets AI agents spend money autonomously.<a class="fn" href="#src-2">[2]</a></p></div>
@@ -267,6 +322,7 @@ a{color:inherit}
       <div class="tl-item"><div class="d">Oct 10, 2024</div><div class="t">GOAT launches</div><p>Goatseus Maximus, a Solana memecoin, launches and becomes Truth Terminal’s largest position.<a class="fn" href="#src-3">[3]</a></p></div>
       <div class="tl-item"><div class="d">Oct 18, 2024</div><div class="t">The first AI crypto millionaire</div><p>Truth Terminal’s holdings pass $1M — “most likely the first ever” AI bot to become a crypto millionaire.<a class="fn" href="#src-3">[3]</a></p></div>
       <div class="tl-item"><div class="d">Oct 2024</div><div class="t">Stripe buys Bridge</div><p>Stripe acquires stablecoin infrastructure firm Bridge for $1.1B.<a class="fn" href="#src-4">[4]</a></p></div>
+      <div class="tl-item"><div class="d">Nov 2024</div><div class="t">AgentKit</div><p>Coinbase introduces AgentKit, a framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a></p></div>
       <div class="tl-item"><div class="d">Nov 25, 2024</div><div class="t">MCP</div><p>Anthropic introduces the Model Context Protocol, a standard for giving agents tools and context.<a class="fn" href="#src-5">[5]</a></p></div>
       <div class="tl-item"><div class="d">Apr 2025</div><div class="t">A2A</div><p>Google releases Agent2Agent, a protocol for agent-to-agent discovery and task delegation.<a class="fn" href="#src-6">[6]</a></p></div>
       <div class="tl-item"><div class="d">Apr 29, 2025</div><div class="t">Mastercard Agent Pay</div><p>Lets verified AI agents complete purchases for users.<a class="fn" href="#src-7">[7]</a></p></div>
@@ -286,9 +342,9 @@ a{color:inherit}
 
 <div class="wrap">
 
-  <!-- §4 PLAYERS -->
+  <!-- §5 PLAYERS -->
   <section class="part" id="players">
-    <div class="sh"><span class="sn">§4</span><h2>Who's building it</h2><span class="aside">What each has shipped</span></div>
+    <div class="sh"><span class="sn">§5</span><h2>Who's building it</h2><span class="aside">What each has shipped</span></div>
     <table class="dir">
       <thead><tr><th>Company</th><th>Area</th><th>What they do</th><th></th></tr></thead>
       <tbody>
@@ -301,13 +357,28 @@ a{color:inherit}
         <tr><td>Visa</td><td class="cat">Card network</td><td>Intelligent Commerce — payment tools and spending controls for agents.</td><td class="lnk"><a href="#src-7">↗</a></td></tr>
         <tr><td>Cloudflare</td><td class="cat">Infrastructure</td><td>Co-launched the x402 Foundation with Coinbase.</td><td class="lnk"><a href="#src-12">↗</a></td></tr>
         <tr><td>Ethereum Foundation</td><td class="cat">Standards</td><td>Released ERC-8004 “Trustless Agents”.</td><td class="lnk"><a href="#src-10">↗</a></td></tr>
+        <tr><td>Ribbit Capital</td><td class="cat">Investor</td><td>Led Privy’s $15M round in March 2025. Three months later, Stripe agreed to buy Privy.</td><td class="lnk"><a href="#src-9">↗</a></td></tr>
+        <tr><td>Skyfire</td><td class="cat">Payments</td><td>Launched a platform in 2024 letting AI agents spend money autonomously.</td><td class="lnk"><a href="#src-2">↗</a></td></tr>
       </tbody>
     </table>
   </section>
 
-  <!-- §5 GLOSSARY -->
+  <!-- §6 OPEN QUESTIONS -->
+  <section class="part" id="questions">
+    <div class="sh"><span class="sn">§6</span><h2>Open questions</h2><span class="aside">What isn’t solved yet</span></div>
+    <ol class="qs">
+      <li><h3>Who approved it?</h3><p>If an agent buys the wrong thing, who pays? Google built AP2 around three questions: did the user approve this purchase, can the merchant trust the request reflects what the user wanted, and who is responsible for fraud or mistakes.<a class="fn" href="#src-11">[11]</a></p></li>
+      <li><h3>How autonomous is “autonomous”?</h3><p>Truth Terminal, the bot that got $50K from Marc Andreessen, had limited autonomy: its human handler approved its posts and decided who it talked to.<a class="fn" href="#src-1">[1]</a></p></li>
+      <li><h3>Can agents be tricked?</h3><p>AI jailbreaker Pliny the Prompter tried to get Truth Terminal to send him the funds. Its creator rejected the attempt and the bot refused.<a class="fn" href="#src-1">[1]</a></p></li>
+      <li><h3>Who holds the keys?</h3><p>The answers so far are limits set in advance. ChatGPT’s checkout uses payment tokens scoped to one merchant and one cart total, so the agent never touches stored card details.<a class="fn" href="#src-13">[13]</a> Coinbase’s Agentic Wallets let users set permissions before the agent acts.<a class="fn" href="#src-15">[15]</a></p></li>
+      <li><h3>Who checks the agents?</h3><p>ERC-8004 proposes independent validators who stake to check an agent’s claims — rewarded if right, slashed if wrong. It is still under review.<a class="fn" href="#src-10">[10]</a> Mastercard requires agents to be verified before they can pay.<a class="fn" href="#src-7">[7]</a></p></li>
+      <li><h3>Whose rails win?</h3><p>x402, AP2, the Agentic Commerce Protocol, Visa and Mastercard all launched in 2025. Several are designed to stay open: AP2 is payment-agnostic, ACP is meant to work with multiple processors, and x402 plans to support cards and bank accounts.<a class="fn" href="#src-11">[11]</a><a class="fn" href="#src-13">[13]</a><a class="fn" href="#src-12">[12]</a></p></li>
+    </ol>
+  </section>
+
+  <!-- §7 GLOSSARY -->
   <section class="part" id="glossary">
-    <div class="sh"><span class="sn">§5</span><h2>Glossary</h2></div>
+    <div class="sh"><span class="sn">§7</span><h2>Glossary</h2></div>
     <dl class="gloss">
       <div><dt>MCP<span>Protocol</span></dt><dd>Model Context Protocol. Anthropic’s standard for giving AI agents tools and context.<a class="fn" href="#src-5">[5]</a></dd></div>
       <div><dt>A2A<span>Protocol</span></dt><dd>Agent2Agent. Google’s protocol for agents to discover each other and delegate tasks.<a class="fn" href="#src-6">[6]</a></dd></div>
@@ -315,12 +386,16 @@ a{color:inherit}
       <div><dt>AP2<span>Payments</span></dt><dd>Agent Payments Protocol. Google’s standard for proving an agent has a user’s authority to buy something.<a class="fn" href="#src-11">[11]</a></dd></div>
       <div><dt>ACP<span>Payments</span></dt><dd>Agentic Commerce Protocol. OpenAI and Stripe’s standard behind checkout inside ChatGPT.<a class="fn" href="#src-13">[13]</a></dd></div>
       <div><dt>ERC-8004<span>Standard</span></dt><dd>“Trustless Agents.” Ethereum registries for an agent’s identity, reputation and validation.<a class="fn" href="#src-10">[10]</a></dd></div>
+      <div><dt>HTTP 402<span>Web</span></dt><dd>A web status code meaning “Payment Required”. Barely used until x402 gave it a job.<a class="fn" href="#src-12">[12]</a></dd></div>
+      <div><dt>Shared Payment Token<span>Payments</span></dt><dd>A token scoped to one merchant and one cart total, so an agent can pay without seeing card details.<a class="fn" href="#src-13">[13]</a></dd></div>
+      <div><dt>AgentKit<span>Wallets</span></dt><dd>Coinbase’s framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a></dd></div>
+      <div><dt>AP4M<span>Payments</span></dt><dd>Agent Pay for Machines. Mastercard’s service for small, continuous payments between agents.<a class="fn" href="#src-16">[16]</a></dd></div>
     </dl>
   </section>
 
-  <!-- §6 SOURCES -->
+  <!-- §8 SOURCES -->
   <section class="part" id="sources">
-    <div class="sh"><span class="sn">§6</span><h2>Sources</h2></div>
+    <div class="sh"><span class="sn">§8</span><h2>Sources</h2></div>
     <ol class="sources">
       <li id="src-1">Marc Andreessen Sends $50K in Bitcoin to an AI Bot on Twitter — Decrypt, Jul 10, 2024. <a href="https://decrypt.co/?p=239340" target="_blank" rel="noopener">link</a></li>
       <li id="src-2">Coinbase sees first crypto transaction between AI agents — Cointelegraph, Aug 31, 2024. <a href="https://cointelegraph.com/news/coinbase-artificial-intelligence-ai-crypto-transactions-wallet-brian-armstrong" target="_blank" rel="noopener">link</a></li>

@@ -86,10 +86,12 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - Figures row with footnote markers
 - §1 Overview — two-column article, drop cap, pull quote
 - §2 The stack — isometric SVG slab diagram (5 layers) with labels; hover links slab ↔ label
-- §3 How we got here — full-width black band, vertical timeline
-- §4 Who's building it — directory table
-- §5 Glossary — book-style definition list
-- §6 Sources — numbered list; footnotes `[n]` link here
+- §3 How an agent pays — x402 sequence diagram (agent ↔ server, 4 steps)
+- §4 How we got here — full-width black band, vertical timeline
+- §5 Who's building it — directory table
+- §6 Open questions — numbered list of unsolved problems
+- §7 Glossary — book-style definition list
+- §8 Sources — numbered list; footnotes `[n]` link here
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
