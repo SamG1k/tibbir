@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Agentic Economy</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:#f2efe6;color:#1a1a14;font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+a{color:inherit}
+.ph{opacity:.45}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;background:#f2efe6;
+  display:flex;align-items:stretch;border-bottom:2px solid #1a1a14;
+}
+.nav .logo{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:4px;
+  padding:14px 28px;display:flex;align-items:center;
+  border-right:2px solid #1a1a14;white-space:nowrap;
+}
+.nav .logo span{border-left:3px solid #1a7a2e;padding-left:8px}
+.nav .links{display:flex;gap:18px;align-items:center;padding:0 24px;flex:1}
+.nav .links a{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;color:#999;text-decoration:none;
+  letter-spacing:1px;text-transform:uppercase;transition:color .15s;
+}
+.nav .links a:hover{color:#1a7a2e}
+.tib-badge{
+  display:flex;align-items:center;gap:10px;padding:0 24px;
+  background:#1a7a2e;color:#f2efe6;text-decoration:none;
+  border-left:2px solid #1a1a14;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:3px;
+  transition:background .15s;
+}
+.tib-badge:hover{background:#155f24}
+.tib-flip{display:inline-block;position:relative;width:7.2em;height:1.2em;perspective:400px}
+.tib-flip span{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  backface-visibility:hidden;transition:transform .5s ease;
+}
+.tib-flip .b{transform:rotateX(180deg)}
+.tib-badge:hover .tib-flip .a{transform:rotateX(-180deg)}
+.tib-badge:hover .tib-flip .b{transform:rotateX(0)}
+.tib-badge .arr{font-size:13px}
+
+/* HERO */
+.hero{padding:72px 28px 56px;border-bottom:2px solid #1a1a14}
+.hero .eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:#1a7a2e;font-weight:600;margin-bottom:16px;
+}
+.hero h1{font-size:clamp(38px,7vw,72px);font-weight:700;line-height:.92;letter-spacing:-3px;max-width:820px}
+.hero h1 em{font-style:normal;background:#1a7a2e;color:#f2efe6;padding:2px 10px}
+.hero .sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#777;margin-top:18px;max-width:560px;line-height:1.7}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid #1a1a14}
+.stat{padding:20px 28px;border-right:2px solid #1a1a14;border-top:3px solid #1a7a2e}
+.stat:last-child{border-right:none}
+.stat .label{font-family:'IBM Plex Mono',monospace;font-size:8px;color:#aaa;letter-spacing:1.5px;margin-bottom:4px;text-transform:uppercase}
+.stat .value{font-size:22px;font-weight:700;color:#1a7a2e}
+
+/* SECTION HEADER */
+.sec{border-bottom:2px solid #1a1a14}
+.sec-head{padding:28px 28px 20px;display:flex;align-items:baseline;gap:16px}
+.sec-num{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;color:#f2efe6;font-weight:600;background:#1a7a2e;
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;
+}
+.sec-head h2{font-size:clamp(20px,3.5vw,28px);font-weight:700;letter-spacing:-1px}
+.sec-head p{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#999;margin-left:auto}
+.sec-body{padding:0 28px 32px}
+.sec-body p{font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:#555;margin:6px 0 10px}
+.sec-body h3{font-size:14px;font-weight:700;margin:20px 0 8px;letter-spacing:-.3px}
+.two-col{display:grid;grid-template-columns:1fr;gap:0 40px}
+@media(min-width:760px){.two-col{grid-template-columns:1fr 1fr}}
+.quote-block{
+  padding:16px 20px;margin:14px 0;border:2px solid #1a7a2e;
+  font-size:13px;font-weight:500;font-style:italic;line-height:1.6;
+}
+.quote-block .attr{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;font-style:normal;color:#999;
+  margin-top:8px;letter-spacing:1px;text-transform:uppercase;
+}
+
+/* STACK */
+.stack{border:2px solid #1a1a14}
+.layer{display:grid;grid-template-columns:70px 1fr 1.4fr;border-bottom:2px solid #1a1a14;transition:background .15s}
+.layer:last-child{border-bottom:none}
+.layer:hover{background:#ebe8df}
+.layer > div{padding:18px 20px}
+.layer .ln{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:#f2efe6;background:#1a1a14;
+  display:flex;align-items:center;justify-content:center;
+}
+.layer:hover .ln{background:#1a7a2e}
+.layer .lt{font-size:17px;font-weight:700;border-right:2px solid #1a1a14;display:flex;align-items:center}
+.layer .ld{font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1.7;color:#555}
+.layer .ld b{display:block;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:#1a7a2e;margin-bottom:4px}
+
+/* MILESTONES */
+.ms-track{overflow-x:auto;cursor:grab;scrollbar-width:none;padding-bottom:4px}
+.ms-track::-webkit-scrollbar{display:none}
+.ms-track.grabbing{cursor:grabbing}
+.ms-row{display:flex;gap:0;min-width:max-content;border:2px solid #1a1a14}
+.ms{width:240px;padding:18px 20px;border-right:2px solid #1a1a14;border-top:4px solid #1a7a2e;user-select:none}
+.ms:last-child{border-right:none}
+.ms .d{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:#1a7a2e;text-transform:uppercase}
+.ms .t{font-size:15px;font-weight:700;margin:6px 0;letter-spacing:-.3px}
+.ms p{font-size:10px !important;margin:0 !important}
+.hint{font-family:'IBM Plex Mono',monospace;font-size:.72rem;opacity:.55;letter-spacing:.04em;text-transform:uppercase;margin:12px 0 0;text-align:center}
+
+/* PLAYERS */
+.players{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid #1a1a14}
+.player{padding:20px;border-right:2px solid #1a1a14;border-bottom:2px solid #1a1a14;transition:background .15s}
+.player:nth-child(3n){border-right:none}
+.player:nth-last-child(-n+3){border-bottom:none}
+.player:hover{background:#1a7a2e;color:#f2efe6}
+.player:hover .pr,.player:hover p{color:rgba(242,239,230,.75)}
+.player .pc{
+  font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;
+  display:inline-block;border:1.5px solid currentColor;padding:2px 6px;margin-bottom:10px;
+}
+.player .pn{font-size:16px;font-weight:700;letter-spacing:-.3px}
+.player .pr{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#999;margin:2px 0 8px;text-transform:uppercase;letter-spacing:1px}
+.player p{font-size:10px !important;margin:0 !important}
+
+/* GLOSSARY */
+.gl-item{border-top:2px solid #1a1a14}
+.gl-item:last-child{border-bottom:2px solid #1a1a14}
+.gl-head{display:flex;align-items:center;gap:16px;padding:16px 4px;cursor:pointer;transition:all .15s}
+.gl-head:hover{background:#ebe8df;padding-left:12px}
+.gl-head .term{font-size:16px;font-weight:700}
+.gl-head .tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#999;letter-spacing:1px;text-transform:uppercase}
+.gl-head .tog{
+  margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:16px;color:#1a7a2e;
+  width:24px;height:24px;border:1.5px solid #1a7a2e;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.gl-item.open .tog{background:#1a7a2e;color:#f2efe6}
+.gl-body{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.gl-body p{padding:0 4px 16px;max-width:720px}
+
+/* CTA */
+.cta{padding:56px 28px;text-align:center;background:#1a7a2e;border-bottom:2px solid #1a1a14}
+.cta .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;color:rgba(242,239,230,.6);text-transform:uppercase;margin-bottom:14px}
+.cta h2{font-size:clamp(24px,4.5vw,42px);font-weight:700;letter-spacing:-2px;color:#f2efe6}
+.cta h2 em{font-style:normal;background:#f2efe6;color:#1a7a2e;padding:2px 10px}
+.cta p{font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(242,239,230,.7);margin:14px auto 24px;max-width:480px;line-height:1.7}
+.cta-btn{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;color:#1a7a2e;background:#f2efe6;
+  padding:12px 26px;border:2px solid #1a1a14;transition:transform .1s;
+}
+.cta-btn:hover{transform:translateY(-2px)}
+
+/* FOOTER */
+.footer{
+  padding:14px 28px;display:flex;justify-content:space-between;
+  font-family:'IBM Plex Mono',monospace;font-size:8px;color:#bbb;letter-spacing:1px;
+}
+
+@media(max-width:760px){
+  .nav .links{display:none}
+  .nav .logo{flex:1;border-right:none;padding:14px 16px}
+  .tib-badge{padding:0 16px}
+  .hero,.sec-head,.sec-body,.cta{padding-left:16px;padding-right:16px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{padding:16px}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:2px solid #1a1a14}
+  .sec-head{flex-wrap:wrap}
+  .sec-head p{margin-left:0;width:100%}
+  .layer{grid-template-columns:48px 1fr}
+  .layer .lt{border-right:none}
+  .layer .ld{grid-column:2;padding-top:0}
+  .players{grid-template-columns:1fr}
+  .player{border-right:none !important;border-bottom:2px solid #1a1a14 !important}
+  .player:last-child{border-bottom:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="logo"><span>AGENTIC ECONOMY</span></div>
+  <div class="links">
+    <a href="#overview">Overview</a>
+    <a href="#stack">The Stack</a>
+    <a href="#milestones">Milestones</a>
+    <a href="#players">Players</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+  <a class="tib-badge" href="/" title="Go to TIBBIR">
+    <span class="tib-flip"><span class="a">ЯIBBIT</span><span class="b">TIBBIR</span></span>
+    <span class="arr">→</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Placeholder eyebrow</div>
+  <h1>Placeholder headline about the <em>agent</em> economy</h1>
+  <div class="sub">Placeholder subtitle. One or two lines explaining what this page covers and why it matters.</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="label">Stat label</div><div class="value">000</div></div>
+  <div class="stat"><div class="label">Stat label</div><div class="value">000</div></div>
+  <div class="stat"><div class="label">Stat label</div><div class="value">000</div></div>
+  <div class="stat"><div class="label">Stat label</div><div class="value">000</div></div>
+</div>
+
+<!-- 01 OVERVIEW -->
+<div class="sec" id="overview">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <h2>What Is The Agentic Economy</h2>
+    <p>Placeholder section note</p>
+  </div>
+  <div class="sec-body two-col">
+    <div>
+      <h3>Placeholder subheading</h3>
+      <p>Placeholder paragraph. This is where the plain-English explanation goes. A few sentences, sourced, no hype.</p>
+      <p>Placeholder paragraph. Second point or example.</p>
+    </div>
+    <div>
+      <h3>Placeholder subheading</h3>
+      <p>Placeholder paragraph. Another angle on the topic.</p>
+      <div class="quote-block">"Placeholder for a verbatim, sourced quote."<div class="attr">Name · Source · Date</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 STACK -->
+<div class="sec" id="stack">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <h2>The Stack</h2>
+    <p>Placeholder: layers top to bottom</p>
+  </div>
+  <div class="sec-body">
+    <div class="stack">
+      <div class="layer"><div class="ln">L1</div><div class="lt">Layer name</div><div class="ld"><b>Who builds it</b>Placeholder description of this layer.</div></div>
+      <div class="layer"><div class="ln">L2</div><div class="lt">Layer name</div><div class="ld"><b>Who builds it</b>Placeholder description of this layer.</div></div>
+      <div class="layer"><div class="ln">L3</div><div class="lt">Layer name</div><div class="ld"><b>Who builds it</b>Placeholder description of this layer.</div></div>
+      <div class="layer"><div class="ln">L4</div><div class="lt">Layer name</div><div class="ld"><b>Who builds it</b>Placeholder description of this layer.</div></div>
+      <div class="layer"><div class="ln">L5</div><div class="lt">Layer name</div><div class="ld"><b>Who builds it</b>Placeholder description of this layer.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 MILESTONES -->
+<div class="sec" id="milestones">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <h2>Milestones</h2>
+    <p>Placeholder section note</p>
+  </div>
+  <div class="sec-body">
+    <div class="ms-track" id="msTrack">
+      <div class="ms-row">
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+        <div class="ms"><div class="d">Mon 20XX</div><div class="t">Milestone title</div><p>Placeholder one-line description.</p></div>
+      </div>
+    </div>
+    <p class="hint">drag to scroll</p>
+  </div>
+</div>
+
+<!-- 04 PLAYERS -->
+<div class="sec" id="players">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <h2>Key Players</h2>
+    <p>Placeholder section note</p>
+  </div>
+  <div class="sec-body">
+    <div class="players">
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+      <div class="player"><div class="pc">Category</div><div class="pn">Company name</div><div class="pr">What they do</div><p>Placeholder short description.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 GLOSSARY -->
+<div class="sec" id="glossary">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <h2>Glossary</h2>
+    <p>Placeholder section note</p>
+  </div>
+  <div class="sec-body">
+    <div class="gl-item"><div class="gl-head" onclick="glToggle(this)"><span class="term">Term</span><span class="tag">Category</span><span class="tog">+</span></div><div class="gl-body"><p>Placeholder plain-English definition.</p></div></div>
+    <div class="gl-item"><div class="gl-head" onclick="glToggle(this)"><span class="term">Term</span><span class="tag">Category</span><span class="tog">+</span></div><div class="gl-body"><p>Placeholder plain-English definition.</p></div></div>
+    <div class="gl-item"><div class="gl-head" onclick="glToggle(this)"><span class="term">Term</span><span class="tag">Category</span><span class="tog">+</span></div><div class="gl-body"><p>Placeholder plain-English definition.</p></div></div>
+    <div class="gl-item"><div class="gl-head" onclick="glToggle(this)"><span class="term">Term</span><span class="tag">Category</span><span class="tog">+</span></div><div class="gl-body"><p>Placeholder plain-English definition.</p></div></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="eyebrow">Placeholder eyebrow</div>
+  <h2>Where does <em>TIBBIR</em> fit?</h2>
+  <p>Placeholder line pointing people to the TIBBIR site.</p>
+  <a class="cta-btn" href="/">Enter the ribbit hole →</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>NFA / DYOR</span>
+  <span>by SamG1k</span>
+</div>
+
+<script>
+function glToggle(head){
+  var item=head.parentElement, body=item.querySelector('.gl-body'), tog=head.querySelector('.tog');
+  if(item.classList.toggle('open')){body.style.maxHeight=body.scrollHeight+'px';tog.textContent='−'}
+  else{body.style.maxHeight='0';tog.textContent='+'}
+}
+(function(){
+  var t=document.getElementById('msTrack'),down=false,sx,sl;
+  t.addEventListener('mousedown',function(e){down=true;t.classList.add('grabbing');sx=e.pageX;sl=t.scrollLeft});
+  window.addEventListener('mouseup',function(){down=false;t.classList.remove('grabbing')});
+  t.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-sx)*1.5});
+})();
+</script>
+</body>
+</html>
