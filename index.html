@@ -86,16 +86,28 @@ a{color:inherit}
 .band{background:#1a1a14;color:#f2efe6;margin-top:72px;padding:56px 0 72px}
 .band .sh{border-top-color:#f2efe6}
 .band .sh .aside{color:rgba(242,239,230,.4)}
-.vtl{position:relative;max-width:880px;margin:16px auto 0}
-.vtl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:#1a7a2e;transform:translateX(-50%)}
-.tl-item{position:relative;width:50%;padding:0 40px 40px 0;text-align:right}
-.tl-item:nth-child(even){margin-left:50%;padding:0 0 40px 40px;text-align:left}
-.tl-item:last-child{padding-bottom:0}
-.tl-item::after{content:'';position:absolute;top:3px;right:-7px;width:12px;height:12px;border-radius:50%;background:#1a1a14;border:2px solid #1a7a2e}
-.tl-item:nth-child(even)::after{right:auto;left:-7px}
-.tl-item .d{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:#1a7a2e;text-transform:uppercase;font-weight:600}
-.tl-item .t{font-size:20px;font-weight:700;letter-spacing:-.5px;margin:4px 0 6px}
-.tl-item p{font-size:14px;line-height:1.55;color:rgba(242,239,230,.6)}
+.tl-tabs{display:flex;flex-wrap:wrap;gap:0;margin:0 0 28px;border:2px solid #f2efe6;width:max-content;max-width:100%}
+.tl-tabs button{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:2px;background:none;color:#f2efe6;border:none;border-left:2px solid #f2efe6;padding:9px 18px;cursor:pointer}
+.tl-tabs button:first-child{border-left:none}
+.tl-tabs button.on{background:#1a7a2e}
+.tl-tabs button:hover:not(.on){background:rgba(242,239,230,.1)}
+.yr-h{display:flex;justify-content:center;align-items:baseline;gap:12px;margin-bottom:22px}
+.yr-h span{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:3px;background:#1a7a2e;color:#f2efe6;padding:4px 12px}
+.yr-h em{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(242,239,230,.4)}
+.yr + .yr{margin-top:40px}
+.vtl2{position:relative;max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
+.vtl2::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:#1a7a2e;transform:translateX(-50%)}
+.vtl2 .col.r{padding-top:44px}
+.ev{position:relative;padding:0 0 24px}
+.col.l .ev{padding-right:32px;text-align:right}
+.col.r .ev{padding-left:32px}
+.ev::after{content:'';position:absolute;top:3px;right:-7px;width:12px;height:12px;border-radius:50%;background:#1a1a14;border:2px solid #1a7a2e}
+.col.r .ev::after{right:auto;left:-7px}
+.ev .d{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:#3fa055;text-transform:uppercase;font-weight:600}
+.ev .t{font-size:17px;font-weight:700;letter-spacing:-.4px;margin:3px 0 4px;line-height:1.2}
+.ev p{font-size:13px;line-height:1.5;color:rgba(242,239,230,.6)}
+.tl-next{display:block;margin:12px auto 0;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;background:#1a7a2e;color:#f2efe6;border:2px solid #f2efe6;padding:10px 20px;cursor:pointer}
+.tl-next:hover{background:#155f24}
 
 /* DIRECTORY */
 .dir{width:100%;border-collapse:collapse}
@@ -140,6 +152,34 @@ a{color:inherit}
 .seq-row.back .msg p{text-align:right}
 .seq-note{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:24px}
 .seq-note p{font-size:15px;line-height:1.65;color:#2b2b24}
+
+/* STATUS TAGS */
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;border:1px solid;margin-left:8px;vertical-align:2px;line-height:1.5;white-space:nowrap}
+.tag-live{background:#1a7a2e;color:#f2efe6;border-color:#1a7a2e}
+.tag-preview{color:#1a7a2e;border-color:#1a7a2e}
+.tag-announced{color:#666;border-style:dashed;border-color:#888}
+.tag-forecast{background:#1a1a14;color:#f2efe6;border-color:#1a1a14}
+.band .tag-preview{color:#3fa055;border-color:#3fa055}
+.band .tag-announced{color:rgba(242,239,230,.6);border-color:rgba(242,239,230,.45)}
+.band .tag-forecast{background:#f2efe6;color:#1a1a14;border-color:#f2efe6}
+.fig .l .tag{margin-left:0;margin-top:6px}
+.key{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding:12px 0;border-bottom:1px solid #1a1a14;font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#555;letter-spacing:.5px}
+.key b{font-weight:600;color:#1a1a14;text-transform:uppercase;letter-spacing:1.5px}
+.key .tag{margin-left:0;margin-right:4px}
+.key .k-note{margin-left:auto;color:#888}
+.figs{border-bottom:1px solid #1a1a14}
+
+/* SUBHEADS */
+.sub{display:flex;align-items:baseline;gap:12px;margin:44px 0 20px;padding-top:12px;border-top:1px solid #1a1a14}
+.sh + .sub{margin-top:8px}
+.sub span{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#1a7a2e}
+.sub h3{font-size:22px;font-weight:700;letter-spacing:-.6px}
+.sub em{margin-left:auto;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#888;letter-spacing:1px;text-transform:uppercase}
+.dir.price td:first-child{width:20%}
+.dir.price td.cat{width:22%}
+#economics .article{margin-bottom:12px}
+.dir tr.grp td{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1a1a14;background:rgba(26,26,20,.06);padding:8px 10px;border-bottom:1px solid #1a1a14;white-space:normal;width:auto}
+.dir tr.grp:hover td{background:rgba(26,26,20,.06)}
 
 /* CASES */
 .case{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:30px 0;border-top:1px solid rgba(26,26,20,.2)}
@@ -194,9 +234,17 @@ a{color:inherit}
   .sk-labels{height:auto;display:flex;flex-direction:column;gap:16px}
   .sk-lab{position:static;padding-left:0}
   .sk-lab::before{display:none}
-  .vtl::before{left:6px}
-  .tl-item,.tl-item:nth-child(even){width:100%;margin-left:0;padding:0 0 32px 32px;text-align:left}
-  .tl-item::after,.tl-item:nth-child(even)::after{left:0;right:auto}
+  .vtl2{display:flex;flex-direction:column}
+  .vtl2::before{left:6px}
+  .vtl2 .col{display:contents}
+  .col.l .ev,.col.r .ev{padding:0 0 22px 30px;text-align:left}
+  .col.l .ev::after,.col.r .ev::after{left:0;right:auto}
+  .tl-tabs button{padding:8px 12px}
+  .key .k-note{margin-left:0;width:100%}
+  .sub{flex-wrap:wrap}
+  .sub em{margin-left:0;width:100%}
+  .dir tr.grp{padding:0;border:none}
+  .dir tr.grp td{display:block;padding:8px 10px}
   .dir thead{display:none}
   .dir tr{display:block;padding:14px 0;border-bottom:1px solid rgba(26,26,20,.2)}
   .dir td{display:block;border:none;padding:2px 0;width:auto !important}
@@ -211,13 +259,13 @@ a{color:inherit}
 <div class="nav">
   <div class="logo"><span>AGENTIC ECONOMY</span></div>
   <div class="links">
-    <a href="#overview">Overview</a>
-    <a href="#stack">Stack</a>
-    <a href="#payments">Payments</a>
-    <a href="#cases">Cases</a>
+    <a href="#agents">Agents</a>
+    <a href="#stack">Infrastructure</a>
+    <a href="#work">Work</a>
+    <a href="#economics">Economics</a>
+    <a href="#trust">Trust</a>
     <a href="#timeline">Timeline</a>
     <a href="#players">Players</a>
-    <a href="#questions">Questions</a>
     <a href="#glossary">Glossary</a>
     <a href="#sources">Sources</a>
   </div>
@@ -233,46 +281,45 @@ a{color:inherit}
   <header class="mast">
     <div class="mast-meta"><span>Vol. 01</span><span>A field guide</span><span>Updated Oct 2026</span></div>
     <div class="mast-rule"></div>
-    <h1>AI agents are getting <em>wallets</em>.</h1>
+    <h1>AI agents are getting to <em>work</em>.</h1>
     <div class="standfirst">
-      <p>Between 2024 and 2026, AI agents went from posting on X to holding money, paying each other and checking out on their own. Coinbase, Stripe, Google, Visa and Mastercard built the rails. This is how it happened.</p>
-      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §9<br>~15 min read</div>
+      <p>Between 2024 and 2026, AI agents went from demos to doing real jobs — writing code, answering customers, using computers, trading and paying for things on their own. This guide covers what they are, what they run on, where they work, how the money moves, and what could go wrong.</p>
+      <div class="byline"><b>Compiled by SamG1k</b><br>Every claim sourced — see §9<br>~20 min read</div>
     </div>
   </header>
 
   <!-- FIGURES -->
   <div class="figs">
-    <div class="fig"><div class="v">$50K<a class="fn" href="#src-1">[1]</a></div><div class="l">BTC Andreessen sent to an AI agent</div></div>
+    <div class="fig"><div class="v">2/3<a class="fn" href="#src-35">[35]</a></div><div class="l">Of Klarna’s support chats handled by its AI assistant in month one</div></div>
+    <div class="fig"><div class="v">~7 mo<a class="fn" href="#src-45">[45]</a></div><div class="l">Time for the length of tasks agents can complete to double</div></div>
+    <div class="fig"><div class="v">97M+<a class="fn" href="#src-44">[44]</a></div><div class="l">Monthly MCP SDK downloads, Dec 2025</div></div>
+    <div class="fig"><div class="v">800+<a class="fn" href="#src-41">[41]</a></div><div class="l">Agents and tools on AWS Marketplace at launch</div></div>
+    <div class="fig"><div class="v">$0.99<a class="fn" href="#src-40">[40]</a></div><div class="l">Intercom Fin’s price per resolved outcome</div></div>
     <div class="fig"><div class="v">160M+<a class="fn" href="#src-31">[31]</a></div><div class="l">x402 agent transactions in a year, per Brian Armstrong</div></div>
-    <div class="fig"><div class="v">$3–5T<a class="fn" href="#src-25">[25]</a></div><div class="l">McKinsey’s 2030 forecast for global agentic commerce</div></div>
     <div class="fig"><div class="v">150K+<a class="fn" href="#src-18">[18]</a></div><div class="l">Robinhood agentic trading accounts by Sep 2026</div></div>
-    <div class="fig"><div class="v">4,700%<a class="fn" href="#src-28">[28]</a></div><div class="l">Rise in AI-driven traffic to US retail sites in a year</div></div>
-    <div class="fig"><div class="v">60+<a class="fn" href="#src-11">[11]</a></div><div class="l">Launch partners for Google’s AP2</div></div>
     <div class="fig"><div class="v">700M<a class="fn" href="#src-13">[13]</a></div><div class="l">ChatGPT weekly users at Instant Checkout launch</div></div>
-    <div class="fig"><div class="v">100+<a class="fn" href="#src-20">[20]</a></div><div class="l">Services in Tempo’s payments directory at launch</div></div>
-    <div class="fig"><div class="v">$1.1B<a class="fn" href="#src-4">[4]</a></div><div class="l">Stripe’s price for Bridge</div></div>
-    <div class="fig"><div class="v">$1.8B<a class="fn" href="#src-29">[29]</a></div><div class="l">Mastercard’s top price for stablecoin firm BVNK</div></div>
-    <div class="fig"><div class="v">75M+<a class="fn" href="#src-9">[9]</a></div><div class="l">Accounts on Privy when Stripe bought it</div></div>
-    <div class="fig"><div class="v">1,000+<a class="fn" href="#src-27">[27]</a></div><div class="l">Agents created on Virtuals in three weeks</div></div>
+    <div class="fig"><div class="v">4,700%<a class="fn" href="#src-28">[28]</a></div><div class="l">Rise in AI-driven traffic to US retail sites in a year</div></div>
+    <div class="fig"><div class="v">$1.1B<a class="fn" href="#src-47">[47]</a></div><div class="l">Stripe’s price for Bridge, its largest acquisition</div></div>
+    <div class="fig"><div class="v">$3–5T<a class="fn" href="#src-25">[25]</a></div><div class="l">McKinsey’s 2030 forecast for global agentic commerce <span class="tag tag-forecast">Forecast</span></div></div>
+    <div class="fig"><div class="v">40%+<a class="fn" href="#src-43">[43]</a></div><div class="l">Of agentic AI projects Gartner expects to be cancelled by end-2027 <span class="tag tag-forecast">Forecast</span></div></div>
   </div>
+  <div class="key"><b>Status key</b><span><span class="tag tag-live">Live</span> available now</span><span><span class="tag tag-preview">Preview</span> beta or early access</span><span><span class="tag tag-announced">Announced</span> not yet available</span><span><span class="tag tag-forecast">Forecast</span> analyst projection</span><span class="k-note">As reported at the time</span></div>
 
-  <!-- §1 OVERVIEW -->
-  <section class="part" id="overview">
-    <div class="sh"><span class="sn">§1</span><h2>What is the agentic economy?</h2></div>
+  <!-- §1 THE AGENTS -->
+  <section class="part" id="agents">
+    <div class="sh"><span class="sn">§1</span><h2>The agents</h2><span class="aside">What they are and what they can do</span></div>
     <div class="article">
-      <p class="lead">An AI agent is software that doesn’t just answer — it acts on someone’s behalf. Brian Armstrong’s argument in 2024 was simple: agents are held back because they can’t pay for anything, and crypto wallets give them a way to transact.<a class="fn" href="#src-2">[2]</a></p>
-      <p>That idea moved fast. Coinbase’s x402 protocol lets an agent pay for data, compute or another AI’s services in stablecoins, straight over the web — no account, no API key, no prepaid credits.<a class="fn" href="#src-8">[8]</a></p>
+      <p class="lead">An AI agent is software that doesn’t just answer — it acts on someone’s behalf: it plans steps, uses tools and gets things done. In 2024 that went from demo to product. Cognition pitched Devin as an AI software engineer that could plan and carry out complex coding tasks.<a class="fn" href="#src-34">[34]</a> Anthropic let Claude use a computer the way people do — looking at the screen, moving a cursor, clicking and typing — while admitting the ability was “imperfect”.<a class="fn" href="#src-36">[36]</a></p>
+      <p>OpenAI’s Operator could book a restaurant table or fill a grocery order in a browser, but scored 38.1% on a benchmark of computer tasks where humans score 72.4%.<a class="fn" href="#src-37">[37]</a> The gap is closing fast: METR found the length of tasks agents can complete has doubled roughly every seven months for six years.<a class="fn" href="#src-45">[45]</a></p>
       <div class="pull"><q>The next generation of agents won’t just advise — they’ll act.</q><cite>Erik Reppel &amp; Josh Nickerson, Coinbase — Cointelegraph, Feb 2026</cite></div>
-      <p>The card networks followed. Mastercard requires agents to be verified before they pay; Visa gives developers tokenized cards and spending controls for agents.<a class="fn" href="#src-7">[7]</a> Google’s AP2 goes after the hard questions: did the user approve this purchase, can the merchant trust the request, and who is responsible if it goes wrong.<a class="fn" href="#src-11">[11]</a></p>
-      <p>Big money is betting on it. McKinsey forecasts agentic commerce could reach $3–5 trillion globally by 2030.<a class="fn" href="#src-25">[25]</a> Visa says AI-driven traffic to US retail sites rose more than 4,700% in a year.<a class="fn" href="#src-28">[28]</a> Stripe paid $1.1B for Bridge; Mastercard agreed to pay up to $1.8B for stablecoin firm BVNK.<a class="fn" href="#src-4">[4]</a><a class="fn" href="#src-29">[29]</a></p>
-      <p>And it’s reaching ordinary accounts. Since May 2026, Robinhood customers can hand an agent its own trading account and credit card — more than 150,000 opened one in four months.<a class="fn" href="#src-17">[17]</a><a class="fn" href="#src-18">[18]</a> Coinbase followed with an account AI assistants can trade from directly.<a class="fn" href="#src-22">[22]</a></p>
-      <p>Put together, it’s a new layer of the economy: agents that can talk to tools and to each other, prove who they are, and move money. The stack below breaks it down.</p>
+      <p>Not everything sold as an agent is one. Gartner estimates only about 130 of the thousands of “agentic AI” vendors are the real thing, and expects over 40% of agentic AI projects to be cancelled by the end of 2027 — over cost, unclear value and weak risk controls.<a class="fn" href="#src-43">[43]</a></p>
+      <p>What turns this into an economy is agents acting with money and on behalf of businesses. Brian Armstrong’s argument in 2024: agents are held back because they can’t pay, and crypto wallets give them a way to transact.<a class="fn" href="#src-2">[2]</a> The rest of this guide follows the thread — the infrastructure agents run on, the work they do, how the money moves, and who is accountable when it goes wrong.</p>
     </div>
   </section>
 
-  <!-- §2 STACK -->
+  <!-- §2 THE INFRASTRUCTURE -->
   <section class="part" id="stack">
-    <div class="sh"><span class="sn">§2</span><h2>The stack</h2><span class="aside">Top layer to bottom</span></div>
+    <div class="sh"><span class="sn">§2</span><h2>The infrastructure</h2><span class="aside">The stack, top layer to bottom</span></div>
     <div class="sk-wrap">
     <svg class="sk-svg" viewBox="0 0 360 456" aria-hidden="true">
     <g class="slab" data-i="4" transform="translate(0,288)">
@@ -307,18 +354,60 @@ a{color:inherit}
     </g>
     </svg>
       <div class="sk-labels">
-        <div class="sk-lab" data-i="0" style="top:60px"><span class="n">L1</span><div><div class="t">Agents</div><p>The AI doing the work — from Truth Terminal on X to agents shopping inside ChatGPT.<a class="fn" href="#src-1">[1]</a><a class="fn" href="#src-13">[13]</a></p></div></div>
-        <div class="sk-lab" data-i="1" style="top:178px"><span class="n">L2</span><div><div class="t">Talking</div><p>MCP plugs agents into tools; A2A lets agents work with each other.<a class="fn" href="#src-5">[5]</a><a class="fn" href="#src-6">[6]</a></p></div></div>
-        <div class="sk-lab" data-i="2" style="top:250px"><span class="n">L3</span><div><div class="t">Paying</div><p>x402, AP2, ACP and Tempo’s MPP — how an agent actually pays.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-11">[11]</a><a class="fn" href="#src-13">[13]</a><a class="fn" href="#src-20">[20]</a></p></div></div>
-        <div class="sk-lab" data-i="3" style="top:322px"><span class="n">L4</span><div><div class="t">Trust</div><p>ERC-8004 agent identity and reputation; card networks verifying agents.<a class="fn" href="#src-10">[10]</a><a class="fn" href="#src-7">[7]</a></p></div></div>
-        <div class="sk-lab" data-i="4" style="top:394px"><span class="n">L5</span><div><div class="t">Money</div><p>Wallets and stablecoins — Coinbase Agentic Wallets, Stripe’s Bridge and Privy.<a class="fn" href="#src-15">[15]</a><a class="fn" href="#src-4">[4]</a><a class="fn" href="#src-9">[9]</a></p></div></div>
+        <div class="sk-lab" data-i="0" style="top:60px"><span class="n">L1</span><div><div class="t">Models &amp; agents</div><p>The AI that plans and acts — Claude, OpenAI’s computer-using agent, Devin.<a class="fn" href="#src-36">[36]</a><a class="fn" href="#src-37">[37]</a><a class="fn" href="#src-34">[34]</a></p></div></div>
+        <div class="sk-lab" data-i="1" style="top:178px"><span class="n">L2</span><div><div class="t">Tools &amp; protocols</div><p>MCP connects agents to tools; A2A lets agents work together.<a class="fn" href="#src-44">[44]</a><a class="fn" href="#src-6">[6]</a></p></div></div>
+        <div class="sk-lab" data-i="2" style="top:250px"><span class="n">L3</span><div><div class="t">Platforms</div><p>Where agents are built and run — AWS AgentCore, Salesforce Agentforce, GitHub.<a class="fn" href="#src-42">[42]</a><a class="fn" href="#src-39">[39]</a><a class="fn" href="#src-38">[38]</a></p></div></div>
+        <div class="sk-lab" data-i="3" style="top:322px"><span class="n">L4</span><div><div class="t">Trust</div><p>Identity and verification — ERC-8004, Visa’s TAP, Mastercard’s agent checks.<a class="fn" href="#src-10">[10]</a><a class="fn" href="#src-28">[28]</a><a class="fn" href="#src-7">[7]</a></p></div></div>
+        <div class="sk-lab" data-i="4" style="top:394px"><span class="n">L5</span><div><div class="t">Money</div><p>Payment protocols and wallets — x402, AP2, ACP, MPP, stablecoins.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-11">[11]</a><a class="fn" href="#src-13">[13]</a><a class="fn" href="#src-20">[20]</a></p></div></div>
       </div>
+    </div>
+    <div class="seq-note">
+      <p>MCP became the common plug. In December 2025 Anthropic donated it to the new Agentic AI Foundation under the Linux Foundation, co-founded with OpenAI and Block. By then it had more than 10,000 public servers and 97M+ monthly SDK downloads, and was used by ChatGPT, Gemini, Microsoft Copilot, Cursor and VS Code.<a class="fn" href="#src-44">[44]</a></p>
+      <p>The cloud giants are packaging the rest of the plumbing. AWS’s AgentCore bundles what agents need to run in production — runtime, memory, identity, a browser tool, a code interpreter and monitoring — and launched in preview in July 2025.<a class="fn" href="#src-42">[42]</a></p>
     </div>
   </section>
 
-  <!-- §3 HOW AN AGENT PAYS -->
-  <section class="part" id="payments">
-    <div class="sh"><span class="sn">§3</span><h2>How an agent pays</h2><span class="aside">x402, step by step</span></div>
+  <!-- §3 AGENTS AT WORK -->
+  <section class="part" id="work">
+    <div class="sh"><span class="sn">§3</span><h2>Agents at work</h2><span class="aside">Real deployments</span></div>
+      <article class="case">
+        <div class="case-h"><span class="d">Feb 2024</span><span class="tag tag-live">Live</span><h3>Klarna</h3><p>Customer service, at scale.</p><blockquote>“This AI breakthrough in customer interaction means superior experiences for our customers at better prices”<cite>Sebastian Siemiatkowski, Klarna CEO — Feb 2024</cite></blockquote></div>
+        <dl class="spec"><div><dt>What it does</dt><dd>An OpenAI-powered assistant that handled about two-thirds of Klarna’s customer service chats in its first month — the work of 700 full-time agents, by Klarna’s count.<a class="fn" href="#src-35">[35]</a></dd></div><div><dt>Results</dt><dd>Average resolution time fell from 11 minutes to 2. It runs in 23 markets and 35 languages, and Klarna estimated a $40M profit improvement for 2024.<a class="fn" href="#src-35">[35]</a></dd></div><div><dt>Fine print</dt><dd>These are Klarna’s own figures, published a month after launch.<a class="fn" href="#src-35">[35]</a></dd></div></dl>
+      </article>
+      <article class="case">
+        <div class="case-h"><span class="d">May 19, 2025</span><span class="tag tag-preview">Preview</span><h3>GitHub Copilot coding agent</h3><p>Assign it a ticket like a teammate.</p></div>
+        <dl class="spec"><div><dt>How it works</dt><dd>Assign an issue to Copilot. It works in its own cloud environment, makes the changes, checks them against your tests and linter, then asks you to review a pull request.<a class="fn" href="#src-38">[38]</a></dd></div><div><dt>Best at</dt><dd>Low-to-medium complexity tasks in well-tested codebases: features, bug fixes, tests, refactoring and docs.<a class="fn" href="#src-38">[38]</a></dd></div><div><dt>Cost</dt><dd>Runs on GitHub Actions minutes and premium requests — one per model request from June 2025.<a class="fn" href="#src-38">[38]</a></dd></div></dl>
+      </article>
+      <article class="case">
+        <div class="case-h"><span class="d">Jan 23, 2025</span><span class="tag tag-preview">Preview</span><h3>OpenAI Operator</h3><p>An agent that uses a web browser for you.</p></div>
+        <dl class="spec"><div><dt>How it works</dt><dd>Reads screenshots, finds buttons and text boxes, and clicks through tasks in a remote browser, backtracking when stuck.<a class="fn" href="#src-37">[37]</a></dd></div><div><dt>Examples</dt><dd>Booking a table on OpenTable, finding concert tickets on StubHub, turning a photo of a handwritten list into an Instacart order.<a class="fn" href="#src-37">[37]</a></dd></div><div><dt>Guardrails</dt><dd>Trained to pause and ask before actions with outside effects. OpenAI admitted it “still makes mistakes”.<a class="fn" href="#src-37">[37]</a></dd></div><div><dt>Access</dt><dd>US ChatGPT Pro subscribers ($200 a month) at launch.<a class="fn" href="#src-37">[37]</a></dd></div></dl>
+      </article>
+      <article class="case">
+        <div class="case-h"><span class="d">May 27, 2026</span><span class="tag tag-preview">Preview</span><h3>Robinhood</h3><p>A trading account and a credit card, just for your agent.</p><blockquote>“Our mission has always been to democratize finance for all, and now, that mission extends to AI agents.”<cite>Vlad Tenev, Robinhood CEO — May 2026</cite></blockquote></div>
+        <dl class="spec"><div><dt>How it works</dt><dd>Agents plug in through Robinhood’s Trading and Banking MCP servers. They trade from a separate account holding only what you put in it, and shop with a virtual Gold Card.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Guardrails</dt><dd>Spending limits, optional approval for every purchase, a push notification per trade, and an instant disconnect. Agents can’t see your main card number.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Fine print</dt><dd>Robinhood doesn’t control or audit third-party agents, and customers carry the risk of agent-placed orders.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Since</dt><dd>By late September, over 150,000 customers had opened agentic accounts and agents were using Robinhood’s tools almost 30 million times a day. Robinhood is now building its own in-app agents.<a class="fn" href="#src-18">[18]</a></dd></div></dl>
+      </article>
+      <article class="case">
+        <div class="case-h"><span class="d">Sep 29, 2025</span><span class="tag tag-live">Live</span><h3>ChatGPT Instant Checkout</h3><p>Buying things without leaving the chat.</p></div>
+        <dl class="spec"><div><dt>How it works</dt><dd>US ChatGPT users can buy from Etsy sellers in the chat, with more than a million Shopify merchants to follow. Built on the Agentic Commerce Protocol, co-developed with Stripe.<a class="fn" href="#src-13">[13]</a></dd></div><div><dt>Guardrails</dt><dd>Payment tokens are scoped to one merchant and one cart total, so the agent never handles stored card details. Orders stay in the merchant’s own systems.<a class="fn" href="#src-13">[13]</a></dd></div><div><dt>Reach</dt><dd>ChatGPT had 700 million weekly users at launch.<a class="fn" href="#src-13">[13]</a> PayPal has since rolled out tools so its merchants can sell on AI surfaces too.<a class="fn" href="#src-30">[30]</a></dd></div></dl>
+      </article>
+  </section>
+
+  <!-- §4 THE ECONOMICS -->
+  <section class="part" id="economics">
+    <div class="sh"><span class="sn">§4</span><h2>The economics</h2><span class="aside">Who pays, how, and how much</span></div>
+    <div class="sub"><span>4.1</span><h3>How agents get priced</h3></div>
+    <table class="dir price">
+      <thead><tr><th>Model</th><th>Example</th><th>How it charges</th></tr></thead>
+      <tbody>
+        <tr><td>Per conversation</td><td class="cat">Salesforce Agentforce</td><td>Service Agent from $2 per conversation at launch.<a class="fn" href="#src-39">[39]</a></td></tr>
+        <tr><td>Per outcome</td><td class="cat">Intercom Fin</td><td>$0.99 when a customer confirms the issue is resolved, doesn’t ask for more help, or Fin completes a workflow.<a class="fn" href="#src-40">[40]</a></td></tr>
+        <tr><td>Per request</td><td class="cat">x402</td><td>Micropayments for each API call, dataset or bit of compute — no account or subscription.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-12">[12]</a></td></tr>
+        <tr><td>Per session</td><td class="cat">Tempo’s MPP</td><td>Funds reserved upfront, then streamed as the agent uses a service.<a class="fn" href="#src-20">[20]</a></td></tr>
+        <tr><td>Subscription</td><td class="cat">OpenAI Operator</td><td>Included with ChatGPT Pro at $200 a month at launch.<a class="fn" href="#src-37">[37]</a></td></tr>
+        <tr><td>Marketplace</td><td class="cat">AWS Marketplace</td><td>800+ agents and tools; pay-as-you-go, subscriptions or custom pricing.<a class="fn" href="#src-41">[41]</a></td></tr>
+      </tbody>
+    </table>
+    <div class="sub"><span>4.2</span><h3>How an agent pays</h3><em>x402, step by step</em></div>
     <div class="seq">
       <div class="seq-head"><span>AGENT</span><span></span><span>SERVER</span></div>
       <div class="seq-row"><span class="n">01</span><div class="msg"><b>Request</b><div class="ln"></div><p>The agent asks for something — an API, a dataset, a page.</p></div><span></span></div>
@@ -330,111 +419,35 @@ a{color:inherit}
       <p>That’s the whole loop. No account, no subscription, no API key. x402 reuses HTTP’s “402 Payment Required” code — long unused — so payment becomes part of an ordinary web request.<a class="fn" href="#src-8">[8]</a><a class="fn" href="#src-12">[12]</a></p>
       <p>The examples given at the x402 Foundation launch: an AI assistant buying from several merchants at once, agents paying per browser session, trading bots buying real-time data through micropayments.<a class="fn" href="#src-12">[12]</a> By February 2026 x402 had reportedly processed 50 million transactions.<a class="fn" href="#src-15">[15]</a></p>
     </div>
-  </section>
-
-  <!-- §4 AGENTS AT WORK -->
-  <section class="part" id="cases">
-    <div class="sh"><span class="sn">§4</span><h2>Agents at work</h2><span class="aside">What they can do today</span></div>
+    <div class="sub"><span>4.3</span><h3>The money behind it</h3></div>
+    <div class="article">
+      <p>Big money is betting on it. McKinsey forecasts agentic commerce could reach $3–5 trillion globally by 2030 <span class="tag tag-forecast">Forecast</span><a class="fn" href="#src-25">[25]</a>, and Gartner expects a third of enterprise software apps to include agentic AI by 2028 <span class="tag tag-forecast">Forecast</span>.<a class="fn" href="#src-43">[43]</a> Visa says AI-driven traffic to US retail sites rose more than 4,700% in a year.<a class="fn" href="#src-28">[28]</a></p>
+      <p>The payment companies are buying in. Stripe closed its $1.1B purchase of stablecoin firm Bridge in February 2025, its largest acquisition, and then bought wallet maker Privy.<a class="fn" href="#src-47">[47]</a><a class="fn" href="#src-9">[9]</a> Mastercard agreed to pay up to $1.8B for stablecoin firm BVNK.<a class="fn" href="#src-29">[29]</a></p>
+      <p>And it’s reaching ordinary accounts. Since May 2026, Robinhood customers can hand an agent its own trading account and credit card — more than 150,000 opened one in four months.<a class="fn" href="#src-17">[17]</a><a class="fn" href="#src-18">[18]</a> Coinbase followed with an account AI assistants can trade and pay from directly.<a class="fn" href="#src-22">[22]</a></p>
+      <p>The economics aren’t settled. Salesforce launched at $2 a conversation; Intercom charges only when a problem is actually solved; x402 charges per request.<a class="fn" href="#src-39">[39]</a><a class="fn" href="#src-40">[40]</a><a class="fn" href="#src-8">[8]</a> Gartner’s warning is the counterweight: most current projects are early experiments, many lacking clear return on investment.<a class="fn" href="#src-43">[43]</a></p>
+    </div>
       <article class="case">
-        <div class="case-h"><span class="d">May 27, 2026</span><h3>Robinhood</h3><p>A trading account and a credit card, just for your agent.</p><blockquote>“Our mission has always been to democratize finance for all, and now, that mission extends to AI agents.”<cite>Vlad Tenev, Robinhood CEO — May 2026</cite></blockquote></div>
-        <dl class="spec"><div><dt>How it works</dt><dd>Agents plug in through Robinhood’s Trading and Banking MCP servers. They trade from a separate account holding only what you put in it, and shop with a virtual Gold Card.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Guardrails</dt><dd>Spending limits, optional approval for every purchase, a push notification per trade, and an instant disconnect. Agents can’t see your main card number.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Fine print</dt><dd>Robinhood doesn’t control or audit third-party agents, and customers carry the risk of agent-placed orders.<a class="fn" href="#src-17">[17]</a></dd></div><div><dt>Since</dt><dd>By late September, over 150,000 customers had opened agentic accounts and agents were using Robinhood’s tools almost 30 million times a day. Robinhood is now building its own in-app agents.<a class="fn" href="#src-18">[18]</a></dd></div></dl>
-      </article>
-      <article class="case">
-        <div class="case-h"><span class="d">Jun 11, 2026</span><h3>Coinbase for Agents</h3><p>An account your AI assistant can trade and pay from.</p></div>
+        <div class="case-h"><span class="d">Jun 11, 2026</span><span class="tag tag-live">Live</span><h3>Coinbase for Agents</h3><p>An account your AI assistant can trade and pay from.</p></div>
         <dl class="spec"><div><dt>How it works</dt><dd>Works inside ChatGPT or Claude via Coinbase’s MCP server. Ask it to rebalance a portfolio, run an investment thesis or advise on a single trade.<a class="fn" href="#src-22">[22]</a></dd></div><div><dt>Payments</dt><dd>Pays for research data, APIs and compute with x402 — no login, no subscription. USDC settles most transactions.<a class="fn" href="#src-22">[22]</a><a class="fn" href="#src-23">[23]</a></dd></div><div><dt>Guardrails</dt><dd>Run it in a sandbox or on your main account up to a spending cap. Autonomy ranges from one recommendation to a standing thesis the agent runs itself.<a class="fn" href="#src-23">[23]</a></dd></div><div><dt>Markets</dt><dd>Crypto spot and derivatives at launch; equities and prediction markets planned.<a class="fn" href="#src-22">[22]</a></dd></div></dl>
       </article>
       <article class="case">
-        <div class="case-h"><span class="d">Sep 29, 2025</span><h3>ChatGPT Instant Checkout</h3><p>Buying things without leaving the chat.</p></div>
-        <dl class="spec"><div><dt>How it works</dt><dd>US ChatGPT users can buy from Etsy sellers in the chat, with more than a million Shopify merchants to follow. Built on the Agentic Commerce Protocol, co-developed with Stripe.<a class="fn" href="#src-13">[13]</a></dd></div><div><dt>Guardrails</dt><dd>Payment tokens are scoped to one merchant and one cart total, so the agent never handles stored card details. Orders stay in the merchant’s own systems.<a class="fn" href="#src-13">[13]</a></dd></div><div><dt>Reach</dt><dd>ChatGPT had 700 million weekly users at launch.<a class="fn" href="#src-13">[13]</a> PayPal has since rolled out tools so its merchants can sell on AI surfaces too.<a class="fn" href="#src-30">[30]</a></dd></div></dl>
-      </article>
-      <article class="case">
-        <div class="case-h"><span class="d">Mar 18, 2026</span><h3>Tempo + MPP</h3><p>A payments blockchain with a protocol for machines.</p></div>
+        <div class="case-h"><span class="d">Mar 18, 2026</span><span class="tag tag-live">Live</span><h3>Tempo + MPP</h3><p>A payments blockchain with a protocol for machines.</p></div>
         <dl class="spec"><div><dt>What it is</dt><dd>A blockchain from Stripe and Paradigm built for high-volume, low-cost stablecoin payments. It launched with the Machine Payments Protocol, an open standard for agents and services to request, authorize and settle payments.<a class="fn" href="#src-20">[20]</a><a class="fn" href="#src-21">[21]</a></dd></div><div><dt>Sessions</dt><dd>An agent reserves funds upfront, then pays as it goes while using a service. Many small payments are batched into one settlement.<a class="fn" href="#src-20">[20]</a></dd></div><div><dt>Reach</dt><dd>100+ services in its directory at launch. Design partners include Anthropic, DoorDash, Mastercard, OpenAI, Shopify and Visa. Visa, Stripe and Lightspark extended MPP to cards and Bitcoin’s Lightning Network.<a class="fn" href="#src-20">[20]</a></dd></div></dl>
       </article>
       <article class="case">
-        <div class="case-h"><span class="d">Oct 2024</span><h3>Virtuals Protocol</h3><p>Agents with their own tokens.</p></div>
+        <div class="case-h"><span class="d">Oct 2024</span><span class="tag tag-live">Live</span><h3>Virtuals Protocol</h3><p>Agents with their own tokens.</p></div>
         <dl class="spec"><div><dt>How it works</dt><dd>Anyone can create an AI agent and tokenize it. Each agent’s token trades paired with $VIRTUAL.<a class="fn" href="#src-26">[26]</a><a class="fn" href="#src-27">[27]</a></dd></div><div><dt>Luna</dt><dd>The flagship agent: livestreams 24/7, holds her own wallet, and sent $LUNA to users who listed Base wallets in their X bios.<a class="fn" href="#src-26">[26]</a><a class="fn" href="#src-27">[27]</a></dd></div><div><dt>First 3 weeks</dt><dd>1,000+ agents created, 17,500 token holders and over $250M in trading volume.<a class="fn" href="#src-27">[27]</a></dd></div></dl>
       </article>
   </section>
 
-</div>
-
-<!-- §5 TIMELINE (dark band) -->
-<section class="band" id="timeline">
-  <div class="wrap">
-    <div class="sh"><span class="sn">§5</span><h2>How we got here</h2><span class="aside">Jul 2024 — Sep 2026</span></div>
-    <div class="vtl">
-      <div class="tl-item"><div class="d">Jul 10, 2024</div><div class="t">A bot gets a grant</div><p>Marc Andreessen sends $50K in Bitcoin to Truth Terminal, an AI agent on X, framed as a grant.<a class="fn" href="#src-1">[1]</a></p></div>
-      <div class="tl-item"><div class="d">Aug 2024</div><div class="t">Agents get spending money</div><p>Skyfire launches a payment platform that lets AI agents spend money autonomously.<a class="fn" href="#src-2">[2]</a></p></div>
-      <div class="tl-item"><div class="d">Aug 30, 2024</div><div class="t">First AI-to-AI crypto transaction</div><p>“This week at @CoinbaseDev we witnessed our first AI to AI crypto transaction.” — Brian Armstrong. “They used tokens to buy tokens.”<a class="fn" href="#src-2">[2]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 10, 2024</div><div class="t">GOAT launches</div><p>Goatseus Maximus, a Solana memecoin, launches and becomes Truth Terminal’s largest position.<a class="fn" href="#src-3">[3]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 18, 2024</div><div class="t">The first AI crypto millionaire</div><p>Truth Terminal’s holdings pass $1M — “most likely the first ever” AI bot to become a crypto millionaire.<a class="fn" href="#src-3">[3]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 2024</div><div class="t">Agents get tokens</div><p>Virtuals Protocol launches a platform for creating AI agents with their own tokens. Its flagship agent Luna sends $LUNA to users who list Base wallets in their X bios. 1,000+ agents launch in three weeks.<a class="fn" href="#src-26">[26]</a><a class="fn" href="#src-27">[27]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 2024</div><div class="t">Stripe buys Bridge</div><p>Stripe acquires stablecoin infrastructure firm Bridge for $1.1B.<a class="fn" href="#src-4">[4]</a></p></div>
-      <div class="tl-item"><div class="d">Nov 2024</div><div class="t">AgentKit</div><p>Coinbase introduces AgentKit, a framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a></p></div>
-      <div class="tl-item"><div class="d">Nov 25, 2024</div><div class="t">MCP</div><p>Anthropic introduces the Model Context Protocol, a standard for giving agents tools and context.<a class="fn" href="#src-5">[5]</a></p></div>
-      <div class="tl-item"><div class="d">Mar 18, 2025</div><div class="t">Ribbit backs Crossmint</div><p>Ribbit Capital leads a $23.6M round in Crossmint, which builds wallets, payments and credentials for AI agents.<a class="fn" href="#src-24">[24]</a></p></div>
-      <div class="tl-item"><div class="d">Apr 2025</div><div class="t">A2A</div><p>Google releases Agent2Agent, a protocol for agent-to-agent discovery and task delegation.<a class="fn" href="#src-6">[6]</a></p></div>
-      <div class="tl-item"><div class="d">Apr 29, 2025</div><div class="t">Mastercard Agent Pay</div><p>Lets verified AI agents complete purchases for users.<a class="fn" href="#src-7">[7]</a></p></div>
-      <div class="tl-item"><div class="d">Apr 30, 2025</div><div class="t">Visa Intelligent Commerce</div><p>APIs for AI agents to pay, with tokenized cards and spending controls.<a class="fn" href="#src-7">[7]</a></p></div>
-      <div class="tl-item"><div class="d">May 6, 2025</div><div class="t">x402</div><p>Coinbase launches x402: stablecoin payments over HTTP, reviving the 402 “Payment Required” code. Backed by AWS, Circle, Anthropic and Near.<a class="fn" href="#src-8">[8]</a></p></div>
-      <div class="tl-item"><div class="d">Jun 11, 2025</div><div class="t">Stripe buys Privy</div><p>Stripe agrees to acquire wallet firm Privy, whose March round was led by Ribbit Capital.<a class="fn" href="#src-9">[9]</a></p></div>
-      <div class="tl-item"><div class="d">Aug 2025</div><div class="t">ERC-8004 “Trustless Agents”</div><p>Ethereum standard for agent identity, reputation and validation. Eight implementations appear within 24 hours.<a class="fn" href="#src-10">[10]</a></p></div>
-      <div class="tl-item"><div class="d">Sep 16, 2025</div><div class="t">AP2</div><p>Google launches the Agent Payments Protocol with 60+ partners, including Mastercard, PayPal and Coinbase.<a class="fn" href="#src-11">[11]</a></p></div>
-      <div class="tl-item"><div class="d">Sep 24, 2025</div><div class="t">x402 Foundation</div><p>Cloudflare and Coinbase launch a foundation to drive x402 agent payments.<a class="fn" href="#src-12">[12]</a></p></div>
-      <div class="tl-item"><div class="d">Sep 29, 2025</div><div class="t">Checkout inside ChatGPT</div><p>OpenAI launches Instant Checkout and the Agentic Commerce Protocol, co-developed with Stripe.<a class="fn" href="#src-13">[13]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 2025</div><div class="t">x402 takes off</div><p>x402 transactions jump more than 10,000% in a month — nearly 500,000 in a single week.<a class="fn" href="#src-32">[32]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 14, 2025</div><div class="t">Visa Trusted Agent Protocol</div><p>Built with Cloudflare, it lets merchants tell approved shopping agents apart from malicious bots.<a class="fn" href="#src-28">[28]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 20, 2025</div><div class="t">The $5 trillion forecast</div><p>McKinsey projects agentic commerce could reach $3–5 trillion globally by 2030.<a class="fn" href="#src-25">[25]</a></p></div>
-      <div class="tl-item"><div class="d">Oct 28, 2025</div><div class="t">PayPal goes agentic</div><p>PayPal launches tools for merchants to sell through AI shopping agents.<a class="fn" href="#src-30">[30]</a></p></div>
-      <div class="tl-item"><div class="d">Jan 2026</div><div class="t">ERC-8004 hits mainnet</div><p>The agent standard goes live on Ethereum mainnet.<a class="fn" href="#src-14">[14]</a></p></div>
-      <div class="tl-item"><div class="d">Feb 12, 2026</div><div class="t">Coinbase Agentic Wallets</div><p>Wallets that let AI agents hold, spend, earn and trade crypto, paying via x402.<a class="fn" href="#src-15">[15]</a></p></div>
-      <div class="tl-item"><div class="d">Mar 17, 2026</div><div class="t">Mastercard buys BVNK</div><p>Mastercard agrees to buy stablecoin infrastructure firm BVNK for up to $1.8B.<a class="fn" href="#src-29">[29]</a></p></div>
-      <div class="tl-item"><div class="d">Mar 18, 2026</div><div class="t">Tempo + MPP</div><p>Stripe and Paradigm’s payments blockchain goes live with the Machine Payments Protocol for agents.<a class="fn" href="#src-20">[20]</a><a class="fn" href="#src-21">[21]</a></p></div>
-      <div class="tl-item"><div class="d">May 27, 2026</div><div class="t">Robinhood opens to agents</div><p>Agents get their own trading accounts and a virtual credit card on Robinhood.<a class="fn" href="#src-17">[17]</a></p></div>
-      <div class="tl-item"><div class="d">Jun 2026</div><div class="t">Mastercard Agent Pay for Machines</div><p>Agent-to-agent micropayments, tested with Checkout.com, Cloudflare, Coinbase, Ripple and Stripe.<a class="fn" href="#src-16">[16]</a></p></div>
-      <div class="tl-item"><div class="d">Jun 10, 2026</div><div class="t">Regulators weigh in</div><p>The Financial Stability Board proposes safeguards for agentic AI in finance, including treating agents as “synthetic employees”.<a class="fn" href="#src-33">[33]</a></p></div>
-      <div class="tl-item"><div class="d">Jun 11, 2026</div><div class="t">Coinbase for Agents</div><p>An account AI assistants like ChatGPT and Claude can trade and pay from, with user-set limits.<a class="fn" href="#src-22">[22]</a></p></div>
-      <div class="tl-item"><div class="d">Sep 29, 2026</div><div class="t">Robinhood Agents</div><p>Robinhood unveils its own in-app agents. Over 150,000 customers have opened agentic accounts.<a class="fn" href="#src-18">[18]</a></p></div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-
-  <!-- §6 PLAYERS -->
-  <section class="part" id="players">
-    <div class="sh"><span class="sn">§6</span><h2>Who's building it</h2><span class="aside">What each has shipped</span></div>
-    <table class="dir">
-      <thead><tr><th>Company</th><th>Area</th><th>What they do</th><th></th></tr></thead>
-      <tbody>
-        <tr><td>Coinbase</td><td class="cat">Wallets · payments</td><td>AgentKit, x402 and Agentic Wallets — wallets and payments built for agents.</td><td class="lnk"><a href="#src-15">↗</a></td></tr>
-        <tr><td>Stripe</td><td class="cat">Payments</td><td>Bought Bridge and Privy; co-developed the Agentic Commerce Protocol with OpenAI.</td><td class="lnk"><a href="#src-9">↗</a></td></tr>
-        <tr><td>Google</td><td class="cat">Protocols</td><td>Agent2Agent (A2A) and the Agent Payments Protocol (AP2).</td><td class="lnk"><a href="#src-11">↗</a></td></tr>
-        <tr><td>Anthropic</td><td class="cat">Protocols</td><td>Created the Model Context Protocol (MCP).</td><td class="lnk"><a href="#src-5">↗</a></td></tr>
-        <tr><td>OpenAI</td><td class="cat">Commerce</td><td>Instant Checkout — buying directly inside ChatGPT.</td><td class="lnk"><a href="#src-13">↗</a></td></tr>
-        <tr><td>Mastercard</td><td class="cat">Card network</td><td>Agent Pay (2025), Agent Pay for Machines (2026), and a deal to buy stablecoin firm BVNK.</td><td class="lnk"><a href="#src-16">↗</a></td></tr>
-        <tr><td>Visa</td><td class="cat">Card network</td><td>Intelligent Commerce and the Trusted Agent Protocol — tools for agents to pay, and for merchants to trust them.</td><td class="lnk"><a href="#src-7">↗</a></td></tr>
-        <tr><td>Cloudflare</td><td class="cat">Infrastructure</td><td>Co-launched the x402 Foundation with Coinbase.</td><td class="lnk"><a href="#src-12">↗</a></td></tr>
-        <tr><td>Ethereum Foundation</td><td class="cat">Standards</td><td>Released ERC-8004 “Trustless Agents”.</td><td class="lnk"><a href="#src-10">↗</a></td></tr>
-        <tr><td>Ribbit Capital</td><td class="cat">Investor</td><td>Led Privy’s $15M round in March 2025. Three months later, Stripe agreed to buy Privy.</td><td class="lnk"><a href="#src-9">↗</a></td></tr>
-        <tr><td>Skyfire</td><td class="cat">Payments</td><td>Launched a platform in 2024 letting AI agents spend money autonomously.</td><td class="lnk"><a href="#src-2">↗</a></td></tr>
-        <tr><td>Robinhood</td><td class="cat">Brokerage</td><td>Agentic trading accounts, an agentic credit card, and its own in-app agents.</td><td class="lnk"><a href="#src-18">↗</a></td></tr>
-        <tr><td>Tempo</td><td class="cat">Payments chain</td><td>Stripe and Paradigm’s payments blockchain; co-authored the Machine Payments Protocol.</td><td class="lnk"><a href="#src-20">↗</a></td></tr>
-        <tr><td>PayPal</td><td class="cat">Payments</td><td>Agent Ready and Store Sync — letting merchants sell through AI agents.</td><td class="lnk"><a href="#src-30">↗</a></td></tr>
-        <tr><td>Crossmint</td><td class="cat">Wallets</td><td>Wallet, payment and credential APIs for agents. Maintains GOAT SDK. Round led by Ribbit.</td><td class="lnk"><a href="#src-24">↗</a></td></tr>
-        <tr><td>Virtuals Protocol</td><td class="cat">Agent launchpad</td><td>Lets anyone create and tokenize an AI agent; home of Luna.</td><td class="lnk"><a href="#src-27">↗</a></td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- §7 OPEN QUESTIONS -->
-  <section class="part" id="questions">
-    <div class="sh"><span class="sn">§7</span><h2>Open questions</h2><span class="aside">What isn’t solved yet</span></div>
+  <!-- §5 TRUST & GOVERNANCE -->
+  <section class="part" id="trust">
+    <div class="sh"><span class="sn">§5</span><h2>Trust &amp; governance</h2><span class="aside">What isn’t solved yet</span></div>
     <ol class="qs">
       <li><h3>Who approved it?</h3><p>If an agent buys the wrong thing, who pays? Google built AP2 around three questions: did the user approve this purchase, can the merchant trust the request reflects what the user wanted, and who is responsible for fraud or mistakes.<a class="fn" href="#src-11">[11]</a></p></li>
       <li><h3>How autonomous is “autonomous”?</h3><p>Truth Terminal, the bot that got $50K from Marc Andreessen, had limited autonomy: its human handler approved its posts and decided who it talked to.<a class="fn" href="#src-1">[1]</a></p></li>
       <li><h3>Can agents be tricked?</h3><p>AI jailbreaker Pliny the Prompter tried to get Truth Terminal to send him the funds. Its creator rejected the attempt and the bot refused.<a class="fn" href="#src-1">[1]</a></p></li>
+      <li><h3>Can agents be hijacked?</h3><p>Prompt injection — hiding instructions in content an agent reads — tops OWASP’s list of AI security risks for the third year running. “Excessive agency”, agents holding more permissions than they need, jumped to third. OWASP’s co-chair says prompt injection is “something organizations must continuously manage rather than expect to eliminate.”<a class="fn" href="#src-46">[46]</a></p></li>
       <li><h3>Who holds the keys?</h3><p>The answers so far are limits set in advance. ChatGPT’s checkout uses payment tokens scoped to one merchant and one cart total, so the agent never touches stored card details.<a class="fn" href="#src-13">[13]</a> Coinbase’s Agentic Wallets let users set permissions before the agent acts.<a class="fn" href="#src-15">[15]</a></p></li>
       <li><h3>Who checks the agents?</h3><p>ERC-8004 proposes independent validators who stake to check an agent’s claims — rewarded if right, slashed if wrong. It is still under review.<a class="fn" href="#src-10">[10]</a> Mastercard requires agents to be verified before they can pay.<a class="fn" href="#src-7">[7]</a> Visa’s Trusted Agent Protocol, built with Cloudflare, lets merchants tell approved agents from malicious bots: “We believe the entire payments ecosystem has a responsibility to ensure sellers can trust AI agents.”<a class="fn" href="#src-28">[28]</a></p></li>
       <li><h3>Whose rails win?</h3><p>x402, AP2, the Agentic Commerce Protocol, Visa and Mastercard all launched in 2025. Several are designed to stay open: AP2 is payment-agnostic, ACP is meant to work with multiple processors, and x402 plans to support cards and bank accounts.<a class="fn" href="#src-11">[11]</a><a class="fn" href="#src-13">[13]</a><a class="fn" href="#src-12">[12]</a></p></li>
@@ -443,9 +456,71 @@ a{color:inherit}
     </ol>
   </section>
 
+</div>
+
+<!-- §6 TIMELINE (dark band) -->
+<section class="band" id="timeline">
+  <div class="wrap">
+    <div class="sh"><span class="sn">§6</span><h2>How we got here</h2><span class="aside">Feb 2024 — Sep 2026 · 44 events</span></div>
+    <div class="tl-tabs" role="tablist"><button data-y="2024" class=on>2024</button><button data-y="2025">2025</button><button data-y="2026">2026</button><button data-y="all">All</button></div>
+      <div class="yr" data-y="2024">
+        <div class="yr-h"><span>2024</span><em>13 events</em></div>
+        <div class="vtl2"><div class="col l"><div class="ev" style="order:0"><div class="d">Feb 2024<span class="tag tag-live">Live</span></div><div class="t">Klarna’s AI assistant</div><p>Handles two-thirds of Klarna’s customer service chats in its first month — the work of 700 people, Klarna says.<a class="fn" href="#src-35">[35]</a></p></div><div class="ev" style="order:2"><div class="d">Jul 10, 2024</div><div class="t">A bot gets a grant</div><p>Marc Andreessen sends $50K in Bitcoin to Truth Terminal, an AI agent on X, framed as a grant.<a class="fn" href="#src-1">[1]</a></p></div><div class="ev" style="order:4"><div class="d">Aug 30, 2024</div><div class="t">First AI-to-AI crypto transaction</div><p>“This week at @CoinbaseDev we witnessed our first AI to AI crypto transaction.” — Brian Armstrong. “They used tokens to buy tokens.”<a class="fn" href="#src-2">[2]</a></p></div><div class="ev" style="order:6"><div class="d">Oct 2024<span class="tag tag-live">Live</span></div><div class="t">Agents get tokens</div><p>Virtuals Protocol launches a platform for creating AI agents with their own tokens. Its flagship agent Luna sends $LUNA to users who list Base wallets in their X bios. 1,000+ agents launch in three weeks.<a class="fn" href="#src-26">[26]</a><a class="fn" href="#src-27">[27]</a></p></div><div class="ev" style="order:8"><div class="d">Oct 18, 2024</div><div class="t">The first AI crypto millionaire</div><p>Truth Terminal’s holdings pass $1M — “most likely the first ever” AI bot to become a crypto millionaire.<a class="fn" href="#src-3">[3]</a></p></div><div class="ev" style="order:10"><div class="d">Oct 29, 2024<span class="tag tag-live">Live</span></div><div class="t">Agentforce</div><p>Salesforce makes its agent platform generally available, priced from $2 per conversation.<a class="fn" href="#src-39">[39]</a></p></div><div class="ev" style="order:12"><div class="d">Nov 25, 2024<span class="tag tag-live">Live</span></div><div class="t">MCP</div><p>Anthropic introduces the Model Context Protocol, a standard for giving agents tools and context.<a class="fn" href="#src-5">[5]</a></p></div></div><div class="col r"><div class="ev" style="order:1"><div class="d">Mar 12, 2024<span class="tag tag-preview">Preview</span></div><div class="t">Devin</div><p>Cognition unveils an “AI software engineer”, solving 13.86% of real GitHub issues on its own — up from a previous best of 1.96%.<a class="fn" href="#src-34">[34]</a></p></div><div class="ev" style="order:3"><div class="d">Aug 2024<span class="tag tag-live">Live</span></div><div class="t">Agents get spending money</div><p>Skyfire launches a payment platform that lets AI agents spend money autonomously.<a class="fn" href="#src-2">[2]</a></p></div><div class="ev" style="order:5"><div class="d">Oct 10, 2024</div><div class="t">GOAT launches</div><p>Goatseus Maximus, a Solana memecoin, launches and becomes Truth Terminal’s largest position.<a class="fn" href="#src-3">[3]</a></p></div><div class="ev" style="order:7"><div class="d">Oct 2024</div><div class="t">Stripe agrees to buy Bridge</div><p>Stripe agrees to acquire stablecoin infrastructure firm Bridge.<a class="fn" href="#src-4">[4]</a></p></div><div class="ev" style="order:9"><div class="d">Oct 22, 2024<span class="tag tag-preview">Preview</span></div><div class="t">Claude uses a computer</div><p>Anthropic lets Claude look at a screen, move a cursor, click and type. Public beta.<a class="fn" href="#src-36">[36]</a></p></div><div class="ev" style="order:11"><div class="d">Nov 2024<span class="tag tag-live">Live</span></div><div class="t">AgentKit</div><p>Coinbase introduces AgentKit, a framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a></p></div></div></div>
+        <button class="tl-next" data-go="2025">Next: 2025 →</button>
+      </div>
+      <div class="yr" data-y="2025" hidden>
+        <div class="yr-h"><span>2025</span><em>21 events</em></div>
+        <div class="vtl2"><div class="col l"><div class="ev" style="order:0"><div class="d">Jan 23, 2025<span class="tag tag-preview">Preview</span></div><div class="t">Operator</div><p>OpenAI’s browser-using agent launches for ChatGPT Pro users in the US.<a class="fn" href="#src-37">[37]</a></p></div><div class="ev" style="order:2"><div class="d">Mar 18, 2025</div><div class="t">Ribbit backs Crossmint</div><p>Ribbit Capital leads a $23.6M round in Crossmint, which builds wallets, payments and credentials for AI agents.<a class="fn" href="#src-24">[24]</a></p></div><div class="ev" style="order:4"><div class="d">Apr 2025<span class="tag tag-live">Live</span></div><div class="t">A2A</div><p>Google releases Agent2Agent, a protocol for agent-to-agent discovery and task delegation.<a class="fn" href="#src-6">[6]</a></p></div><div class="ev" style="order:6"><div class="d">Apr 30, 2025<span class="tag tag-live">Live</span></div><div class="t">Visa Intelligent Commerce</div><p>APIs for AI agents to pay, with tokenized cards and spending controls.<a class="fn" href="#src-7">[7]</a></p></div><div class="ev" style="order:8"><div class="d">May 19, 2025<span class="tag tag-preview">Preview</span></div><div class="t">Copilot coding agent</div><p>GitHub lets developers assign issues to an AI agent that returns a pull request.<a class="fn" href="#src-38">[38]</a></p></div><div class="ev" style="order:10"><div class="d">Jun 25, 2025<span class="tag tag-forecast">Forecast</span></div><div class="t">Reality check</div><p>Gartner predicts over 40% of agentic AI projects will be cancelled by the end of 2027.<a class="fn" href="#src-43">[43]</a></p></div><div class="ev" style="order:12"><div class="d">Aug 2025<span class="tag tag-preview">Preview</span></div><div class="t">ERC-8004 “Trustless Agents”</div><p>Ethereum standard for agent identity, reputation and validation. Eight implementations appear within 24 hours.<a class="fn" href="#src-10">[10]</a></p></div><div class="ev" style="order:14"><div class="d">Sep 24, 2025</div><div class="t">x402 Foundation</div><p>Cloudflare and Coinbase launch a foundation to drive x402 agent payments.<a class="fn" href="#src-12">[12]</a></p></div><div class="ev" style="order:16"><div class="d">Oct 14, 2025<span class="tag tag-live">Live</span></div><div class="t">Visa Trusted Agent Protocol</div><p>Built with Cloudflare, it lets merchants tell approved shopping agents apart from malicious bots.<a class="fn" href="#src-28">[28]</a></p></div><div class="ev" style="order:18"><div class="d">Oct 20, 2025<span class="tag tag-forecast">Forecast</span></div><div class="t">The $5 trillion forecast</div><p>McKinsey projects agentic commerce could reach $3–5 trillion globally by 2030.<a class="fn" href="#src-25">[25]</a></p></div><div class="ev" style="order:20"><div class="d">Dec 9, 2025</div><div class="t">MCP goes neutral</div><p>Anthropic donates MCP to the Linux Foundation’s new Agentic AI Foundation, co-founded with OpenAI and Block.<a class="fn" href="#src-44">[44]</a></p></div></div><div class="col r"><div class="ev" style="order:1"><div class="d">Feb 4, 2025</div><div class="t">Bridge deal closes</div><p>$1.1B — Stripe’s largest acquisition to date.<a class="fn" href="#src-47">[47]</a></p></div><div class="ev" style="order:3"><div class="d">Mar 19, 2025</div><div class="t">Agents’ tasks keep getting longer</div><p>METR finds the length of tasks AI agents can complete doubles roughly every seven months.<a class="fn" href="#src-45">[45]</a></p></div><div class="ev" style="order:5"><div class="d">Apr 29, 2025<span class="tag tag-live">Live</span></div><div class="t">Mastercard Agent Pay</div><p>Lets verified AI agents complete purchases for users.<a class="fn" href="#src-7">[7]</a></p></div><div class="ev" style="order:7"><div class="d">May 6, 2025<span class="tag tag-live">Live</span></div><div class="t">x402</div><p>Coinbase launches x402: stablecoin payments over HTTP, reviving the 402 “Payment Required” code. Backed by AWS, Circle, Anthropic and Near.<a class="fn" href="#src-8">[8]</a></p></div><div class="ev" style="order:9"><div class="d">Jun 11, 2025</div><div class="t">Stripe buys Privy</div><p>Stripe agrees to acquire wallet firm Privy, whose March round was led by Ribbit Capital.<a class="fn" href="#src-9">[9]</a></p></div><div class="ev" style="order:11"><div class="d">Jul 16, 2025<span class="tag tag-preview">Preview</span></div><div class="t">AWS AgentCore + agent marketplace</div><p>AWS launches tools to run agents in production, and a marketplace with 800+ agents and tools.<a class="fn" href="#src-42">[42]</a><a class="fn" href="#src-41">[41]</a></p></div><div class="ev" style="order:13"><div class="d">Sep 16, 2025<span class="tag tag-live">Live</span></div><div class="t">AP2</div><p>Google launches the Agent Payments Protocol with 60+ partners, including Mastercard, PayPal and Coinbase.<a class="fn" href="#src-11">[11]</a></p></div><div class="ev" style="order:15"><div class="d">Sep 29, 2025<span class="tag tag-live">Live</span></div><div class="t">Checkout inside ChatGPT</div><p>OpenAI launches Instant Checkout and the Agentic Commerce Protocol, co-developed with Stripe.<a class="fn" href="#src-13">[13]</a></p></div><div class="ev" style="order:17"><div class="d">Oct 2025</div><div class="t">x402 takes off</div><p>x402 transactions jump more than 10,000% in a month — nearly 500,000 in a single week.<a class="fn" href="#src-32">[32]</a></p></div><div class="ev" style="order:19"><div class="d">Oct 28, 2025<span class="tag tag-announced">Announced</span></div><div class="t">PayPal goes agentic</div><p>PayPal launches tools for merchants to sell through AI shopping agents.<a class="fn" href="#src-30">[30]</a></p></div></div></div>
+        <button class="tl-next" data-go="2026">Next: 2026 →</button>
+      </div>
+      <div class="yr" data-y="2026" hidden>
+        <div class="yr-h"><span>2026</span><em>10 events</em></div>
+        <div class="vtl2"><div class="col l"><div class="ev" style="order:0"><div class="d">Jan 2026<span class="tag tag-live">Live</span></div><div class="t">ERC-8004 hits mainnet</div><p>The agent standard goes live on Ethereum mainnet.<a class="fn" href="#src-14">[14]</a></p></div><div class="ev" style="order:2"><div class="d">Mar 17, 2026<span class="tag tag-announced">Announced</span></div><div class="t">Mastercard buys BVNK</div><p>Mastercard agrees to buy stablecoin infrastructure firm BVNK for up to $1.8B.<a class="fn" href="#src-29">[29]</a></p></div><div class="ev" style="order:4"><div class="d">May 27, 2026<span class="tag tag-preview">Preview</span></div><div class="t">Robinhood opens to agents</div><p>Agents get their own trading accounts and a virtual credit card on Robinhood.<a class="fn" href="#src-17">[17]</a></p></div><div class="ev" style="order:6"><div class="d">Jun 11, 2026<span class="tag tag-live">Live</span></div><div class="t">Coinbase for Agents</div><p>An account AI assistants like ChatGPT and Claude can trade and pay from, with user-set limits.<a class="fn" href="#src-22">[22]</a></p></div><div class="ev" style="order:8"><div class="d">Aug 4, 2026</div><div class="t">Prompt injection still #1</div><p>OWASP ranks prompt injection the top AI security risk for a third year; “excessive agency” climbs to #3.<a class="fn" href="#src-46">[46]</a></p></div></div><div class="col r"><div class="ev" style="order:1"><div class="d">Feb 12, 2026<span class="tag tag-live">Live</span></div><div class="t">Coinbase Agentic Wallets</div><p>Wallets that let AI agents hold, spend, earn and trade crypto, paying via x402.<a class="fn" href="#src-15">[15]</a></p></div><div class="ev" style="order:3"><div class="d">Mar 18, 2026<span class="tag tag-live">Live</span></div><div class="t">Tempo + MPP</div><p>Stripe and Paradigm’s payments blockchain goes live with the Machine Payments Protocol for agents.<a class="fn" href="#src-20">[20]</a><a class="fn" href="#src-21">[21]</a></p></div><div class="ev" style="order:5"><div class="d">Jun 10, 2026</div><div class="t">Regulators weigh in</div><p>The Financial Stability Board proposes safeguards for agentic AI in finance, including treating agents as “synthetic employees”.<a class="fn" href="#src-33">[33]</a></p></div><div class="ev" style="order:7"><div class="d">Jun 2026<span class="tag tag-announced">Announced</span></div><div class="t">Mastercard Agent Pay for Machines</div><p>Agent-to-agent micropayments, tested with Checkout.com, Cloudflare, Coinbase, Ripple and Stripe.<a class="fn" href="#src-16">[16]</a></p></div><div class="ev" style="order:9"><div class="d">Sep 29, 2026<span class="tag tag-announced">Announced</span></div><div class="t">Robinhood Agents</div><p>Robinhood unveils its own in-app agents. Over 150,000 customers have opened agentic accounts.<a class="fn" href="#src-18">[18]</a></p></div></div></div>
+        
+      </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- §7 PLAYERS -->
+  <section class="part" id="players">
+    <div class="sh"><span class="sn">§7</span><h2>Who’s building it</h2><span class="aside">22 companies</span></div>
+    <table class="dir">
+      <thead><tr><th>Company</th><th>Area</th><th>What they do</th><th></th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">Agents &amp; work</td></tr>
+        <tr><td>Anthropic</td><td class="cat">Models · protocols</td><td>Claude and computer use; created MCP and donated it to the Agentic AI Foundation.</td><td class="lnk"><a href="#src-44">↗</a></td></tr>
+        <tr><td>OpenAI</td><td class="cat">Models · commerce</td><td>Operator, and Instant Checkout inside ChatGPT; co-founded the Agentic AI Foundation.</td><td class="lnk"><a href="#src-37">↗</a></td></tr>
+        <tr><td>Cognition</td><td class="cat">Software agents</td><td>Devin, pitched as an AI software engineer.</td><td class="lnk"><a href="#src-34">↗</a></td></tr>
+        <tr><td>GitHub</td><td class="cat">Software agents</td><td>Copilot coding agent — assign it an issue, get a pull request.</td><td class="lnk"><a href="#src-38">↗</a></td></tr>
+        <tr><td>Salesforce</td><td class="cat">Business agents</td><td>Agentforce, its platform for building and deploying agents.</td><td class="lnk"><a href="#src-39">↗</a></td></tr>
+        <tr><td>Intercom</td><td class="cat">Customer service</td><td>Fin, an AI agent priced per resolved outcome.</td><td class="lnk"><a href="#src-40">↗</a></td></tr>
+        <tr><td>Klarna</td><td class="cat">Customer service</td><td>Early large-scale deployment of an AI assistant for support chats.</td><td class="lnk"><a href="#src-35">↗</a></td></tr>
+        <tr class="grp"><td colspan="4">Infrastructure</td></tr>
+        <tr><td>AWS</td><td class="cat">Cloud</td><td>AgentCore for running agents, plus a marketplace for buying them.</td><td class="lnk"><a href="#src-42">↗</a></td></tr>
+        <tr><td>Google</td><td class="cat">Protocols</td><td>Agent2Agent (A2A) and the Agent Payments Protocol (AP2).</td><td class="lnk"><a href="#src-11">↗</a></td></tr>
+        <tr><td>Cloudflare</td><td class="cat">Infrastructure</td><td>Co-launched the x402 Foundation; co-developed Visa’s Trusted Agent Protocol.</td><td class="lnk"><a href="#src-12">↗</a></td></tr>
+        <tr><td>Ethereum Foundation</td><td class="cat">Standards</td><td>Released ERC-8004 “Trustless Agents”.</td><td class="lnk"><a href="#src-10">↗</a></td></tr>
+        <tr class="grp"><td colspan="4">Money</td></tr>
+        <tr><td>Coinbase</td><td class="cat">Wallets · payments</td><td>AgentKit, x402, Agentic Wallets and Coinbase for Agents.</td><td class="lnk"><a href="#src-22">↗</a></td></tr>
+        <tr><td>Stripe</td><td class="cat">Payments</td><td>Bought Bridge and Privy; co-developed ACP with OpenAI; co-created Tempo.</td><td class="lnk"><a href="#src-47">↗</a></td></tr>
+        <tr><td>Tempo</td><td class="cat">Payments chain</td><td>Stripe and Paradigm’s payments blockchain; co-authored the Machine Payments Protocol.</td><td class="lnk"><a href="#src-20">↗</a></td></tr>
+        <tr><td>Visa</td><td class="cat">Card network</td><td>Intelligent Commerce and the Trusted Agent Protocol.</td><td class="lnk"><a href="#src-28">↗</a></td></tr>
+        <tr><td>Mastercard</td><td class="cat">Card network</td><td>Agent Pay, Agent Pay for Machines, and a deal to buy stablecoin firm BVNK.</td><td class="lnk"><a href="#src-16">↗</a></td></tr>
+        <tr><td>PayPal</td><td class="cat">Payments</td><td>Agent Ready and Store Sync — letting merchants sell through AI agents.</td><td class="lnk"><a href="#src-30">↗</a></td></tr>
+        <tr><td>Robinhood</td><td class="cat">Brokerage</td><td>Agentic trading accounts, an agentic credit card, and its own in-app agents.</td><td class="lnk"><a href="#src-18">↗</a></td></tr>
+        <tr><td>Crossmint</td><td class="cat">Wallets</td><td>Wallet, payment and credential APIs for agents. Round led by Ribbit.</td><td class="lnk"><a href="#src-24">↗</a></td></tr>
+        <tr><td>Skyfire</td><td class="cat">Payments</td><td>Launched a platform in 2024 letting AI agents spend money autonomously.</td><td class="lnk"><a href="#src-2">↗</a></td></tr>
+        <tr><td>Virtuals Protocol</td><td class="cat">Agent launchpad</td><td>Lets anyone create and tokenize an AI agent; home of Luna.</td><td class="lnk"><a href="#src-27">↗</a></td></tr>
+        <tr><td>Ribbit Capital</td><td class="cat">Investor</td><td>Led rounds in Privy (Mar 2025) and Crossmint (Mar 2025).</td><td class="lnk"><a href="#src-9">↗</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
   <!-- §8 GLOSSARY -->
   <section class="part" id="glossary">
-    <div class="sh"><span class="sn">§8</span><h2>Glossary</h2></div>
+    <div class="sh"><span class="sn">§8</span><h2>Glossary</h2><span class="aside">24 terms</span></div>
     <dl class="gloss">
       <div><dt>MCP<span>Protocol</span></dt><dd>Model Context Protocol. Anthropic’s standard for giving AI agents tools and context.<a class="fn" href="#src-5">[5]</a></dd></div>
       <div><dt>A2A<span>Protocol</span></dt><dd>Agent2Agent. Google’s protocol for agents to discover each other and delegate tasks.<a class="fn" href="#src-6">[6]</a></dd></div>
@@ -463,12 +538,20 @@ a{color:inherit}
       <div><dt>IAO<span>Tokens</span></dt><dd>A token launched alongside a new AI agent on Virtuals Protocol.<a class="fn" href="#src-26">[26]</a></dd></div>
       <div><dt>Agentic account<span>Brokerage</span></dt><dd>On Robinhood, a separate account an agent trades from, holding only what you deposit.<a class="fn" href="#src-17">[17]</a></dd></div>
       <div><dt>Synthetic employee<span>Regulation</span></dt><dd>The FSB’s suggestion that firms govern AI agents with HR-style controls, like staff.<a class="fn" href="#src-33">[33]</a></dd></div>
+      <div><dt>Computer use<span>Agents</span></dt><dd>An agent operating a computer like a person — reading the screen, clicking and typing.<a class="fn" href="#src-36">[36]</a></dd></div>
+      <div><dt>Time horizon<span>Capability</span></dt><dd>METR’s measure of an agent: the length of task (in human time) it completes half the time.<a class="fn" href="#src-45">[45]</a></dd></div>
+      <div><dt>Agent washing<span>Market</span></dt><dd>Gartner’s term for relabelling chatbots and automation tools as “agentic” without real agentic features.<a class="fn" href="#src-43">[43]</a></dd></div>
+      <div><dt>Outcome-based pricing<span>Economics</span></dt><dd>Charging only when the agent achieves a result — like Intercom’s $0.99 per resolved conversation.<a class="fn" href="#src-40">[40]</a></dd></div>
+      <div><dt>AAIF<span>Infrastructure</span></dt><dd>Agentic AI Foundation. Linux Foundation home for MCP, goose and AGENTS.md.<a class="fn" href="#src-44">[44]</a></dd></div>
+      <div><dt>Prompt injection<span>Security</span></dt><dd>Hiding instructions in content an agent reads, to make it do something its user didn’t ask for.<a class="fn" href="#src-46">[46]</a></dd></div>
+      <div><dt>Excessive agency<span>Security</span></dt><dd>An agent holding more tools or permissions than its job needs — OWASP’s #3 AI risk in 2026.<a class="fn" href="#src-46">[46]</a></dd></div>
+      <div><dt>Coding agent<span>Agents</span></dt><dd>An agent that takes a software task and returns finished code for review, like GitHub’s Copilot agent.<a class="fn" href="#src-38">[38]</a></dd></div>
     </dl>
   </section>
 
   <!-- §9 SOURCES -->
   <section class="part" id="sources">
-    <div class="sh"><span class="sn">§9</span><h2>Sources</h2></div>
+    <div class="sh"><span class="sn">§9</span><h2>Sources</h2><span class="aside">47 sources · read directly</span></div>
     <ol class="sources">
       <li id="src-1">Marc Andreessen Sends $50K in Bitcoin to an AI Bot on Twitter — Decrypt, Jul 10, 2024. <a href="https://decrypt.co/?p=239340" target="_blank" rel="noopener">link</a></li>
       <li id="src-2">Coinbase sees first crypto transaction between AI agents — Cointelegraph, Aug 31, 2024. <a href="https://cointelegraph.com/news/coinbase-artificial-intelligence-ai-crypto-transactions-wallet-brian-armstrong" target="_blank" rel="noopener">link</a></li>
@@ -503,6 +586,20 @@ a{color:inherit}
       <li id="src-31">Brian Armstrong Says Coinbase Processes $1T in Stablecoin Payments Annually — The Defiant, 2026. <a href="https://thedefiant.io/news/cefi/brian-armstrong-says-coinbase-processes-usd1t-in-stablecoin-payments-annually" target="_blank" rel="noopener">link</a></li>
       <li id="src-32">Coinbase’s x402 transactions explode over 10,000% in a month — Cointelegraph, Oct 26, 2025. <a href="https://cointelegraph.com/news/coinbases-x402-transactions-rise-10000-percent" target="_blank" rel="noopener">link</a></li>
       <li id="src-33">Agentic AI Risk Catches Eye of Financial Stability Board — PYMNTS, Jun 10, 2026. <a href="https://www.pymnts.com/artificial-intelligence-2/2026/agentic-ai-risk-catches-eye-of-financial-stability-board/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-34">Introducing Devin, the first AI software engineer — Cognition, Mar 12, 2024. <a href="https://cognition.com/blog/introducing-devin" target="_blank" rel="noopener">link</a></li>
+      <li id="src-35">Klarna Claims Its New AI Assistant Does the Work of 700 Full-Time Agents — CX Today, Feb 29, 2024. <a href="https://www.cxtoday.com/contact-center/klarna-claims-its-new-ai-assistant-does-the-work-of-700-full-time-agents/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-36">Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku — Anthropic, Oct 22, 2024. <a href="https://www.anthropic.com/news/3-5-models-and-computer-use" target="_blank" rel="noopener">link</a></li>
+      <li id="src-37">OpenAI launches Operator—an agent that can use a computer for you — MIT Technology Review, Jan 23, 2025. <a href="https://www.technologyreview.com/2025/01/23/1110484/openai-launches-operator-an-agent-that-can-use-a-computer-for-you/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-38">GitHub Copilot coding agent in public preview — GitHub Changelog, May 19, 2025. <a href="https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-39">Salesforce’s Agentforce hits general availability — TechCrunch, Oct 29, 2024. <a href="https://techcrunch.com/2024/10/29/salesforce-ai-chatbot-agentforce-hits-general-availability" target="_blank" rel="noopener">link</a></li>
+      <li id="src-40">Fin pricing — Intercom, accessed Oct 2026. <a href="https://www.intercom.com/pricing" target="_blank" rel="noopener">link</a></li>
+      <li id="src-41">AWS launches AI Agents Marketplace and Bedrock AgentCore — CRN Asia, Jul 2025. <a href="https://www.crnasia.com/news-network/2025/aws-launches-ai-agents-marketplace-and-bedrock-agentcore-aws" target="_blank" rel="noopener">link</a></li>
+      <li id="src-42">AWS launches AgentCore system and agentic marketplace — TechTarget, Jul 16, 2025. <a href="https://www.techtarget.com/searchenterpriseai/news/366627853/AWS-launches-AgentCore-system-and-agentic-marketplace" target="_blank" rel="noopener">link</a></li>
+      <li id="src-43">Over 40% of Agentic AI Projects Will Be Scrapped by 2027, Says Gartner — Outlook Business, Jun 25, 2025. <a href="https://www.outlookbusiness.com/artificial-intelligence/over-40-of-agentic-ai-projects-will-be-scrapped-by-2027-says-gartner" target="_blank" rel="noopener">link</a></li>
+      <li id="src-44">Donating the Model Context Protocol and establishing the Agentic AI Foundation — Anthropic, Dec 9, 2025. <a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener">link</a></li>
+      <li id="src-45">Measuring AI Ability to Complete Long Tasks — METR, Mar 19, 2025. <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-46">Prompt Injection tops 2026 OWASP GenAI / LLM Top Ten vulnerabilities — SD Times, Aug 4, 2026. <a href="https://sdtimes.com/security/prompt-injection-tops-2026-owasp-genai-llm-top-ten-vulnerabilities/" target="_blank" rel="noopener">link</a></li>
+      <li id="src-47">Stripe closes $1.1 billion Bridge deal, prepares for aggressive stablecoin push — CNBC via NBC New York, Feb 4, 2025. <a href="https://www.nbcnewyork.com/news/business/money-report/stripe-closes-1-1-billion-bridge-deal-prepares-for-aggressive-stablecoin-push/6135508/" target="_blank" rel="noopener">link</a></li>
     </ol>
   </section>
 
@@ -518,6 +615,18 @@ document.querySelectorAll('.sk-lab').forEach(function(l){
     el.addEventListener('mouseleave',function(){g.classList.remove('on');l.classList.remove('on')});
   });
 });
+
+(function(){
+  var tabs=document.querySelectorAll('.tl-tabs button'),yrs=document.querySelectorAll('.yr');
+  function show(y,scroll){
+    tabs.forEach(function(b){b.classList.toggle('on',b.dataset.y===y)});
+    yrs.forEach(function(el){el.hidden=!(y==='all'||el.dataset.y===y)});
+    document.querySelectorAll('.tl-next').forEach(function(b){b.style.display=y==='all'?'none':''});
+    if(scroll)document.getElementById('timeline').scrollIntoView({behavior:'smooth'});
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.y,false)})});
+  document.querySelectorAll('.tl-next').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.go,true)})});
+})();
 </script>
 </body>
 </html>

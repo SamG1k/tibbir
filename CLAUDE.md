@@ -84,15 +84,17 @@ A general page on the agentic economy, same colours/fonts as TIBBIR but its own 
 Design went through several rounds; Sam's goal is **authentic, not AI-themed**. Current direction = editorial "field guide" / research report:
 - Masthead (Vol. 01 · A field guide · Updated…), big headline, standfirst, "Compiled by SamG1k" byline
 - Figures row with footnote markers
-- §1 Overview — two-column article, drop cap, pull quote
-- §2 The stack — isometric SVG slab diagram (5 layers) with labels; hover links slab ↔ label
-- §3 How an agent pays — x402 sequence diagram (agent ↔ server, 4 steps)
-- §4 Agents at work — case studies (Robinhood, Coinbase for Agents, ChatGPT checkout, Tempo/MPP, Virtuals), spec-sheet layout
-- §5 How we got here — full-width black band, vertical timeline (32 events)
-- §6 Who's building it — directory table
-- §7 Open questions — numbered list of unsolved problems
-- §8 Glossary — book-style definition list
-- §9 Sources — numbered list; footnotes `[n]` link here
+- Figures row (12) + status key. Status tags on items: Live / Preview / Announced / Forecast (as reported at the time)
+- Organised in 5 pillars (per an outside review asking for broader coverage than payments/crypto):
+- §1 The agents — two-column article, drop cap, pull quote
+- §2 The infrastructure — isometric SVG stack (5 layers) + notes on MCP/AAIF and AWS AgentCore
+- §3 Agents at work — case studies (Klarna, GitHub Copilot agent, Operator, Robinhood, ChatGPT checkout), spec-sheet layout
+- §4 The economics — 4.1 pricing models table, 4.2 x402 sequence diagram, 4.3 money/forecasts + cases (Coinbase for Agents, Tempo, Virtuals)
+- §5 Trust & governance — numbered open questions
+- §6 How we got here — black band, compact two-column timeline with year tabs (2024/2025/2026/All) + "Next year" button
+- §7 Who's building it — directory grouped: Agents & work / Infrastructure / Money
+- §8 Glossary
+- §9 Sources — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
