@@ -267,10 +267,13 @@ html{scrollbar-gutter:stable}
 html.locked{overflow:hidden}
 .intro{position:fixed;inset:0;z-index:1000;cursor:pointer;outline:none}
 .half{position:absolute;left:0;right:0;height:50%;overflow:hidden;background:#f2efe6;will-change:transform;transition:transform .95s cubic-bezier(.76,0,.24,1)}
-.half.top{top:0;border-bottom:3px solid #1a1a14}
-.half.bot{bottom:0;border-top:3px solid #1a1a14}
+.half.top{top:0}
+.half.bot{bottom:0}
 .half.top .in{top:0}
-.intro:not(.split) .half{border-color:transparent}
+.half::after{content:'';position:absolute;left:0;right:0;height:3px;background:#1a1a14;opacity:0;z-index:2}
+.half.top::after{bottom:0}
+.half.bot::after{top:0}
+.intro.split .half::after{opacity:1}
 .half .in{position:absolute;left:0;right:0;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:28px clamp(16px,5vw,64px)}
 .half.top .in{top:0}
 .half.bot .in{bottom:0}
@@ -279,8 +282,20 @@ html.locked{overflow:hidden}
 .in-foot{bottom:24px;border-top:1px solid #1a1a14;padding-top:10px}
 .in-h{font-size:clamp(48px,11vw,150px);font-weight:700;line-height:.88;letter-spacing:-.045em;max-width:1100px}
 .in-h em{font-style:normal;color:#1a7a2e}
-.in-h .w{display:inline-block;opacity:0;transform:translateY(.35em);animation:wIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.15s + var(--i) * .11s)}
-.in-cta{margin-top:34px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;display:inline-flex;align-self:flex-start;gap:10px;align-items:center;opacity:0;animation:ctaIn .5s ease 1s forwards}
+.in-h .l{display:block;overflow:hidden;padding-bottom:.06em}
+.in-h .l>span{display:inline-block;transform:translateY(105%);animation:lIn .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.35s + var(--i) * .22s)}
+@keyframes lIn{to{transform:none}}
+.in-h,.in-top,.in-foot,.in-cta{position:relative;z-index:1}
+.in-top,.in-foot{position:absolute}
+.net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.net .ed line{stroke:#1a1a14;stroke-width:2;stroke-opacity:.28;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .7s ease-out forwards;animation-delay:calc(.2s + var(--d) * .07s)}
+.net .nd{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);animation:pop .45s cubic-bezier(.2,.9,.3,1.4) forwards;animation-delay:calc(.1s + var(--d) * .09s)}
+.net .nd rect{fill:#f2efe6;stroke:#1a1a14;stroke-width:2.5}
+.net .nd.big rect{fill:#1a7a2e;stroke:#1a1a14;stroke-width:3}
+.net .nd text{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;letter-spacing:3px;fill:#1a1a14}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1;transform:none}}
+.in-cta{margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;display:inline-flex;align-self:flex-start;gap:10px;align-items:center;opacity:0;animation:ctaIn .5s ease 1.3s forwards}
 .in-cta::before{content:'';width:28px;height:3px;background:#1a7a2e;transform-origin:left;animation:ctaLine 1.6s ease-in-out 1.4s infinite}
 @keyframes wIn{to{opacity:1;transform:none}}
 @keyframes ctaIn{to{opacity:1}}
@@ -292,8 +307,8 @@ html.locked{overflow:hidden}
 .intro.split .half.bot{transform:translateY(101%)}
 .intro.split .seam{opacity:0;transition:opacity .2s}
 .intro.gone{display:none}
-@media(max-width:760px){.in-top span:nth-child(2){display:none}.in-cta{margin-top:24px}.in-h{font-size:15.5vw;line-height:.95}}
-@media (prefers-reduced-motion:reduce){.in-h .w,.in-cta{animation:none;opacity:1;transform:none}.half,.seam{transition:none}}
+@media(max-width:760px){.in-top span:nth-child(2){display:none}.in-cta{margin-top:24px}.in-h{font-size:13.2vw;line-height:.95}.net{opacity:.3}.net .nd text{display:none}}
+@media (prefers-reduced-motion:reduce){.in-h .l>span,.in-cta,.net .ed line,.net .nd{animation:none;opacity:1;transform:none;stroke-dashoffset:0}.half,.seam{transition:none}}
 
 /* CASES */
 .case{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:30px 0;border-top:1px solid rgba(26,26,20,.2)}
@@ -386,15 +401,17 @@ html.locked{overflow:hidden}
 <body>
 <div class="intro" id="intro" role="button" tabindex="0" aria-label="Enter the field guide">
   <div class="half top"><div class="in">
+      <svg class="net" viewBox="0 0 1600 1000" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><g class="ed"><line pathLength="1" style="--d:0" x1="1130" y1="250" x2="1440" y2="330"/><line pathLength="1" style="--d:1" x1="1130" y1="250" x2="1300" y2="600"/><line pathLength="1" style="--d:2" x1="1440" y1="330" x2="1300" y2="600"/><line pathLength="1" style="--d:3" x1="1300" y1="600" x2="1010" y2="780"/><line pathLength="1" style="--d:4" x1="1300" y1="600" x2="1480" y2="810"/><line pathLength="1" style="--d:5" x1="1010" y1="780" x2="1480" y2="810"/><line pathLength="1" style="--d:6" x1="1130" y1="250" x2="820" y2="130"/><line pathLength="1" style="--d:7" x1="1130" y1="250" x2="1290" y2="110"/><line pathLength="1" style="--d:8" x1="1440" y1="330" x2="1290" y2="110"/><line pathLength="1" style="--d:9" x1="1440" y1="330" x2="1560" y2="560"/><line pathLength="1" style="--d:10" x1="1480" y1="810" x2="1560" y2="560"/><line pathLength="1" style="--d:11" x1="1300" y1="600" x2="1000" y2="430"/><line pathLength="1" style="--d:12" x1="1130" y1="250" x2="1000" y2="430"/><line pathLength="1" style="--d:13" x1="1010" y1="780" x2="840" y2="560"/><line pathLength="1" style="--d:14" x1="1000" y1="430" x2="840" y2="560"/><line pathLength="1" style="--d:15" x1="1010" y1="780" x2="1180" y2="900"/><line pathLength="1" style="--d:16" x1="1480" y1="810" x2="1180" y2="900"/></g><g class="nd big" style="--d:0"><rect x="1119" y="239" width="22" height="22"/><text x="1150" y="256">AGENTS</text></g><g class="nd big" style="--d:1"><rect x="1429" y="319" width="22" height="22"/><text x="1460" y="336">TOOLS</text></g><g class="nd big" style="--d:2"><rect x="1289" y="589" width="22" height="22"/><text x="1320" y="606">WORK</text></g><g class="nd big" style="--d:3"><rect x="999" y="769" width="22" height="22"/><text x="1030" y="786">MONEY</text></g><g class="nd big" style="--d:4"><rect x="1469" y="799" width="22" height="22"/><text x="1500" y="816">TRUST</text></g><g class="nd" style="--d:5"><rect x="814" y="124" width="12" height="12"/></g><g class="nd" style="--d:6"><rect x="1284" y="104" width="12" height="12"/></g><g class="nd" style="--d:7"><rect x="1554" y="554" width="12" height="12"/></g><g class="nd" style="--d:8"><rect x="834" y="554" width="12" height="12"/></g><g class="nd" style="--d:9"><rect x="1174" y="894" width="12" height="12"/></g><g class="nd" style="--d:10"><rect x="994" y="424" width="12" height="12"/></g></svg>
       <div class="in-top"><span>Vol. 01</span><span>A field guide</span><span>Oct 2026</span></div>
-      <h2 class="in-h"><span class="w" style="--i:0">AI</span> <span class="w" style="--i:1">agents</span> <span class="w" style="--i:2">are</span> <span class="w" style="--i:3">getting</span> <span class="w" style="--i:4">to</span> <span class="w" style="--i:5"><em>work</em>.</span></h2>
-      <div class="in-cta">Click to enter</div>
+      <h2 class="in-h"><span class="l" style="--i:0"><span>AI agents are</span></span><span class="l" style="--i:1"><span>getting to</span></span><span class="l" style="--i:2"><span><em>work</em>.</span></span></h2>
+      <div class="in-cta">Click to enter →</div>
       <div class="in-foot"><span>Compiled by SamG1k</span><span>53 sources</span></div>
   </div></div>
   <div class="half bot" aria-hidden="true"><div class="in">
+      <svg class="net" viewBox="0 0 1600 1000" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><g class="ed"><line pathLength="1" style="--d:0" x1="1130" y1="250" x2="1440" y2="330"/><line pathLength="1" style="--d:1" x1="1130" y1="250" x2="1300" y2="600"/><line pathLength="1" style="--d:2" x1="1440" y1="330" x2="1300" y2="600"/><line pathLength="1" style="--d:3" x1="1300" y1="600" x2="1010" y2="780"/><line pathLength="1" style="--d:4" x1="1300" y1="600" x2="1480" y2="810"/><line pathLength="1" style="--d:5" x1="1010" y1="780" x2="1480" y2="810"/><line pathLength="1" style="--d:6" x1="1130" y1="250" x2="820" y2="130"/><line pathLength="1" style="--d:7" x1="1130" y1="250" x2="1290" y2="110"/><line pathLength="1" style="--d:8" x1="1440" y1="330" x2="1290" y2="110"/><line pathLength="1" style="--d:9" x1="1440" y1="330" x2="1560" y2="560"/><line pathLength="1" style="--d:10" x1="1480" y1="810" x2="1560" y2="560"/><line pathLength="1" style="--d:11" x1="1300" y1="600" x2="1000" y2="430"/><line pathLength="1" style="--d:12" x1="1130" y1="250" x2="1000" y2="430"/><line pathLength="1" style="--d:13" x1="1010" y1="780" x2="840" y2="560"/><line pathLength="1" style="--d:14" x1="1000" y1="430" x2="840" y2="560"/><line pathLength="1" style="--d:15" x1="1010" y1="780" x2="1180" y2="900"/><line pathLength="1" style="--d:16" x1="1480" y1="810" x2="1180" y2="900"/></g><g class="nd big" style="--d:0"><rect x="1119" y="239" width="22" height="22"/><text x="1150" y="256">AGENTS</text></g><g class="nd big" style="--d:1"><rect x="1429" y="319" width="22" height="22"/><text x="1460" y="336">TOOLS</text></g><g class="nd big" style="--d:2"><rect x="1289" y="589" width="22" height="22"/><text x="1320" y="606">WORK</text></g><g class="nd big" style="--d:3"><rect x="999" y="769" width="22" height="22"/><text x="1030" y="786">MONEY</text></g><g class="nd big" style="--d:4"><rect x="1469" y="799" width="22" height="22"/><text x="1500" y="816">TRUST</text></g><g class="nd" style="--d:5"><rect x="814" y="124" width="12" height="12"/></g><g class="nd" style="--d:6"><rect x="1284" y="104" width="12" height="12"/></g><g class="nd" style="--d:7"><rect x="1554" y="554" width="12" height="12"/></g><g class="nd" style="--d:8"><rect x="834" y="554" width="12" height="12"/></g><g class="nd" style="--d:9"><rect x="1174" y="894" width="12" height="12"/></g><g class="nd" style="--d:10"><rect x="994" y="424" width="12" height="12"/></g></svg>
       <div class="in-top"><span>Vol. 01</span><span>A field guide</span><span>Oct 2026</span></div>
-      <h2 class="in-h"><span class="w" style="--i:0">AI</span> <span class="w" style="--i:1">agents</span> <span class="w" style="--i:2">are</span> <span class="w" style="--i:3">getting</span> <span class="w" style="--i:4">to</span> <span class="w" style="--i:5"><em>work</em>.</span></h2>
-      <div class="in-cta">Click to enter</div>
+      <h2 class="in-h"><span class="l" style="--i:0"><span>AI agents are</span></span><span class="l" style="--i:1"><span>getting to</span></span><span class="l" style="--i:2"><span><em>work</em>.</span></span></h2>
+      <div class="in-cta">Click to enter →</div>
       <div class="in-foot"><span>Compiled by SamG1k</span><span>53 sources</span></div>
   </div></div>
   <div class="seam"></div>
