@@ -29,7 +29,7 @@ TIBBIR is a crypto token connected to Ribbit Capital's portfolio ecosystem ("TIB
 
 Contract address (bottom of page, `user-select: all`): `0xA4A2E2ca3fBfE21aed83471D28b6f65A233C6e00`
 
-**Chain:** The site currently says Base / Virtuals Protocol — that is correct for when it was written (~3 months ago). About a month ago TIBBIR bridged to Robinhood Chain. This will be added later (not yet) — likely a new timeline event after "The World Is Flat" (Jul 2026), plus updates to hero, stats bar, Brian/Paul/Vlad rebel panels and the Stealth Launch event.
+**Chain:** The site currently says Base / Virtuals Protocol — that is correct for when it was written (~3 months ago). About a month ago TIBBIR bridged to Robinhood Chain. Timeline events added (Sep/Oct 2026). Still to do: updates to hero, stats bar, Brian/Paul/Vlad rebel panels, Stealth Launch event and the bottom CA (Robinhood Chain CA: 0x4db7374E966097be94C6680d49156D580F097Bbf). Sam still to send the Aug 2026 🌉 post.
 
 ### Source of truth
 
@@ -55,7 +55,7 @@ Always edit the real `index.html`, never the lite copy.
 3. 01 Who Is Ribbit Capital (expandable) / 02 The Thesis (expandable)
 4. Key Rebels — 3D flip cards: Vlad Tenev, Brian Armstrong, Alfonso de León, Michael Rihani, Rick Song, Paul Frambot. Hint: `hover to flip · click to expand`. Panel copy is placeholder.
 5. Stats bar
-6. 03 The Evidence — sticky draggable timeline, 17 events Jan 2024 → Jul 2026 (Tibbir Trust is an event, May 2024, with SEC LINK button)
+6. 03 The Evidence — sticky draggable timeline, 19 events Jan 2024 → Oct 2026 (Tibbir Trust is an event, May 2024, with SEC LINK button). Newest: panel-17 "The Future Is Hood" (Sep 15–29 2026 braille posts decoded into a suspension bridge with Show-the-numbers toggle, announcement quote + screenshots, Altcoinist on-chain timeline, CCIP bridge, both CAs) and panel-18 "Leap of Faith" (early-bridger SBT + Oct 20 Principles post). Sources: Sam's screenshots + post data via api.fxtwitter.com.
 7. Links (@ribbita2012), CA, footer
 
 ### Known issues in index.html (not fixed yet)
