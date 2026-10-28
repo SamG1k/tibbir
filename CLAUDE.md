@@ -93,7 +93,7 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §3 Agents at work — case studies (Klarna, GitHub Copilot agent, Operator, Robinhood, ChatGPT checkout), spec-sheet layout
 - §4 The economics — 4.1 pricing models table, 4.2 x402 sequence diagram, 4.3 money/forecasts + cases (Coinbase for Agents, Tempo, Virtuals)
 - §5 Trust & governance — numbered open questions
-- §6 How we got here — black band, compact two-column timeline with year tabs (2024/2025/2026/All) + "Next year" button
+- §6 How we got here — black band, compact two-column timeline with year tabs (2024/2025/2026/All) + "Next year" button; desktop layout is placed by JS (layTimeline) so markers never overlap and run in date order; square green markers with a short tick to each event
 - §7 Who's building it — directory grouped: Agents & work / Infrastructure / Money
 - §8 Glossary
 - §9 Sources — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
