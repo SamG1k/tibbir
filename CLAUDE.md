@@ -61,7 +61,7 @@ Always edit the real `index.html`, never the lite copy.
 ### Known issues in index.html (not fixed yet)
 
 - Oct 2026 content review fixed: rebrand date now "late 2025" (matches timeline); punk/coin claim softened to match Rebrand panel; Clarity Act "if passed"; hero/stats/CA/Brian+Vlad+Paul cards updated for Robinhood Chain (both CAs shown); duplicate Regulatory Moat (Treasury panel) removed; Revolut/1,563/rebrand repeats removed; Tempo no longer called Ribbit portfolio, "$5B" = valuation; "peer-reviewed" → arXiv paper; Visa 4.8B/day removed; Nubank wording unified; rebel cards shrunk to 224×344.
-- Still open: Alfonso card image reads "ALFONSO GÓMEZ" but name/dossier say "Alfonso de León" — Sam to confirm. Hackathon (Nov 2024) still has no source. Holders figure (71,873+) undated.
+- Still open: Alfonso card image reads "ALFONSO GÓMEZ" but name/dossier say "Alfonso de León" — Sam to confirm. Hackathon (Nov 2024) still has no source. Holders stat removed from stats bar (Oct 2026).
 - Fixed Oct 2026: duplicate `<script>` block removed (no more `#tlDetail` console error / double drag handler); "Store + TEE" renamed "Store Launch" and its repeated TEE paragraph removed (TEE lives in "TEE Verified"); footer © 2026.
 
 ### Image layout (TIBBIR timeline events)
