@@ -282,9 +282,7 @@ html.locked{overflow:hidden}
 .story{position:absolute;left:clamp(16px,6vw,96px);right:clamp(16px,6vw,96px);top:16%;bottom:24%;display:flex;flex-direction:column}
 .kick{position:relative;height:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#1a7a2e}
 .kick span{position:absolute;left:0;top:0;transition:opacity .4s}
-.kick .k1{opacity:0}
-.intro.end .kick .k0{opacity:0}
-.intro.end .kick .k1{opacity:1}
+.kick .kt{font-variant-numeric:tabular-nums}
 .caps{position:relative;flex:1;margin-top:18px}
 .cap{position:absolute;left:0;top:0;max-width:16ch;font-size:clamp(38px,6.2vw,96px);font-weight:700;line-height:.95;letter-spacing:-.04em;opacity:0;transform:translateY(.4em);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
 .cap em{font-style:normal;color:#1a7a2e}
@@ -417,8 +415,8 @@ html.locked{overflow:hidden}
   <div class="half top"><div class="in">
       <div class="in-top"><span>Vol. 01</span><span>A field guide</span><span>Oct 2026</span></div>
       <div class="story">
-        <div class="kick"><span class="k0">A simple example</span><span class="k1">The agentic economy, in five steps</span></div>
-        <div class="count" aria-hidden="true"><span class="cn">01</span><span class="ct">/05</span></div><div class="caps"><p class="cap" data-s="0">You ask your agent to book a table for two.</p><p class="cap" data-s="1">It goes looking — and finds the restaurant’s agent.</p><p class="cap" data-s="2">The two agents agree on a time.</p><p class="cap" data-s="3">Your agent pays, within the limit you set.</p><p class="cap" data-s="4">Booked. No forms, no logins, no waiting.</p><p class="cap" data-s="5">That’s the <em>agentic economy</em>.</p></div>
+        <div class="kick"><span class="kt">An example · Friday, 7:00:00 pm</span></div>
+        <div class="count" aria-hidden="true"><span class="cn">01</span><span class="ct">/05</span></div><div class="caps"><p class="cap" data-s="0">“Book us a table for two tonight.”</p><p class="cap" data-s="1">Your agent asks around — and finds the restaurant’s agent.</p><p class="cap" data-s="2">The two agents agree on 8:30.</p><p class="cap" data-s="3">Your agent pays the deposit. Inside your limit.</p><p class="cap" data-s="4">Booked. You never opened an app.</p><p class="cap" data-s="5">That’s the <em>agentic economy</em>.</p></div>
         <div class="track"><div class="rail"></div><div class="fill"></div><ol class="stops"><li class="stp" data-s="0" style="left:0%"><i></i><b>You</b><span>asks</span></li><li class="stp" data-s="1" style="left:25%"><i></i><b>Your agent</b><span>searches</span></li><li class="stp" data-s="2" style="left:50%"><i></i><b>Restaurant’s agent</b><span>confirms</span></li><li class="stp" data-s="3" style="left:75%"><i></i><b>Payment</b><span>settles</span></li><li class="stp" data-s="4" style="left:100%"><i></i><b>Done</b><span>booked</span></li></ol><div class="runner"><em></em></div></div>
       </div>
       <div class="in-cta">Scroll to continue ↓ · or click to enter</div>
@@ -427,8 +425,8 @@ html.locked{overflow:hidden}
   <div class="half bot" aria-hidden="true"><div class="in">
       <div class="in-top"><span>Vol. 01</span><span>A field guide</span><span>Oct 2026</span></div>
       <div class="story">
-        <div class="kick"><span class="k0">A simple example</span><span class="k1">The agentic economy, in five steps</span></div>
-        <div class="count" aria-hidden="true"><span class="cn">01</span><span class="ct">/05</span></div><div class="caps"><p class="cap" data-s="0">You ask your agent to book a table for two.</p><p class="cap" data-s="1">It goes looking — and finds the restaurant’s agent.</p><p class="cap" data-s="2">The two agents agree on a time.</p><p class="cap" data-s="3">Your agent pays, within the limit you set.</p><p class="cap" data-s="4">Booked. No forms, no logins, no waiting.</p><p class="cap" data-s="5">That’s the <em>agentic economy</em>.</p></div>
+        <div class="kick"><span class="kt">An example · Friday, 7:00:00 pm</span></div>
+        <div class="count" aria-hidden="true"><span class="cn">01</span><span class="ct">/05</span></div><div class="caps"><p class="cap" data-s="0">“Book us a table for two tonight.”</p><p class="cap" data-s="1">Your agent asks around — and finds the restaurant’s agent.</p><p class="cap" data-s="2">The two agents agree on 8:30.</p><p class="cap" data-s="3">Your agent pays the deposit. Inside your limit.</p><p class="cap" data-s="4">Booked. You never opened an app.</p><p class="cap" data-s="5">That’s the <em>agentic economy</em>.</p></div>
         <div class="track"><div class="rail"></div><div class="fill"></div><ol class="stops"><li class="stp" data-s="0" style="left:0%"><i></i><b>You</b><span>asks</span></li><li class="stp" data-s="1" style="left:25%"><i></i><b>Your agent</b><span>searches</span></li><li class="stp" data-s="2" style="left:50%"><i></i><b>Restaurant’s agent</b><span>confirms</span></li><li class="stp" data-s="3" style="left:75%"><i></i><b>Payment</b><span>settles</span></li><li class="stp" data-s="4" style="left:100%"><i></i><b>Done</b><span>booked</span></li></ol><div class="runner"><em></em></div></div>
       </div>
       <div class="in-cta">Scroll to continue ↓ · or click to enter</div>
@@ -974,6 +972,8 @@ document.querySelectorAll('.sk-lab').forEach(function(l){
     timers.forEach(clearTimeout);timers=[];
     timers.push(setTimeout(function(){sts.forEach(function(st){st.classList.toggle('on',+st.dataset.s<=stop)})},reduce?0:650));
     it.classList.toggle('end',i===LAST);
+    var T=['An example · Friday, 7:00:00 pm','7:00:02 pm','7:00:03 pm','7:00:04 pm','7:00:05 pm','Five seconds, start to finish'];
+    it.querySelectorAll('.kt').forEach(function(k){k.textContent=T[i]});
     ctas.forEach(function(c){c.textContent=touch?(i===LAST?'Swipe or tap to enter →':'Swipe up · tap to enter'):(i===LAST?'Scroll or click to enter →':'Scroll to continue ↓ · or click to enter')});
   }
   show(0);
