@@ -63,6 +63,10 @@ Always edit the real `index.html`, never the lite copy.
 - Section 01 says the ЯIBBIT rebrand was "early 2026"; the timeline says Oct 2025 (left as-is until Sam confirms the right date).
 - Fixed Oct 2026: duplicate `<script>` block removed (no more `#tlDetail` console error / double drag handler); "Store + TEE" renamed "Store Launch" and its repeated TEE paragraph removed (TEE lives in "TEE Verified"); footer © 2026.
 
+### Image layout (TIBBIR timeline events)
+
+- Use `.media-row` (image + its related text side by side, `.flip` puts image on the right) and `.fig-pair` (two images side by side, full width). Every image is a `<figure class="mfig">` with a short factual `<figcaption>`. `.mfig.wide` = fill column, `.mfig.sq` = small/square image (column shrinks to 340px), `.pix` = pixel art. Avoid lone centred images with empty space either side.
+
 ### Hard rules
 
 - **No fabricated content.** Never invent quotes, tweets or claims. Verbatim only, from sources. If unsure, flag it — don't guess.
