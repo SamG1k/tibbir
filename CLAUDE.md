@@ -60,10 +60,8 @@ Always edit the real `index.html`, never the lite copy.
 
 ### Known issues in index.html (not fixed yet)
 
-- Duplicate `<script>` block at the bottom; its timeline click handler references missing `#tlDetail` → console error on every timeline click.
-- "Store + TEE" and "TEE Verified" (both Jan 2026) repeat the same Phala/TEE content.
-- Section 01 says the ЯIBBIT rebrand was "early 2026"; the timeline says Oct 2025.
-- Footer says © 2025.
+- Section 01 says the ЯIBBIT rebrand was "early 2026"; the timeline says Oct 2025 (left as-is until Sam confirms the right date).
+- Fixed Oct 2026: duplicate `<script>` block removed (no more `#tlDetail` console error / double drag handler); "Store + TEE" renamed "Store Launch" and its repeated TEE paragraph removed (TEE lives in "TEE Verified"); footer © 2026.
 
 ### Hard rules
 

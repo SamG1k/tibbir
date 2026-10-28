@@ -1137,7 +1137,7 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
           <div class="tl-node" data-target="panel-11">
             <div class="tl-dot"></div>
             <div class="tl-date">Jan 2026</div>
-            <div class="tl-title">Store + TEE</div>
+            <div class="tl-title">Store Launch</div>
           </div>
           <div class="tl-node" data-target="panel-12">
             <div class="tl-dot"></div>
@@ -1482,7 +1482,7 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
   </div>
 </div>
 
-<!-- PANEL 11: Store + TEE -->
+<!-- PANEL 11: Store Launch -->
 <div class="tl-event" id="panel-15">
   <div class="tl-event-header">
     <div class="tl-meta">Oct 2025 · ribbitcap.com</div>
@@ -1521,7 +1521,7 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
 <div class="tl-event" id="panel-11">
   <div class="tl-event-header">
     <div class="tl-meta">Jan 2026 · Proof of Loop</div>
-    <h2>Ribbita <em>Store Launch</em> + TEE Verification</h2>
+    <h2>Ribbita <em>Store Launch</em></h2>
   </div>
   <div class="tl-event-body">
     <h3 class="full-width">The Store</h3>
@@ -1547,8 +1547,6 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
     </div>
     <p>Every transaction automatically executed a 2x TIBBIR buy-and-burn. Powered by Crossmint for payment processing. Five wallet integrations: Coinbase Wallet, MetaMask, Rainbow, Safe (Gnosis), WalletConnect.</p>
 
-    <h3>TEE Verification</h3>
-    <p>The same day, Phala Network independently detects the <span class="highlight">ribbit-aac-ecosystem</span> process running inside an Intel TDX trusted execution enclave. TEE verification means the agent's code runs in tamper-proof hardware — no one, including the developers, can modify its behavior at runtime. Phala didn't build or deploy this. They discovered it.</p>
 
     <div class="evidence full-width">
       <div class="ev-label">OpenID Discovery</div>
@@ -1578,7 +1576,7 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
   </div>
 </div>
 
-<!-- PANEL 12: TEE Confirmed (merged into Store Launch above) -->
+<!-- PANEL 12: TEE Verified -->
 <div class="tl-event" id="panel-12">
   <div class="tl-event-header">
     <div class="tl-meta">Jan 2026 · Verification</div>
@@ -1844,93 +1842,11 @@ document.querySelectorAll(".tl-node").forEach(function(node){
   <!-- FOOTER -->
   <div class="footer">
     <span>NFA / DYOR</span>
-    <span>&copy; 2025</span>
+    <span>&copy; 2026</span>
   </div>
   <div style="padding:16px 28px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:#999;">by SamG1k</div>
 </div>
 
-<script>
-// Landing transition
-function enterSite(){
-  var landing=document.getElementById("landing");
-  landing.classList.add("exit");
-  setTimeout(function(){landing.style.display="none"},1100);
-}
-
-// Smooth scroll
-function scrollTo_(id){
-  var el=document.getElementById(id);
-  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-// Expandable sections
-function toggleSection(head){
-  var row=head.parentElement;
-  var body=row.querySelector(".section-body");
-  var toggle=head.querySelector(".toggle");
-  if(row.classList.contains("open")){
-    row.classList.remove("open");
-    body.style.maxHeight="0";
-    toggle.textContent="+";
-  }else{
-    // Close others
-    document.querySelectorAll(".section-row.open").forEach(function(r){
-      r.classList.remove("open");
-      r.querySelector(".section-body").style.maxHeight="0";
-      r.querySelector(".toggle").textContent="+";
-    });
-    row.classList.add("open");
-    body.style.maxHeight=body.scrollHeight+"px";
-    toggle.textContent="\u2212";
-  }
-}
-
-// Timeline drag
-(function(){
-  var track=document.getElementById("timelineTrack");
-  var isDown=false,startX,scrollLeft;
-  track.addEventListener("mousedown",function(e){
-    isDown=true;track.classList.add("grabbing");
-    startX=e.pageX-track.offsetLeft;
-    scrollLeft=track.scrollLeft;
-  });
-  track.addEventListener("mouseleave",function(){isDown=false;track.classList.remove("grabbing")});
-  track.addEventListener("mouseup",function(){isDown=false;track.classList.remove("grabbing")});
-  track.addEventListener("mousemove",function(e){
-    if(!isDown)return;
-    e.preventDefault();
-    var x=e.pageX-track.offsetLeft;
-    var walk=(x-startX)*2;
-    track.scrollLeft=scrollLeft-walk;
-  });
-  // Touch
-  var touchStartX,touchScrollLeft;
-  track.addEventListener("touchstart",function(e){
-    touchStartX=e.touches[0].pageX-track.offsetLeft;
-    touchScrollLeft=track.scrollLeft;
-  });
-  track.addEventListener("touchmove",function(e){
-    var x=e.touches[0].pageX-track.offsetLeft;
-    var walk=(x-touchStartX)*2;
-    track.scrollLeft=touchScrollLeft-walk;
-  });
-})();
-
-// Timeline node click — swap rich HTML panels
-var detailPanels = document.querySelectorAll('.tl-panel');
-document.querySelectorAll(".tl-node").forEach(function(node){
-  node.addEventListener("click",function(){
-    document.querySelectorAll(".tl-node").forEach(function(n){n.classList.remove("active")});
-    node.classList.add("active");
-    var idx = node.getAttribute("data-detail");
-    detailPanels.forEach(function(p){ p.style.display = 'none'; });
-    var target = document.getElementById('panel-' + idx);
-    if(target) target.style.display = 'block';
-    // Update the wrapper to show
-    document.getElementById('tlDetail').classList.add('show');
-  });
-});
-</script>
 <div class="lb-overlay" id="lbOverlay" onclick="lbClose()">
   <span class="lb-close" onclick="lbClose()">×</span>
   <img class="lb-trigger" onclick="lbOpen(this.src,this.alt)" id="lbImg" src="" alt="">
