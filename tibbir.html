@@ -539,13 +539,16 @@ html{overflow-x:hidden}body{background:#f2efe6;color:#1a1a14;overflow-x:hidden;m
 
 
 /* Story layout: Future Is Hood + Leap of Faith read top-to-bottom in one column */
-#panel-17 .tl-event-body,#panel-18 .tl-event-body{columns:auto;max-width:980px}
-#panel-17 .tl-event-body>p,#panel-18 .tl-event-body>p{font-size:12px;max-width:760px}
+#panel-17 .tl-event-body,#panel-18 .tl-event-body{columns:auto;max-width:1040px;margin:0 auto;padding-left:28px;padding-right:28px}
+#panel-17 .tl-event-header>*,#panel-18 .tl-event-header>*{max-width:984px;margin-left:auto;margin-right:auto}
+#panel-17 .tl-event-body>p,#panel-18 .tl-event-body>p{font-size:12.5px}
 #panel-17 .tl-event-body>h3,#panel-18 .tl-event-body>h3{font-size:16px;margin-top:34px}
 #panel-17 .tl-event-body>h3:first-child,#panel-18 .tl-event-body>h3:first-child{margin-top:24px}
-#panel-17 .img-band,#panel-18 .img-band{justify-content:flex-start;margin:14px 0 8px}
-#panel-17 .quote-block,#panel-18 .quote-block,#panel-17 .evidence,#panel-18 .evidence{max-width:760px}
-#panel-17 .entity-grid{max-width:760px}
+#panel-17 .img-band,#panel-18 .img-band{justify-content:center;margin:16px 0 10px}
+#panel-17 .img-band img,#panel-18 .img-band img{max-width:min(100%,620px);width:100%}
+#panel-18 .img-band img[alt="Leap of Faith soulbound token"]{max-width:424px}
+
+
 
 /* Lightbox */
 .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
