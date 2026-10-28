@@ -82,7 +82,7 @@ Always edit the real `index.html`, never the lite copy.
 A general page on the agentic economy, same colours/fonts as TIBBIR but its own look. Top bar: "AGENTIC ECONOMY" left, section links, green ЯIBBIT→TIBBIR flip button on the right linking to `/tibbir`.
 
 Design went through several rounds; Sam's goal is **authentic, not AI-themed**. Current direction = editorial "field guide" / research report:
-- Intro: full-screen cream; a network (Agents/Tools/Work/Money/Trust green nodes + small nodes, thin black lines) draws in on the right, headline "AI agents are / getting to / work." rises in line by line, "Click to enter →". Click any time → green seam across the middle, screen tears in half (top up, bottom down) revealing the site. Transform-only animations. Rejected before: book-cover intro, boot-sequence/terminal and fake activity-feed ideas.
+- Intro: full-screen cream. Left: headline "AI agents are / getting to / work." rises line by line + one-line subline + "Click to enter →". Right: framed figure "Fig. 00 — The agentic economy, simplified" on graph paper — network (Agents/Tools/Work/Money/Trust green labelled nodes + small nodes) draws in, then small green squares travel along the lines (tasks, data, money moving); legend underneath. Click any time → green seam, screen tears in half revealing the site. On mobile the figure sits below the headline. Rejected before: book-cover intro, boot-sequence/terminal, fake activity feed; plain unframed network looked "basic".
 - Masthead (Vol. 01 · A field guide · Updated…), big headline, standfirst, "Compiled by SamG1k" byline
 - Figures row with footnote markers
 - Figures row (12) + status key. Status tags on items: Live / Preview / Announced / Forecast (as reported at the time)
