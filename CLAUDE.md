@@ -65,7 +65,7 @@ Always edit the real `index.html`, never the lite copy.
 
 ### Image layout (TIBBIR timeline events)
 
-- Use `.media-row` (image + its related text side by side, `.flip` puts image on the right) and `.fig-pair` (two images side by side, full width). Every image is a `<figure class="mfig">` with a short factual `<figcaption>`. `.mfig.wide` = fill column, `.mfig.sq` = small/square image (column shrinks to 340px), `.pix` = pixel art. Avoid lone centred images with empty space either side.
+- Use `.media-row` (image + its related text side by side, `.flip` puts image on the right) and `.fig-pair` (two images side by side, full width). Every image is a `<figure class="mfig">` with a short factual `<figcaption>`. `.mfig.wide` = fill column, `.mfig.sq` = small/square image (column shrinks to 340px), `.pix` = pixel art. Avoid lone centred images with empty space either side. Exception: Sam prefers panel-17 (Future Is Hood) and panel-18 (Leap of Faith) in their original stacked layout (centred screenshots) — keep those as they are.
 
 ### Hard rules
 
