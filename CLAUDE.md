@@ -86,6 +86,7 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - Figures row with footnote markers
 - Figures row (12) + status key. Status tags on items: Live / Preview / Announced / Forecast (as reported at the time)
 - Organised in 5 pillars (per an outside review asking for broader coverage than payments/crypto):
+- §0 Start here — primer: 0.1 what is the agentic economy, 0.2 chatbot/workflow/agent table, 0.3 agent loop diagram, 0.4 five autonomy levels, 0.5 why now / why agents need money, 0.6 FAQ
 - §1 The agents — two-column article, drop cap, pull quote
 - §2 The infrastructure — isometric SVG stack (5 layers) + notes on MCP/AAIF and AWS AgentCore
 - §3 Agents at work — case studies (Klarna, GitHub Copilot agent, Operator, Robinhood, ChatGPT checkout), spec-sheet layout
@@ -95,6 +96,7 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §7 Who's building it — directory grouped: Agents & work / Infrastructure / Money
 - §8 Glossary
 - §9 Sources — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
+- Interactive bits: stack hover (§2), agent-loop "Run an example" (0.3), autonomy slider (0.4), x402 "Play" (4.2), case-study tab switchers (§3, §4), timeline year tabs (§6), glossary search + 4 category chips (§8), reading progress bar in nav. Skip gimmicks (count-ups, hover lifts).
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
 
