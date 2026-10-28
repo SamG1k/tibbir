@@ -82,6 +82,7 @@ Always edit the real `index.html`, never the lite copy.
 A general page on the agentic economy, same colours/fonts as TIBBIR but its own look. Top bar: "AGENTIC ECONOMY" left, section links, green ЯIBBIT→TIBBIR flip button on the right linking to `/tibbir`.
 
 Design went through several rounds; Sam's goal is **authentic, not AI-themed**. Current direction = editorial "field guide" / research report:
+- Intro: "field guide cover" — closed booklet (green spine, title, Vol. 01, contents teaser), "Click to open the guide"; cover swings open to a Contents page, then green wipe (same as TIBBIR landing) into the site. Shows every visit.
 - Masthead (Vol. 01 · A field guide · Updated…), big headline, standfirst, "Compiled by SamG1k" byline
 - Figures row with footnote markers
 - Figures row (12) + status key. Status tags on items: Live / Preview / Announced / Forecast (as reported at the time)
