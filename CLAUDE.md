@@ -98,8 +98,8 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §5 Trust & governance — numbered open questions
 - §6 How we got here — black band, compact two-column timeline with year tabs (2024/2025/2026/All) + "Next year" button; desktop layout is placed by JS (layTimeline) so markers never overlap and run in date order; square green markers with a short tick to each event
 - §7 Who's building it — directory grouped: Agents & work / Infrastructure / Money
-- §8 Glossary
-- §9 Sources — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
+- §8 Glossary — 46 terms A–Z with letter headers, each with a "§n" link to where it appears; search + category chips
+- §9 Sources (63) — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
 - Interactive bits: stack hover (§2), agent-loop "Run an example" (0.3), autonomy slider (0.4), x402 "Play" (4.2), case-study tab switchers (§3, §4), timeline year tabs (§6), glossary search + 4 category chips (§8), reading progress bar in nav. Skip gimmicks (count-ups, hover lifts).
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
