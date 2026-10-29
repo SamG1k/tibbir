@@ -93,13 +93,13 @@ Design went through several rounds; Sam's goal is **authentic, not AI-themed**. 
 - §0 Start here — primer: 0.1 what is the agentic economy, 0.2 chatbot/workflow/agent table, 0.3 agent loop diagram, 0.4 five autonomy levels, 0.5 why now / why agents need money, 0.6 FAQ
 - §1 The agents — two-column article, drop cap, pull quote
 - §2 The infrastructure — isometric SVG stack (5 layers) + notes on MCP/AAIF and AWS AgentCore
-- §3 Agents at work — case studies (Klarna, GitHub Copilot agent, Operator, Robinhood, ChatGPT checkout), spec-sheet layout
+- §3 Agents at work — case studies (Klarna + its 2025 rehiring, GitHub Copilot agent, Operator, Robinhood, ChatGPT checkout, Salesforce, Replit failure), spec-sheet layout
 - §4 The economics — 4.1 pricing models table, 4.2 x402 sequence diagram, 4.3 money/forecasts + cases (Coinbase for Agents, Tempo, Virtuals)
 - §5 Trust & governance — numbered open questions
 - §6 How we got here — black band, compact two-column timeline with year tabs (2024/2025/2026/All) + "Next year" button; desktop layout is placed by JS (layTimeline) so markers never overlap and run in date order; square green markers with a short tick to each event
 - §7 Who's building it — directory grouped: Agents & work / Infrastructure / Money
 - §8 Glossary — 46 terms A–Z with letter headers, each with a "§n" link to where it appears; search + category chips
-- §9 Sources (63) — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
+- §9 Sources (70) — numbered; footnotes `[n]` link to `#src-n`. Only cite pages actually read; cite the article that's *about* the fact, not a side mention
 - Interactive bits: stack hover (§2), agent-loop "Run an example" (0.3), autonomy slider (0.4), x402 "Play" (4.2), case-study tab switchers (§3, §4), timeline year tabs (§6), glossary search + 4 category chips (§8), reading progress bar in nav. Skip gimmicks (count-ups, hover lifts).
 - (Companion note removed — TIBBIR is reached via the top-right button only)
 - Avoid: tickers, hard shadows/hover lifts everywhere, eyebrow labels, identical card grids, accordions.
