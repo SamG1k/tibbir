@@ -126,13 +126,15 @@ a{color:inherit}
 .dir tr:hover td{background:rgba(26,122,46,.05)}
 
 /* GLOSSARY */
-.gloss{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
-.gloss div{padding:14px 0;border-top:1px solid rgba(26,26,20,.2)}
-.gloss dt{font-weight:700;font-size:16px}
+.gloss{column-count:3;column-gap:32px}
+.gloss>div{break-inside:avoid}
+.gloss div{padding:10px 0;border-top:1px solid rgba(26,26,20,.2)}
+.gloss dt{font-weight:700;font-size:15px}
 .gloss dt span{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#888;letter-spacing:1px;text-transform:uppercase;font-weight:400;margin-left:8px}
-.gloss dd{font-size:14px;line-height:1.55;color:#444;margin-top:4px}
-.gloss .gl{grid-column:1/-1;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#1a7a2e;border-top:2px solid #1a1a14;padding:18px 0 2px;margin-top:10px}
-.gloss .gl+div{border-top:0}
+.gloss dd{font-size:13px;line-height:1.5;color:#444;margin-top:3px}
+@media(max-width:1000px){.gloss{column-count:2}}
+.gloss>div[data-l]::before{content:attr(data-l);display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#1a7a2e;border-bottom:2px solid #1a1a14;padding:4px 0 6px;margin:6px 0 10px}
+.gloss>div[data-l]{border-top:0}
 .gsee{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#1a7a2e;text-decoration:none;border:1px solid #1a7a2e;padding:0 4px;margin-left:6px;white-space:nowrap}
 .gsee:hover{background:#1a7a2e;color:#f2efe6}
 
@@ -420,7 +422,7 @@ html.locked{overflow:hidden}
   .dir td{display:block;border:none;padding:2px 0;width:auto !important}
   .dir td.cat{padding-top:2px}
   .dir td.lnk{display:none}
-  .gloss{grid-template-columns:1fr}
+  .gloss{column-count:1}
 }
 </style>
 </head>
@@ -797,69 +799,52 @@ html.locked{overflow:hidden}
     </div>
     <p class="gnone" hidden>No terms match.</p>
     <dl class="gloss">
-      <div class="gl" data-l="A">A</div>
-      <div><dt>A2A<span>Infrastructure</span></dt><dd>Agent2Agent. Google’s protocol for agents to discover each other and delegate tasks.<a class="fn" href="#src-6">[6]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>AAIF<span>Infrastructure</span></dt><dd>Agentic AI Foundation. Linux Foundation home for MCP, goose and AGENTS.md.<a class="fn" href="#src-44">[44]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>ACP<span>Money</span></dt><dd>Agentic Commerce Protocol. OpenAI and Stripe’s standard behind checkout inside ChatGPT.<a class="fn" href="#src-13">[13]</a> <a class="gsee" href="#work">§3</a></dd></div>
-      <div><dt>Agent Card<span>Infrastructure</span></dt><dd>In A2A, a JSON document an agent publishes describing who it is, what it can do, where to reach it and how to authenticate.<a class="fn" href="#src-61">[61]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>Agentic account<span>Money</span></dt><dd>On Robinhood, a separate account an agent trades from, holding only what you deposit.<a class="fn" href="#src-17">[17]</a> <a class="gsee" href="#work">§3</a></dd></div>
-      <div><dt>Agentic commerce<span>Money</span></dt><dd>AI agents shopping, negotiating and transacting on behalf of people.<a class="fn" href="#src-25">[25]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>AgentKit<span>Money</span></dt><dd>Coinbase’s framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
-      <div><dt>Agent washing<span>Agents</span></dt><dd>Gartner’s term for relabelling chatbots and automation tools as “agentic” without real agentic features.<a class="fn" href="#src-43">[43]</a> <a class="gsee" href="#agents">§1</a></dd></div>
-      <div><dt>AI agent<span>Agents</span></dt><dd>A system that autonomously performs tasks by designing workflows with the tools it has.<a class="fn" href="#src-49">[49]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div><dt>AP2<span>Money</span></dt><dd>Agent Payments Protocol. Google’s standard for proving an agent has a user’s authority to buy something.<a class="fn" href="#src-11">[11]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>AP4M<span>Money</span></dt><dd>Agent Pay for Machines. Mastercard’s service for small, continuous payments between agents.<a class="fn" href="#src-16">[16]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
-      <div><dt>Assistant agent<span>Agents</span></dt><dd>An agent that works for a consumer, carrying their preferences to businesses.<a class="fn" href="#src-48">[48]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div><dt>Autonomy level<span>Agents</span></dt><dd>How much an agent does without its user — from Operator (you lead) to Observer (you just watch).<a class="fn" href="#src-52">[52]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="C">C</div>
-      <div><dt>Coding agent<span>Agents</span></dt><dd>An agent that takes a software task and returns finished code for review, like GitHub’s Copilot agent.<a class="fn" href="#src-38">[38]</a> <a class="gsee" href="#work">§3</a></dd></div>
-      <div><dt>Computer use<span>Agents</span></dt><dd>An agent operating a computer like a person — reading the screen, clicking and typing.<a class="fn" href="#src-36">[36]</a> <a class="gsee" href="#players">§7</a></dd></div>
-      <div class="gl" data-l="E">E</div>
-      <div><dt>ERC-8004<span>Infrastructure</span></dt><dd>“Trustless Agents.” Ethereum registries for an agent’s identity, reputation and validation.<a class="fn" href="#src-10">[10]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>Excessive agency<span>Trust &amp; safety</span></dt><dd>An agent holding more tools or permissions than its job needs — OWASP’s #3 AI risk in 2026.<a class="fn" href="#src-46">[46]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
-      <div class="gl" data-l="F">F</div>
-      <div><dt>Facilitator<span>Money</span></dt><dd>In x402, a service that checks a signed payment, screens it and settles it onchain for the seller — like Coinbase’s CDP Facilitator.<a class="fn" href="#src-63">[63]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div class="gl" data-l="G">G</div>
-      <div><dt>Guardrails<span>Trust &amp; safety</span></dt><dd>Limits placed around what an agent can do. Anthropic recommends testing agents in sandboxed environments with guardrails in place.<a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="H">H</div>
-      <div><dt>HTTP 402<span>Infrastructure</span></dt><dd>A web status code meaning “Payment Required”. Barely used until x402 gave it a job.<a class="fn" href="#src-12">[12]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>Human-in-the-loop<span>Trust &amp; safety</span></dt><dd>A setup that requires a person’s input — like an agent pausing for feedback at checkpoints, or needing approval before high-impact actions.<a class="fn" href="#src-58">[58]</a><a class="fn" href="#src-51">[51]</a><a class="fn" href="#src-49">[49]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="I">I</div>
-      <div><dt>IAO<span>Money</span></dt><dd>A token launched alongside a new AI agent on Virtuals Protocol.<a class="fn" href="#src-26">[26]</a></dd></div>
-      <div class="gl" data-l="K">K</div>
-      <div><dt>KYA<span>Trust &amp; safety</span></dt><dd>Know Your Agent. Checks on who runs an agent, who it acts for and what it’s allowed to do.<a class="fn" href="#src-53">[53]</a></dd></div>
-      <div class="gl" data-l="L">L</div>
-      <div><dt>LLM<span>Agents</span></dt><dd>Large language model. A machine-learning model trained on vast amounts of text; enhanced with tools and memory, it’s the building block of most agents.<a class="fn" href="#src-54">[54]</a><a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="M">M</div>
-      <div><dt>Mandate<span>Money</span></dt><dd>In AP2, a cryptographically signed record of what the user asked for (Intent Mandate) and the exact cart and price they approved (Cart Mandate).<a class="fn" href="#src-62">[62]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>MCP<span>Infrastructure</span></dt><dd>Model Context Protocol. Anthropic’s standard for giving AI agents tools and context.<a class="fn" href="#src-5">[5]</a> <a class="gsee" href="#stack">§2</a></dd></div>
-      <div><dt>Memory<span>Agents</span></dt><dd>An agent storing past interactions so it can plan what to do next — one of the add-ons, with retrieval and tools, that turn an LLM into an agent.<a class="fn" href="#src-49">[49]</a><a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div><dt>MPP<span>Money</span></dt><dd>Machine Payments Protocol. Tempo and Stripe’s open standard for agents and services to request, authorize and settle payments.<a class="fn" href="#src-20">[20]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>Multi-agent system<span>Agents</span></dt><dd>Several agents working together — often a lead agent that plans and hands parts of the job to subagents running in parallel.<a class="fn" href="#src-60">[60]</a></dd></div>
-      <div class="gl" data-l="O">O</div>
-      <div><dt>Orchestrator-workers<span>Agents</span></dt><dd>A pattern where one central model breaks a task down, delegates the pieces to worker models and combines their results.<a class="fn" href="#src-51">[51]</a></dd></div>
-      <div><dt>Outcome-based pricing<span>Money</span></dt><dd>Charging only when the agent achieves a result — like Intercom’s $0.99 per resolved conversation.<a class="fn" href="#src-40">[40]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div class="gl" data-l="P">P</div>
-      <div><dt>Prompt injection<span>Trust &amp; safety</span></dt><dd>Hiding instructions in content an agent reads, to make it do something its user didn’t ask for.<a class="fn" href="#src-46">[46]</a> <a class="gsee" href="#trust">§5</a></dd></div>
-      <div class="gl" data-l="S">S</div>
-      <div><dt>Sandbox economy<span>Money</span></dt><dd>Google DeepMind’s term for digital markets where AI agents transact with each other.<a class="fn" href="#src-50">[50]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div><dt>Service agent<span>Agents</span></dt><dd>An agent that works for a business, dealing with customers and other businesses.<a class="fn" href="#src-48">[48]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div><dt>Session<span>Money</span></dt><dd>In MPP, funds an agent reserves upfront and spends as it uses a service, settled in one batch.<a class="fn" href="#src-20">[20]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>Shared Payment Token<span>Money</span></dt><dd>A token scoped to one merchant and one cart total, so an agent can pay without seeing card details.<a class="fn" href="#src-13">[13]</a></dd></div>
-      <div><dt>Spending limit<span>Trust &amp; safety</span></dt><dd>A cap only the user controls. Robinhood’s agent credit card runs on a virtual card with its own limit, plus optional manual approval of every purchase.<a class="fn" href="#src-17">[17]</a> <a class="gsee" href="#work">§3</a></dd></div>
-      <div><dt>Stablecoin<span>Money</span></dt><dd>A cryptocurrency that aims to hold a steady value against an asset like the US dollar — though, as Wikipedia notes, they’re not necessarily stable.<a class="fn" href="#src-55">[55]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>Synthetic employee<span>Trust &amp; safety</span></dt><dd>The FSB’s suggestion that firms govern AI agents with HR-style controls, like staff.<a class="fn" href="#src-33">[33]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
-      <div class="gl" data-l="T">T</div>
-      <div><dt>TAP<span>Trust &amp; safety</span></dt><dd>Trusted Agent Protocol. Visa’s framework for merchants to recognise approved agents using cryptographic signatures.<a class="fn" href="#src-28">[28]</a> <a class="gsee" href="#trust">§5</a></dd></div>
-      <div><dt>Time horizon<span>Agents</span></dt><dd>METR’s measure of an agent: the length of task (in human time) it completes half the time.<a class="fn" href="#src-45">[45]</a> <a class="gsee" href="#agents">§1</a></dd></div>
-      <div><dt>Tool use<span>Agents</span></dt><dd>Also called function calling. Lets a model call functions it’s been given, deciding when from the request and each tool’s description.<a class="fn" href="#src-59">[59]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="U">U</div>
-      <div><dt>USDC<span>Money</span></dt><dd>A stablecoin issued by Circle, pegged to the US dollar.<a class="fn" href="#src-56">[56]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div class="gl" data-l="W">W</div>
-      <div><dt>Wallet<span>Money</span></dt><dd>A program, device or service that stores the keys used to sign crypto transactions.<a class="fn" href="#src-57">[57]</a> <a class="gsee" href="#economics">§4</a></dd></div>
-      <div><dt>Workflow<span>Agents</span></dt><dd>AI and tools following steps a developer wrote in advance — predictable, but not adaptive.<a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
-      <div class="gl" data-l="X">X</div>
-      <div><dt>x402<span>Money</span></dt><dd>Uses the web’s old “402 Payment Required” code so sites and agents can settle payments in stablecoins — no accounts or API keys.<a class="fn" href="#src-8">[8]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="A"><dt>A2A<span>Infrastructure</span></dt><dd>Agent2Agent. Google’s protocol for agents to discover each other and delegate tasks.<a class="fn" href="#src-6">[6]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="A"><dt>AAIF<span>Infrastructure</span></dt><dd>Agentic AI Foundation. Linux Foundation home for MCP, goose and AGENTS.md.<a class="fn" href="#src-44">[44]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="A"><dt>ACP<span>Money</span></dt><dd>Agentic Commerce Protocol. OpenAI and Stripe’s standard behind checkout inside ChatGPT.<a class="fn" href="#src-13">[13]</a> <a class="gsee" href="#work">§3</a></dd></div>
+      <div data-g="A"><dt>Agent Card<span>Infrastructure</span></dt><dd>In A2A, a JSON document an agent publishes describing who it is, what it can do, where to reach it and how to authenticate.<a class="fn" href="#src-61">[61]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="A"><dt>Agentic account<span>Money</span></dt><dd>On Robinhood, a separate account an agent trades from, holding only what you deposit.<a class="fn" href="#src-17">[17]</a> <a class="gsee" href="#work">§3</a></dd></div>
+      <div data-g="A"><dt>Agentic commerce<span>Money</span></dt><dd>AI agents shopping, negotiating and transacting on behalf of people.<a class="fn" href="#src-25">[25]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="A"><dt>AgentKit<span>Money</span></dt><dd>Coinbase’s framework for building wallets into AI agents.<a class="fn" href="#src-15">[15]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
+      <div data-g="A"><dt>Agent washing<span>Agents</span></dt><dd>Gartner’s term for relabelling chatbots and automation tools as “agentic” without real agentic features.<a class="fn" href="#src-43">[43]</a> <a class="gsee" href="#agents">§1</a></dd></div>
+      <div data-g="A"><dt>AI agent<span>Agents</span></dt><dd>A system that autonomously performs tasks by designing workflows with the tools it has.<a class="fn" href="#src-49">[49]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="A"><dt>AP2<span>Money</span></dt><dd>Agent Payments Protocol. Google’s standard for proving an agent has a user’s authority to buy something.<a class="fn" href="#src-11">[11]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="A"><dt>AP4M<span>Money</span></dt><dd>Agent Pay for Machines. Mastercard’s service for small, continuous payments between agents.<a class="fn" href="#src-16">[16]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
+      <div data-g="A"><dt>Assistant agent<span>Agents</span></dt><dd>An agent that works for a consumer, carrying their preferences to businesses.<a class="fn" href="#src-48">[48]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="A"><dt>Autonomy level<span>Agents</span></dt><dd>How much an agent does without its user — from Operator (you lead) to Observer (you just watch).<a class="fn" href="#src-52">[52]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="C"><dt>Coding agent<span>Agents</span></dt><dd>An agent that takes a software task and returns finished code for review, like GitHub’s Copilot agent.<a class="fn" href="#src-38">[38]</a> <a class="gsee" href="#work">§3</a></dd></div>
+      <div data-g="C"><dt>Computer use<span>Agents</span></dt><dd>An agent operating a computer like a person — reading the screen, clicking and typing.<a class="fn" href="#src-36">[36]</a> <a class="gsee" href="#players">§7</a></dd></div>
+      <div data-g="E"><dt>ERC-8004<span>Infrastructure</span></dt><dd>“Trustless Agents.” Ethereum registries for an agent’s identity, reputation and validation.<a class="fn" href="#src-10">[10]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="E"><dt>Excessive agency<span>Trust &amp; safety</span></dt><dd>An agent holding more tools or permissions than its job needs — OWASP’s #3 AI risk in 2026.<a class="fn" href="#src-46">[46]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
+      <div data-g="F"><dt>Facilitator<span>Money</span></dt><dd>In x402, a service that checks a signed payment, screens it and settles it onchain for the seller — like Coinbase’s CDP Facilitator.<a class="fn" href="#src-63">[63]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="G"><dt>Guardrails<span>Trust &amp; safety</span></dt><dd>Limits placed around what an agent can do. Anthropic recommends testing agents in sandboxed environments with guardrails in place.<a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="H"><dt>HTTP 402<span>Infrastructure</span></dt><dd>A web status code meaning “Payment Required”. Barely used until x402 gave it a job.<a class="fn" href="#src-12">[12]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="H"><dt>Human-in-the-loop<span>Trust &amp; safety</span></dt><dd>A setup that requires a person’s input — like an agent pausing for feedback at checkpoints, or needing approval before high-impact actions.<a class="fn" href="#src-58">[58]</a><a class="fn" href="#src-51">[51]</a><a class="fn" href="#src-49">[49]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="I"><dt>IAO<span>Money</span></dt><dd>A token launched alongside a new AI agent on Virtuals Protocol.<a class="fn" href="#src-26">[26]</a></dd></div>
+      <div data-g="K"><dt>KYA<span>Trust &amp; safety</span></dt><dd>Know Your Agent. Checks on who runs an agent, who it acts for and what it’s allowed to do.<a class="fn" href="#src-53">[53]</a></dd></div>
+      <div data-g="L"><dt>LLM<span>Agents</span></dt><dd>Large language model. A machine-learning model trained on vast amounts of text; enhanced with tools and memory, it’s the building block of most agents.<a class="fn" href="#src-54">[54]</a><a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="M"><dt>Mandate<span>Money</span></dt><dd>In AP2, a cryptographically signed record of what the user asked for (Intent Mandate) and the exact cart and price they approved (Cart Mandate).<a class="fn" href="#src-62">[62]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="M"><dt>MCP<span>Infrastructure</span></dt><dd>Model Context Protocol. Anthropic’s standard for giving AI agents tools and context.<a class="fn" href="#src-5">[5]</a> <a class="gsee" href="#stack">§2</a></dd></div>
+      <div data-g="M"><dt>Memory<span>Agents</span></dt><dd>An agent storing past interactions so it can plan what to do next — one of the add-ons, with retrieval and tools, that turn an LLM into an agent.<a class="fn" href="#src-49">[49]</a><a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="M"><dt>MPP<span>Money</span></dt><dd>Machine Payments Protocol. Tempo and Stripe’s open standard for agents and services to request, authorize and settle payments.<a class="fn" href="#src-20">[20]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="M"><dt>Multi-agent system<span>Agents</span></dt><dd>Several agents working together — often a lead agent that plans and hands parts of the job to subagents running in parallel.<a class="fn" href="#src-60">[60]</a></dd></div>
+      <div data-g="O"><dt>Orchestrator-workers<span>Agents</span></dt><dd>A pattern where one central model breaks a task down, delegates the pieces to worker models and combines their results.<a class="fn" href="#src-51">[51]</a></dd></div>
+      <div data-g="O"><dt>Outcome-based pricing<span>Money</span></dt><dd>Charging only when the agent achieves a result — like Intercom’s $0.99 per resolved conversation.<a class="fn" href="#src-40">[40]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="P"><dt>Prompt injection<span>Trust &amp; safety</span></dt><dd>Hiding instructions in content an agent reads, to make it do something its user didn’t ask for.<a class="fn" href="#src-46">[46]</a> <a class="gsee" href="#trust">§5</a></dd></div>
+      <div data-g="S"><dt>Sandbox economy<span>Money</span></dt><dd>Google DeepMind’s term for digital markets where AI agents transact with each other.<a class="fn" href="#src-50">[50]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="S"><dt>Service agent<span>Agents</span></dt><dd>An agent that works for a business, dealing with customers and other businesses.<a class="fn" href="#src-48">[48]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="S"><dt>Session<span>Money</span></dt><dd>In MPP, funds an agent reserves upfront and spends as it uses a service, settled in one batch.<a class="fn" href="#src-20">[20]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="S"><dt>Shared Payment Token<span>Money</span></dt><dd>A token scoped to one merchant and one cart total, so an agent can pay without seeing card details.<a class="fn" href="#src-13">[13]</a></dd></div>
+      <div data-g="S"><dt>Spending limit<span>Trust &amp; safety</span></dt><dd>A cap only the user controls. Robinhood’s agent credit card runs on a virtual card with its own limit, plus optional manual approval of every purchase.<a class="fn" href="#src-17">[17]</a> <a class="gsee" href="#work">§3</a></dd></div>
+      <div data-g="S"><dt>Stablecoin<span>Money</span></dt><dd>A cryptocurrency that aims to hold a steady value against an asset like the US dollar — though, as Wikipedia notes, they’re not necessarily stable.<a class="fn" href="#src-55">[55]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="S"><dt>Synthetic employee<span>Trust &amp; safety</span></dt><dd>The FSB’s suggestion that firms govern AI agents with HR-style controls, like staff.<a class="fn" href="#src-33">[33]</a> <a class="gsee" href="#timeline">§6</a></dd></div>
+      <div data-g="T"><dt>TAP<span>Trust &amp; safety</span></dt><dd>Trusted Agent Protocol. Visa’s framework for merchants to recognise approved agents using cryptographic signatures.<a class="fn" href="#src-28">[28]</a> <a class="gsee" href="#trust">§5</a></dd></div>
+      <div data-g="T"><dt>Time horizon<span>Agents</span></dt><dd>METR’s measure of an agent: the length of task (in human time) it completes half the time.<a class="fn" href="#src-45">[45]</a> <a class="gsee" href="#agents">§1</a></dd></div>
+      <div data-g="T"><dt>Tool use<span>Agents</span></dt><dd>Also called function calling. Lets a model call functions it’s been given, deciding when from the request and each tool’s description.<a class="fn" href="#src-59">[59]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="U"><dt>USDC<span>Money</span></dt><dd>A stablecoin issued by Circle, pegged to the US dollar.<a class="fn" href="#src-56">[56]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="W"><dt>Wallet<span>Money</span></dt><dd>A program, device or service that stores the keys used to sign crypto transactions.<a class="fn" href="#src-57">[57]</a> <a class="gsee" href="#economics">§4</a></dd></div>
+      <div data-g="W"><dt>Workflow<span>Agents</span></dt><dd>AI and tools following steps a developer wrote in advance — predictable, but not adaptive.<a class="fn" href="#src-51">[51]</a> <a class="gsee" href="#start">§0</a></dd></div>
+      <div data-g="X"><dt>x402<span>Money</span></dt><dd>Uses the web’s old “402 Payment Required” code so sites and agents can settle payments in stablecoins — no accounts or API keys.<a class="fn" href="#src-8">[8]</a> <a class="gsee" href="#economics">§4</a></dd></div>
     </dl>
   </section>
 
@@ -1004,12 +989,12 @@ document.querySelectorAll('.sk-lab').forEach(function(l){
 
   /* glossary search */
   var gq=document.getElementById('gq');
-  if(gq){var cat='',items=document.querySelectorAll('.gloss > div:not(.gl)'),letters=document.querySelectorAll('.gloss .gl'),none=document.querySelector('.gnone');
+  if(gq){var cat='',items=document.querySelectorAll('.gloss > div'),none=document.querySelector('.gnone');
     function filt(){var q=gq.value.trim().toLowerCase(),n=0;
       items.forEach(function(it){var ok=(!q||it.textContent.toLowerCase().indexOf(q)>-1)&&(!cat||it.querySelector('dt span').textContent===cat);it.hidden=!ok;if(ok)n++});
-      letters.forEach(function(g){var x=g.nextElementSibling,v=false;while(x&&!x.classList.contains('gl')){if(!x.hidden)v=true;x=x.nextElementSibling}g.hidden=!v});
+      var last='';items.forEach(function(it){it.removeAttribute('data-l');if(!it.hidden&&it.dataset.g!==last){it.setAttribute('data-l',it.dataset.g);last=it.dataset.g}});
       none.hidden=n>0}
-    gq.addEventListener('input',filt);
+    gq.addEventListener('input',filt);filt();
     document.querySelectorAll('.gchips button').forEach(function(b){b.addEventListener('click',function(){cat=b.dataset.cat;document.querySelectorAll('.gchips button').forEach(function(x){x.classList.toggle('on',x===b)});filt()})});
   }
 })();
